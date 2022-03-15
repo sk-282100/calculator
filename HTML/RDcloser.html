@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/RDcloser.css">
+
+</head>
+
+<body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#slider1").slider({
+                min: 10, max: 90, step: 1, value: 10,
+                slide: function (event, ui) {
+                    $("#slidervalue").val(ui.value);
+                }
+            });
+            var initialValue = $("#slider1").slider("option", "value");
+            $("#slidervalue").val(initialValue);
+            $("#slidervalue").change(function () {
+                var oldVal = $("#slider1").slider("option", "value");
+                var newVal = $(this).val();
+                if (isNaN(newVal) || newVal < 10 || newVal > 100) {
+                    $("#slidervalue").val(oldVal);
+                } else {
+                    $("#slider1").slider("option", "value", newVal);
+                }
+            });
+        });
+    </script>
+
+    <input id="slidervalue" class="float-end inputText" type="text"> (min: 10, max: 90)
+    <div id="slider1" style="height: 5px;"></div><br />
+
+
+
+    <!-- <input id="slider" type="range" name="range" step="50000" min="100000" max="1000000" value="" onchange="rangePrimary.value=value"> -->
+    <table>
+        <tr>
+            <td>
+                <button>Homepage</button>
+
+                <br />
+                <div class="container">
+
+                    <label>Monthly Investment*</label>
+                    <br />
+                    <input type="text" class="float-end inputText" id="rangePrimary" />
+
+                    <input id="slider" type="range" name="range" step="50000" min="100000" max="1000000" value=""
+                        onchange="rangePrimary.value=value">
+                    <br />
+                    <label>Rate of Interest*</label>
+                    <br />
+                    <input type="text" class="float-end inputText" id="rangePrimary1" />
+
+                    <input id="slider" type="range" name="range" step="1.00" min="1.00" max="100.00" value=""
+                        onchange="rangePrimary1.value=value">
+                    <br />
+                    <label>Time Period*</label>
+                    <br />
+                    <input type="text" class="float-end inputText" id="rangePrimary2" />
+
+                    <input id="slider" type="range" name="range" step="1" min="1" max="100" value=""
+                        onchange="rangePrimary2.value=value">
+                    <br />
+                    <label for="int">Interest Compounding:</label>
+                    <select name="interest" id="int" style="height: 30px;">
+                        <option value="quarterly">Quarterly</option>
+                        <option value="half-yearly">Half-Yearly</option>
+                        <option value="yearly">Yearly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                    <br />
+                    <br />
+                    <button type="button" class="btn btn-info btn1">Show Maturity Value</button>
+                    <br />
+
+            </td>
+</body>
+
+</html>
