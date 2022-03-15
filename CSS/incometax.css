@@ -1,0 +1,22 @@
+button{
+    width: 150px;    
+}
+
+.btn1{
+    border: 2px solid rgb(51, 163, 238);
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color: rgb(51, 163, 238);
+    color: white;
+    margin-bottom: 20px;
+}
+select{
+    border: 2px solid rgb(51, 163, 238);
+    width: 150px;
+}
+.label1{
+    font-weight: bold;
+}
+details{
+
+}
