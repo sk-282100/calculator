@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/RDcloser.css">
     <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
@@ -22,10 +20,6 @@
                     var z = $("#rangePrimary2").val()
                     $("#slider2").val(z)
                 })
-                $("#int").change(function () {
-                    var b = $("#int").val()
-                    $("#int").val(y)
-                })
                 showDetails();
             });
 
@@ -36,9 +30,33 @@
             var intrestRate = $("#rangePrimary1").val()
             var timePeriod = $("#rangePrimary2").val()
             var compoundIntrest = $("#int").val()
+            console.log(monthlyInvestment);
+            console.log(intrestRate);
+            console.log(timePeriod);
+            console.log(compoundIntrest);
 
-            var totalInvestment = (monthlyInvestment * 100);
-            var maturityAmout = monthlyInvestment * ((1 + intrestRate / compoundIntrest) ^ timePeriod);
+           var totalInvestment = monthlyInvestment; 
+            if (compoundIntrest == 4) {
+                var maturityAmout = monthlyInvestment * [(1 + (intrestRate / 100) / 4) ** (4 * timePeriod)];
+                
+            }
+            else if (compoundIntrest == 6) {
+               var maturityAmout = monthlyInvestment * [(1 + (intrestRate / 100) / 6) ** (6 * timePeriod)];
+                
+            }
+            else if (compoundIntrest == 1) {
+               var maturityAmout = monthlyInvestment * [(1 + (intrestRate / 100) / 1) ** (1 * timePeriod)];
+               
+            }
+            else {
+                var maturityAmout = monthlyInvestment * [(1 + (intrestRate / 100) / 12) ** (12 * timePeriod)];
+            }
+
+            // Maturity amount = Deposite amount *[(1 + interestrate/ interest frequency) ^ (interest frequency  tenure)]
+            //     = 100000[(1+(6/100)/4)^(6*4)]
+            // 	= 142950.281193
+
+
             var totalIntrest = (maturityAmout - monthlyInvestment);
 
             $("#tinv").html(totalInvestment);
@@ -76,15 +94,15 @@
             <br />
             <input type="text" class="float-end inputText" id="rangePrimary2" required />
 
-            <input id="slider2" class="slider" type="range" name="range" step="1" min="1" max="12" value=""
+            <input id="slider2" class="slider" type="range" name="range" step="1" min="1" max="100" value=""
                 onchange="rangePrimary2.value=value" required />
             <br />
             <label for="int">Interest Compounding:</label>
             <select name="interest" id="int" style="height: 30px;">
-                <option value="92">Quarterly</option>
-                <option value="182">Half-Yearly</option>
-                <option value="365">Yearly</option>
-                <option value="30">Monthly</option>
+                <option value="4">Quarterly</option>
+                <option value="6">Half-Yearly</option>
+                <option value="1">Yearly</option>
+                <option value="12">Monthly</option>
             </select>
             <br />
             <br />
