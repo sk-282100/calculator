@@ -3,28 +3,68 @@
   <head>
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/FDcal.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script> 
+    $(function(){
+     
+      $("#rangePrimary").change(function(){
+       var x= $("#rangePrimary").val()
+        $("#slider").val(x)
+      })
+
+
+      $("#rangePrimary1").change(function(){
+       var x= $("#rangePrimary1").val()
+        $("#slider1").val(x)
+      })
+
+      $("#rangePrimary2").change(function(){
+       var x= $("#rangePrimary2").val()
+        $("#slider2").val(x)
+      })
+      
+      $("#calculate-button").click(function(){
+        var depositAmount=$("#rangePrimary").val()
+        var intrestRate= $("#rangePrimary1").val()
+        var tenure= $("#rangePrimary2").val()
+         
+        var maturityAmout=depositAmount*((1+intrestRate)^tenure)
+        var totalIntrest=maturityAmout-depositAmount
+        console.log(maturityAmout);
+        $("#maturity").html(maturityAmout)
+        $("#totIntrest").html(totalIntrest)
+      })
+
+   })
+    </script>
   </head>
 
 
   <body>
+    <h4>Fixed Deposit Calculator</h4>
     <table>
+      <tr>
+        <td>
+          <button>Homepage</button>
+        </td>
+      </tr>
       <tr>
         <td >
           <div class="container">
-            <button>Homepage</button>
+          
 
             <br />
             <label> Deposit Amount </label>
             <br />
             <input type="text" class="float-end inputText" id="rangePrimary"/>
 
-            <input id="slider" type="range" name="range" step="50000" min="1000" max="1000000" value="" onchange="rangePrimary.value=value">
+            <input id="slider" type="range" name="range" step="500" min="1000" max="100000" value="" onchange="rangePrimary.value=value">
             <br />
             <label>Interest rate in %</label>
             <br />
             <input type="text" class="float-end inputText"  id="rangePrimary1" />
 
-            <input id="slider" type="range" name="range" step="1.00" min="1.00" max="100.00" value="" onchange="rangePrimary1.value=value+'%'">
+            <input id="slider1" type="range" name="range" step="1.00" min="1.00" max="20.00" value="" onchange="rangePrimary1.value=value">
             <br />
 
             <label for="int">Tenure</label>
@@ -36,29 +76,34 @@
             </select>
             <input type="text" class="float-end inputText" id="rangePrimary2" />
 
-            <input id="slider" type="range" name="range" step="1" min="1" max="100" value="" onchange="rangePrimary2.value=value">
+            <input id="slider2" type="range" name="range" step="1" min="1" max="100" value="" onchange="rangePrimary2.value=value">
             
             <br/>
             <label>Type of fixed deposit</label>
             <div>
                 <label  class="radio-inline">
-                    <input style="width: 30px; height: 15px;"  type="radio" name="optradio" > Monthly Payout
+                    <input style="width: 30px; height: 15px;"  type="radio" name="optradio"> Monthly Payout
                   </label>
                   <label  class="radio-inline">
-                    <input  style="width: 30px;  height: 15px;"  type="radio" name="optradio">Quarterly Payout
+                    <input  style="width: 30px;  height: 15px;"  type="radio" name="optradio" >Quarterly Payout
                   </label>
                   <label  class="radio-inline">
                     <input  style="width: 30px;  height: 15px;"  type="radio" name="optradio">Half Yearly Payout
                   </label> 
                   <label  class="radio-inline">
-                    <input   style="width: 30px;  height: 15px;" type="radio" name="optradio">Reinvestment/Cumulative
+                    <input   style="width: 30px;  height: 15px;" type="radio" name="optradio" >Reinvestment/Cumulative
                   </label> 
               </div>
               <br/>
-              <div class="containers">  
-                <button> Calculate </button>  
+              <div class="calculate">  
+                <button id="calculate-button"> Calculate </button>  
              </div>
           <br/>
+          <div class="total">
+            <p>Maturity Amount: <span id="maturity"></span></p>
+            <p>Total Intrest Earned: <span id="totIntrest"></span></p>
+          </div>
+
         
          
         </td>
