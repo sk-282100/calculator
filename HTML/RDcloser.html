@@ -2,85 +2,113 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/RDcloser.css">
+    <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
+    <script>
 
+        $(document).ready(function () {
+            $("#show-maturity-value").on('click', function () {
+                $("#rangePrimary").change(function () {
+                    var x = $("#rangePrimary").val()
+                    $("#slider").val(x)
+                })
+                $("#rangePrimary1").change(function () {
+                    var y = $("#rangePrimary1").val()
+                    $("#slider1").val(y)
+                })
+                $("#rangePrimary2").change(function () {
+                    var z = $("#rangePrimary2").val()
+                    $("#slider2").val(z)
+                })
+                $("#int").change(function () {
+                    var b = $("#int").val()
+                    $("#int").val(y)
+                })
+                showDetails();
+            });
+
+        });
+        function showDetails() {
+
+            var monthlyInvestment = $("#rangePrimary").val()
+            var intrestRate = $("#rangePrimary1").val()
+            var timePeriod = $("#rangePrimary2").val()
+            var compoundIntrest = $("#int").val()
+
+            var totalInvestment = (monthlyInvestment * 100);
+            var maturityAmout = monthlyInvestment * ((1 + intrestRate / compoundIntrest) ^ timePeriod);
+            var totalIntrest = (maturityAmout - monthlyInvestment);
+
+            $("#tinv").html(totalInvestment);
+            $("#tint").html(totalIntrest);
+            $("#matval").html(maturityAmout);
+        } 
+    </script>
 </head>
 
 <body>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $("#slider1").slider({
-                min: 10, max: 90, step: 1, value: 10,
-                slide: function (event, ui) {
-                    $("#slidervalue").val(ui.value);
-                }
-            });
-            var initialValue = $("#slider1").slider("option", "value");
-            $("#slidervalue").val(initialValue);
-            $("#slidervalue").change(function () {
-                var oldVal = $("#slider1").slider("option", "value");
-                var newVal = $(this).val();
-                if (isNaN(newVal) || newVal < 10 || newVal > 100) {
-                    $("#slidervalue").val(oldVal);
-                } else {
-                    $("#slider1").slider("option", "value", newVal);
-                }
-            });
-        });
-    </script>
 
-    <input id="slidervalue" class="float-end inputText" type="text"> (min: 10, max: 90)
-    <div id="slider1" style="height: 5px;"></div><br />
+    <div class="col-md-6">
 
+        <button>Homepage</button>
+        <br />
 
+        <div class="container">
 
-    <!-- <input id="slider" type="range" name="range" step="50000" min="100000" max="1000000" value="" onchange="rangePrimary.value=value"> -->
-    <table>
-        <tr>
-            <td>
-                <button>Homepage</button>
+            <label>Monthly Investment*</label>
+            <br />
+            <input type="text" class="float-end inputText" id="rangePrimary" required />
 
-                <br />
-                <div class="container">
+            <input id="slider" class="slider" type="range" name="range" step="1" min="1" max="100000" value=""
+                onchange="rangePrimary.value=value" required>
+            <br />
+            <label>Rate of Interest*</label>
+            <br />
+            <input type="text" class="float-end inputText" id="rangePrimary1" required />
 
-                    <label>Monthly Investment*</label>
-                    <br />
-                    <input type="text" class="float-end inputText" id="rangePrimary" />
+            <input id="slider1" class="slider" type="range" name="range" step="1" min="1" max="20" value=""
+                onchange="rangePrimary1.value=value" required />
 
-                    <input id="slider" type="range" name="range" step="50000" min="100000" max="1000000" value=""
-                        onchange="rangePrimary.value=value">
-                    <br />
-                    <label>Rate of Interest*</label>
-                    <br />
-                    <input type="text" class="float-end inputText" id="rangePrimary1" />
+            <br />
+            <label>Time Period*</label>
+            <br />
+            <input type="text" class="float-end inputText" id="rangePrimary2" required />
 
-                    <input id="slider" type="range" name="range" step="1.00" min="1.00" max="100.00" value=""
-                        onchange="rangePrimary1.value=value">
-                    <br />
-                    <label>Time Period*</label>
-                    <br />
-                    <input type="text" class="float-end inputText" id="rangePrimary2" />
+            <input id="slider2" class="slider" type="range" name="range" step="1" min="1" max="12" value=""
+                onchange="rangePrimary2.value=value" required />
+            <br />
+            <label for="int">Interest Compounding:</label>
+            <select name="interest" id="int" style="height: 30px;">
+                <option value="92">Quarterly</option>
+                <option value="182">Half-Yearly</option>
+                <option value="365">Yearly</option>
+                <option value="30">Monthly</option>
+            </select>
+            <br />
+            <br />
 
-                    <input id="slider" type="range" name="range" step="1" min="1" max="100" value=""
-                        onchange="rangePrimary2.value=value">
-                    <br />
-                    <label for="int">Interest Compounding:</label>
-                    <select name="interest" id="int" style="height: 30px;">
-                        <option value="quarterly">Quarterly</option>
-                        <option value="half-yearly">Half-Yearly</option>
-                        <option value="yearly">Yearly</option>
-                        <option value="monthly">Monthly</option>
-                    </select>
-                    <br />
-                    <br />
-                    <button type="button" class="btn btn-info btn1">Show Maturity Value</button>
-                    <br />
+            <button type="submit" id="show-maturity-value" onclick="showDetails()" class="btn btn-info btn1">Show
+                Maturity Value</button>
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <section> Total Investment:<span id="tinv"></span></section>
+                        </td>
+                        <td>
+                            <section> Total Interest:<span id="tint"></span></section>
+                        </td>
+                        <td>
+                            <section> Maturity Value: <span id="matval"></span></section>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 
-            </td>
 </body>
 
 </html>
