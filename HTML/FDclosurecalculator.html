@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/FDclosurecalculator.css">
+    <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
+    <script src="../JS/FDcalculator.js"></script>
+</head>
+
+<body>
+    <table class="container" style="border: 2px solid black;height: 100%; width: 85%;">
+        <tr>
+            <td class="col-md-6" style="border: 2px solid black;">
+                <button>
+                    Homepage
+                </button>
+                <br>
+                <h5>Fixed Deposite Closure Calculator</h5>
+                <br />
+
+                <div class="rows">
+    
+                    <label class="col-md-9">Types of Customer</label>
+                    <input  type="radio" id="normal">
+                    <label  for="normal">Normal</label><br>
+                    <label class="col-md-9"></label>
+                    <input type="radio" id="seniorCitizen">
+                    <label for="seniorCitizen">Senior Citizen</label>
+                 <br />
+                </div>
+                <br />
+                <label for="fdcreation">FD Creation Date</label>
+                <input class="input"  type="date" id="Fdcration"><br />
+
+                <label for="amountOfDeposite">Amount Of Deposite</label>
+                <input class="input" type="text" id="amountOfDeposite" /> <br />
+
+                <label for="int">Penalty Rate<bold>(Rate Below Notes)</bold></label>
+                <select name="interest" id="int" style="height: 30px;">
+                    <option value="0">0</option>
+                    <option value="0.5">0.5</option>
+                    <option value="1">1</option>
+                </select>
+                <br /><br/>
+
+                <label for="matDate">Maturity Date</label>
+                <input class="input" type="text" id="matDate" placeholder="dd/mm/yyyy" /> <br />
+                <br />
+
+                <h6>Maturity Details</h6>
+                <label for="rateOfIntrest">Rate Of Interest(%)</label>
+                <input class="input" type="text" id="rateOfIntrest" /> <br />
+                <label for="matAmount">Maturity Amount</label>
+                <input class="input" type="text" id="matAmount" /> <br />
+                <label for="intAmount">Interest Amount</label>
+                <input class="input" type="text" id="intAmount" /> <br /><br/>
+                
+                <h6>Tenure</h6>
+                <label for="year">Years</label>
+                <input class="input" type="text" id="year" /> <br />
+                <label for="month">Month</label>
+                <input class="input" type="text" id="month"/> <br />
+                <label for="days">Days</label>
+                <input class="input" type="text" id="days"/> <br />
+            </td>
+
+            <td>
+                <div>
+                    <h5 style="margin-top: 0%;"><input type="radio" id="fdGraph" name="fdToggle" value="Graph"
+                            checked="checked"> Graph &nbsp;&nbsp;&nbsp;
+                        <input type="radio" id="fdTable" name="fdToggle" value="Table"> Table
+                    </h5>
+                </div>
+                <div>
+                    <table class="t1 col-10">
+                        <tr>
+                            <th colspan="2">
+                                Financial year Wise interest Amount
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Financial year
+                            </td>
+                            <td>
+                                interest
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               
+                            </td>
+                            <td>
+                             
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+              
+            </td>
+          
+        </tr>
+    </table>
+</body>
+
+</html>

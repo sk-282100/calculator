@@ -1,0 +1,39 @@
+.input{
+    float: right;
+    height: 23px;
+    width: 150px;
+    border: 1.5px solid black;
+   margin-left: 20px;
+}
+table{
+   background-color: #ccffff; 
+  
+}
+select{
+    float: right;
+    width: 150px;
+    height: 40px;
+    border: 1.5px solid black;
+}
+td {
+    padding-right: 70px;
+} 
+
+label{
+    padding-left: 20px;
+}
+h6{
+    padding-left: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+   
+  }
+.t1{
+    text-align: center;
+}
+h5{
+    padding-left: 20px;  
+}
