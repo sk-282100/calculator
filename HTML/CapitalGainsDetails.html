@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html> <head>
+    <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/CapitalGains.css">
+  </head>
+  <script>
+    function myFunction() {
+        var equity = document.getElementById("equity").value
+      sessionStorage.setItem("equity",equity);
+
+      var debit = document.getElementById("debit").value
+      sessionStorage.setItem("debit",debit);
+
+      var shares = document.getElementById("shares").value
+      sessionStorage.setItem("shares",shares);
+
+      var estate = document.getElementById("estate").value
+      sessionStorage.setItem("estate",estate);
+
+      location.replace("TaxDeductionDetails.html")
+    }
+    </script>
+    <body>
+        
+    <div style="border: 2px solid rgb(51, 163, 238); height: 720px; width: 500px;margin: auto;" >
+        <div>
+            <button class="btn1"><a href="#" onclick="location.href = './index.html'">Home</a></button><br/><br/>
+            <br/>
+            <button class="btn1"><a href="#" onclick="location.href = './OtherIncomeDetails.html'">Back</a></button><br/><br/>
+          </div>     
+            <br/>
+        
+        <div class="container">
+        <h3>Details of Capital gains</h3> 
+            <br/>       
+            <div class="details">
+                <label for="Equity" class="equity" id="equity">Equity Instruments:</label><br/>
+                    <input type="text" placeholder="Short term(< 1 year)" />
+                    <input type="text" placeholder="Long term(>= 1 year)" />
+                <label><br/><br/>
+
+                <label for="Debit" class="debit" id="debit" >Debit Investments:</label><br/>
+                    <input type="text" placeholder="Short term(< 3 year)" />
+                    <input type="text" placeholder="Long term(>= 2 year)" />
+                <label><br/><br/>
+
+                <label for="Unlisted" class="shares" id="shares">Unlisted Shares:</label><br/>  
+                    <input type="text" placeholder="Short term (< 2 year)" />
+                    <input type="text" placeholder="Long term(>= 2 year)" />
+                <label><br/><br/>
+
+                <label for="estate" class="estate" id="estate">Real estate or lands:</label><br/> 
+                    <input type="text" placeholder="Short term (< 2 year)" />
+                    <input type="text" placeholder="Long term(>= 2 year)" />
+                <label><br/><br/>
+
+                    <button class="btn1"><a href="#" onclick="myFunction()">Continue</a></button><br/><br/>
+
+            </div>          
+        </div>
+    </div>
+</body>
+</html>

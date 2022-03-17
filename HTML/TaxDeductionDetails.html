@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html> <head>
+    <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/TaxDeduction.css">
+  </head>
+  <script>
+            function myFunction() {
+                var epf = document.getElementById("epf").value
+                sessionStorage.setItem("epf",epf);
+
+                var insurance = document.getElementById("insurance").value
+                sessionStorage.setItem("insurance",insurance);
+
+                var nps = document.getElementById("nps").value
+                sessionStorage.setItem("nps",nps);
+
+                var radios = document.getElementsByName('parent');
+                for (var i = 0, length = radios.length; i < length; i++) {
+                    if (radios[i].checked) {
+            
+                            var radio_value =radios[i].value;
+                                }
+                                }
+                sessionStorage.setItem("parent",radio_value);
+
+                var health = document.getElementById("health").value
+                sessionStorage.setItem("health",health);
+
+                var education = document.getElementById("education").value
+                sessionStorage.setItem("education",education);
+
+                var loan = document.getElementById("loan").value
+                sessionStorage.setItem("loan",loan);
+
+                var rent = document.getElementById("rent").value
+                sessionStorage.setItem("rent",estate);
+
+                location.replace("TotalTaxPay.html")
+            }
+  </script>
+    <body>
+        <div style="border: 2px solid rgb(51, 163, 238); height: 800px; width: 600px; margin: auto;" >
+            <div>
+                <button class="btn1"><a href="#" onclick="location.href = './index.html'">Home</a></button><br/><br/>
+                <br/>
+                <button class="btn1"><a href="#" onclick="location.href = './CapitalGainsDetails.html'">Back</a></button><br/><br/>
+              </div>  
+        <br/>
+        
+        <div class="container">
+            <h3>Details of Eligible Tax Deduction</h3> 
+            <br/>       
+            <div class="details">
+                <input type="text"style="width: 350px;" class="epf" id="epf" placeholder="Section 80C deductions excluding EPF" />
+                <br/><br/>
+
+                <input type="text"style="width: 350px;" class="insurance" id="insurance" placeholder="Health insurance premium for self/family" />
+                <br/><br/>
+
+                <input type="text"style="width: 350px;" class="nps" id="nps" placeholder="NPS investment under section 80CCD(1B)" />
+                <br/><br/>
+
+                <label for="parent" class="parent">Is any of the parent a senior citizen?</label><br/>       
+            
+                <input type="radio" name="parent" value="Self owned" checked="checked">yes</input>
+                <input type="radio" name="parent" value="Rented">no</input><br/><br/>
+
+
+                <input type="text"style="width: 350px;" class="health" id="health" placeholder="Health Insurance premium for parents" />
+                <br/><br/>
+
+                <input type="text"style="width: 350px;" class="education" id="education" placeholder="Interest on education loan " />
+                <br/><br/>
+
+                <input type="text"style="width: 350px;" class="loan" id="loan" placeholder="Home loan interest for self occupied property" />
+                <br/><br/>
+
+                <input type="text"style="width: 350px;" class="rent" id="rent" placeholder="Home loan interest for rented property" />
+                <br/><br/>
+
+                <button class="btn1"><a href="#" onclick="myFunction()">Calculate Now</a></button><br/><br/>
+                
+            </div>
+            <br/>  
+
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -3,33 +3,46 @@
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/TotalTaxPayable.css">
   </head>
-    <body>
-        
-           <div style="border: 2px solid rgb(51, 163, 238); height: 750px; width: 500px;" >
-                <button>Homepage</button>    
-        <br/><br/><br/>
+  <script>
+        function myFunction() {
+                let Totaltax = sessionStorage.getItem("Totaltax");
+
+                // location.replace(" ")
+            }
+  </script>
+    <body>    
+      <div style="border: 2px solid rgb(51, 163, 238); height: 700px; width: 600px; margin: auto;" >
+            <div>
+              <button class="btn1"><a href="#" onclick="location.href = './index.html'">Home</a></button><br/><br/>
+              <br/>
+              <button class="btn1"><a href="#" onclick="location.href = './TaxDeductionDetails.html'">Back</a></button><br/><br/>
+            </div>  
+        <br/>
         
         <div class="container">
-          <button>Back</button><h3>Total Tax Payable</h3> <br>
+          <h3>Total Tax Payable</h3> <br><br><br>
             <br>
-            <table>
+              <table>
                 <tr>
-                  <th>Gross Income</th>
-                  <th>Capital Gain</th>
-                  <th>Tax Deduction</th>
-                  <th>Tax Excemptions</th>
+                  <td>Gross Income</td>
+                  <td></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-              </table>
-            <br/>       
-            
-            <br/>  
-            <div><button class="btn1">Recalculate</button><br/><br/></div>
+                  <td>Capital Gain</td>
+                  <td></td>
+
+                <tr>
+                  <td>Tax Deduction</td>
+                  <td></td>
+
+                </tr>
+                <tr>
+                  <td>Tax Excemptions</td>
+                  <td></td>
+                </tr>
+              </table><br/><br/>  
+
+              <button class="btn1"><a href="#" onclick="myFunction()">Recalculate</a></button><br/><br/>
             
         </div>
     </div>

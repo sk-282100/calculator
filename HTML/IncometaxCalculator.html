@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html> <head>
+    <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/incometax.css">
+  </head>
+  <script>
+    function myFunction() {
+      var age = document.getElementById("age").value
+      sessionStorage.setItem("age",age);
+      
+      var city = document.getElementById("city").value
+      sessionStorage.setItem("city",city);
+      
+      var radios = document.getElementsByName('RecidenceS');
+      for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+   
+                var radio_value =radios[i].value;
+                       }
+                    }
+      sessionStorage.setItem("Resident Type",radio_value);
+      
+      
+      var occupation = document.getElementById("occupation").value
+      sessionStorage.setItem("occupation",occupation);
+
+      location.replace("SalaryDetails.html")
+     
+    }
+    </script>
+    <body style="align-items: center;">     
+      <div style="border: 2px solid rgb(51, 163, 238); height: 650px; width: 600px; margin: auto;" >
+        <div class="row">
+          <div class="col d-flex justify-content-center">          
+           
+            <div>
+              <button class="btn1"><a href="#" onclick="location.href = './index.html'">Home</a></button><br/><br/>
+              <br/>
+              <button class="btn1"><a href="#" onclick="location.href = './index.html'">Back</a></button><br/><br/>
+            </div>          
+            
+        </div>  <br/><br/>
+              
+        
+        <div class="container">
+            <h5>Enter Basic Details</h5>
+            <br/>
+            <label for="age" class="label1">Age:</label><br/>
+            <select name="age" id="age" style="height: 30px;">
+              <option value="18 to 59">18 to 59</option>
+              <option value="59 or above">59 or above</option>
+            </select>      
+            <br/> <br/> 
+            <label for="city" class="label1">Resident city type:</label>
+            <br/>
+            <select name="city" id="city" style="height: 30px;">
+              <option value="Metro">Metro</option>
+              <option value="Urban">Urban</option>
+              <option value="Rural">Rural</option>
+            </select>
+            <br/><br/>
+            <label for="Recidence" class="label1">Resident Type:</label><br/>       
+            
+            <input type="radio" name="RecidenceS" value="Self owned" checked="checked">Self owned</input>
+            <input type="radio" name="RecidenceS" value="Rented">Rented</input><br/><br/>
+
+
+            <label for="occupation" class="label1">Occupation:</label><br/>
+            <select name="occupation" id="occupation" style="height: 30px;">
+              <option value="Self Employed">Self Employed</option>
+              <option value="Government">Government</option>
+              <option value="Private ">Private</option>
+            </select>
+
+            <br/><br/><br/>
+             <button class="btn1"><a  onclick="myFunction()">Continue</a></button><br/><br/>
+               
+        </div>
+    </div>
+    </div>
+</body>
+</html>

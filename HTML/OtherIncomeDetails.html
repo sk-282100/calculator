@@ -3,34 +3,55 @@
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/SalaryDetails.css">
   </head>
+  <script>
+      function myFunction() {
+      
+      var saving = document.getElementById("saving").value
+      sessionStorage.setItem("saving",saving);
+
+      var deposit = document.getElementById("deposit").value
+      sessionStorage.setItem("deposit",deposit);
+
+      var rent = document.getElementById("rent").value
+      sessionStorage.setItem("rent",rent);
+
+      var source = document.getElementById("source").value
+      sessionStorage.setItem("source",source);
+
+      location.replace("CapitalGainsDetails.html")
+    }
+  </script>
     <body>
         
-           <div style="border: 2px solid rgb(51, 163, 238); height: 750px; width: 500px;" >
-                <button>Homepage</button>    
-        <br/><br/><br/>
+      <div style="border: 2px solid rgb(51, 163, 238); height: 650px; width: 600px; margin: auto;" >
+            <div>
+              <button class="btn1"><a href="#" onclick="location.href = './index.html'">Home</a></button><br/><br/>
+              <br/>
+              <button class="btn1"><a href="#" onclick="location.href = './SalaryDetails.html'">Back</a></button><br/><br/>
+            </div>  
+        <br/>
         
         <div class="container">
-            <button>Back</button><h3>Details of Other Income</h3> 
+            <h3>Details of Other Income</h3> 
             <br/>       
             <div class="details">
-                <input type="text"style="width: 350px;" placeholder="Annual Income from Interest or saving" />
+                <input type="text"style="width: 350px;" class="saving" id="saving" placeholder="Annual Income from Interest or saving" />
                 <br/><br/>
 
-                <input type="text"style="width: 350px;" placeholder="Annual Income from Deposits" />
+                <input type="text"style="width: 350px;" class="deposit" id="deposit" placeholder="Annual Income from Deposits" />
                 <br/><br/>
 
-                <input type="text"style="width: 350px;" placeholder="Annual Income from Rentals" />
+                <input type="text"style="width: 350px;" class="rent" id="rent" placeholder="Annual Income from Rentals" />
                 <br/><br/>
 
-                <input type="text"style="width: 350px;" placeholder="Annual Income from other source" />
-                <br/><br/>   
+                <input type="text"style="width: 350px;" class="source" id="source" placeholder="Annual Income from other source" />
+                <br/><br/><br/> 
                 
-                <div><button class="btn1">Continue</button><br/><br/></div>              
+                <button class="btn1"><a href="#" onclick="myFunction()">Continue</a></button><br/><br/>         
                 
             </div>
             <br/>  
-
-            
+   
         </div>
     </div>
 </body>
