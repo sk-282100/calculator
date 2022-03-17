@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/recurringDepositCalculator.css">
+    <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
+    <script src="../JS/recurringDepositCalculator.js"></script>
+</head>
+
+<body>
+    <div class="col-md-7">
+
+        <button onclick="location.href = './index.html'">Homepage</button>
+        <br />
+
+        <div class="container">
+
+            <label>Monthly Investment*</label>
+            <br />
+            <input type="text" class="float-end inputText" id="rangePrimary" required />
+
+            <input id="slider" class="slider" type="range" name="range" step="1" min="1" max="100000" value=""
+                onchange="rangePrimary.value=value" required>
+            <br />
+            <label>Rate of Interest*</label>
+            <br />
+            <input type="text" class="float-end inputText" id="rangePrimary1" required />
+
+            <input id="slider1" class="slider" type="range" name="range" step="1" min="1" max="20" value=""
+                onchange="rangePrimary1.value=value" required />
+
+            <br />
+            <label>Time Period*</label>
+            <br />
+            <input type="text" class="float-end inputText" id="rangePrimary2" required />
+
+            <input id="slider2" class="slider" type="range" name="range" step="1" min="1" max="100" value=""
+                onchange="rangePrimary2.value=value" required />
+            <br />
+            <label for="int">Interest Compounding:</label>
+            <select name="interest" id="int" style="height: 30px;">
+                <option value="4">Quarterly</option>
+                <option value="6">Half-Yearly</option>
+                <option value="1">Yearly</option>
+                <option value="12">Monthly</option>
+            </select>
+            <br />
+            <br />
+
+            <button type="submit" id="show-maturity-value" onclick="showDetails()" class="btn btn-info btn1">Show
+                Maturity Value</button>
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <section> Total Investment:<br /><span id="tinv"></span></section>
+                        </td>
+                        <td>
+                            <section> Total Interest:<br /><span id="tint"></span></section>
+                        </td>
+                        <td>
+                            <section> Maturity Value:<br /> <span id="matval"></span></section>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
