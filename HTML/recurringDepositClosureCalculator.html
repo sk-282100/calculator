@@ -7,119 +7,61 @@
     <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
     <script src="../JS/recurringDepositClosureCalculator.js"></script>
 
-<script>
-  $(document).ready(function(){
-      var typeOfCustomer = $(".radioBtn").val();
-      var rdCreation = $("#Rdcration").val();
-      var amountOfDeposite = $("#amountOfDeposite").val();
-      var PenaltyRate = $("#int").val();
-
-      var maturityAmout = amountOfDeposite *[(1+ (PenaltyRate/100))]
-      var calculateRateOfIntrest = (maturityAmout - monthlyInvestment);
-
-
-          // Maturity amount = Deposite amount *[(1 + interestrate/ interest frequency) ^ (interest frequency  tenure)]
-    //     = 100000[(1+(6/100)/4)^(6*4)]
-    // 	= 142950.281193
-  })
-</script>
-
-
 
 
 </head>
 
 <body>
-    <table class="container" style="border: 2px solid black;height: 100%; width: 85%;">
-        <tr>
+    <div class="mt-3 calculator">
+        <h4 class="mb-2 rows">Recuring Deposit Closure Calculator</h4>
+<form class="container col-lg-11 div " style="background-color: aqua;" >
+    <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage  </button >
+        <div class="col-md-6 float-lg-none">
 
-            <td class="col-md-6" style="border: 2px solid black;">
-                <button>
-                    Homepage
-                </button>
-                <br>
-                <h5 class="label">Recurring Deposite Closure Calculator</h5>
-                <br />
-                <div class="rows">
+            <label class="col-md-9">Types of Customer</label>
+            <input class="flex-column" type="radio" id="normal" name="rd">
+            <label for="normal">Normal</label><br>
+            <label class="col-md-9"></label>
+            <input class="flex-column" type="radio" id="seniorCitizen" name="rd">
 
-                    <label class="col-md-9 label">Types of Customer</label>
-                    <input class="radioBtn" type="radio" id="normal" name="rd">
-                    <label for="normal">Normal</label><br>
-                    <label class="col-md-9"></label>
-                    <input class="radioBtn" type="radio" id="seniorCitizen" name="rd">
+            <label for="seniorCitizen">Senior Citizen</label>
+            <br />
+            <label class="label" for="Rdcreation">RD Creation Date</label>
+            <input class="col-3 float-sm-end border-1"  type="date" id="Rdcration"><br /><br />
+            <label class="label" for="amountOfDeposite">Amount Of Deposite</label>
+            <input class="col-3 float-sm-end border-1" type="text" id="amountOfDeposite" /> <br />
+            <br />
+            <label class="label" for="int">Penalty Rate(Rate Below Notes)</label>
+            <select name="interest" id="int"  class="col-3 float-sm-end border-1">
+                <option class="dropdown-item" value="0">0</option>
+                <option class="dropdown-item" value="0.5">0.5</option>
+                <option class="dropdown-item" value="1">1</option>
+                
+            </select>
+            <br /><br />
+            <label class="label" for="matDate">Maturity Date</label>
+            <input class="col-3 float-sm-end border-1" type="text" id="matDate" placeholder="dd/mm/yyyy" /> <br />
+            <br />
+            <h6 class="label" style="text-decoration: underline;">Maturity Details</h6>
 
-                    <label for="seniorCitizen">Senior Citizen</label>
-                    <br />
-                </div>
+            <label class="label" for="rateOfIntrest">Rate Of Interest(%)</label>
+            <input class="col-3  float-sm-end border-1" type="text" id="rateOfIntrest" /> <br /><br />
+            <label class="label" for="matAmount">Maturity Amount</label>
+            <input class="col-3 float-sm-end border-1" type="text" id="matAmount" /> <br /><br />
+            <label class="label" for="intAmount">Interest Amount</label>
+            <input class="col-3 float-sm-end border-1" type="text" id="intAmount" /> <br /><br />
+            <h6 class="label">Tenure</h6>
 
+            <label class="label" for="year">Years</label>
+            <input class="col-3 float-sm-end border-1" type="text" id="year" /> <br />
+            <br />
+            <label class="label" for="month">Month</label>
+            <input class="col-3 float-sm-end border-1" type="text" id="month" /> <br />
+       </div>
+    </div>
 
-                <label class="label" for="Rdcreation">RD Creation Date</label>
-                <input class="input" type="date" id="Rdcration"><br />
-                <label class="label" for="amountOfDeposite">Amount Of Deposite</label>
-                <input class="input" type="text" id="amountOfDeposite" /> <br />
-                <label class="label" for="int">Penalty Rate(Rate Below Notes)</label>
-                <select name="interest" id="int" style="height: 30px;">
-                    <option value="0">0</option>
-                    <option value="0.5">0.5</option>
-                    <option value="1">1</option>
-                    
-                </select>
-                <br /><br />
-                <label class="label" for="matDate">Maturity Date</label>
-                <input class="input" type="text" id="matDate" placeholder="dd/mm/yyyy" /> <br />
-                <br />
-                <h6 class="label" style="text-decoration: underline;">Maturity Details</h6>
-
-                <label class="label" for="rateOfIntrest">Rate Of Interest(%)</label>
-                <input class="input" type="text" id="rateOfIntrest" /> <br />
-                <label class="label" for="matAmount">Maturity Amount</label>
-                <input class="input" type="text" id="matAmount" /> <br />
-                <label class="label" for="intAmount">Interest Amount</label>
-                <input class="input" type="text" id="intAmount" /> <br /><br />
-                <h6 class="label">Tenure</h6>
-
-                <label class="label" for="year">Years</label>
-                <input class="input" type="text" id="year" /> <br />
-                <label class="label" for="month">Month</label>
-                <input class="input" type="text" id="month" /> <br />
-            </td>
-            <td>
-                <div>
-                    <h5 style="margin-top: 0%;"><input type="radio" id="rdGraph" name="rdToggle" value="Graph"
-                            checked="checked"> Graph &nbsp;&nbsp;&nbsp;
-                        <input type="radio" id="rdTable" name="rdToggle" value="Table"> Table
-                    </h5>
-                </div>
-                <div>
-                    <table class="t1 col-10">
-                        <tr>
-                            <th colspan="2">
-                                Financial year Wise interest Amount
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                Financial year
-                            </td>
-                            <td>
-                                interest
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                2021
-                            </td>
-                            <td>
-                                499
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-        
-            </td>
-        </tr>
-    </table>
+    </form>
+   
 </body>
 
 </html>
