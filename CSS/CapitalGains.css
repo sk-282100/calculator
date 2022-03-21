@@ -1,18 +1,11 @@
-body
-{
- background-color:white;
- margin:0px auto;
- padding:0px;
- font-family:helvetica;
- height:2000px;
-}
-h1
-{
- text-align:center;
- font-size:35px;
- margin-top:60px;
- color:white;
-}
+
+
 .div1{
     padding-left: 20px;
   }
+  input{
+    border: 1px solid #0099CC;
+  }
+  .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #0099CC !important;
+}

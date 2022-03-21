@@ -12,6 +12,12 @@ body
 .div{
   padding-left: 20px;
 }
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #0099CC !important;
+}
+input{
+  border: 1px solid #0099CC;
+}
 h1
 {
  text-align:center;
@@ -23,14 +29,18 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    border: 1px solid #0099CC;
   }
   
   td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    border: 1px solid #0099CC;
+    
   }
   
   tr:nth-child(even) {
     background-color: #dddddd;
+    border: 1px solid #0099CC;
   }

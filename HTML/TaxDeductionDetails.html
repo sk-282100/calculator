@@ -39,16 +39,21 @@
             }
   </script>
     <body>
-        <div style="border: 2px solid rgb(51, 163, 238); height: 800px; width: 600px; margin: auto;" >
+        <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 700px;" >
             <div class="row">              
                 <div class="float-md-start div1">
-                <button class="btn btn-primary" onclick="location.href = './index.html'">Home</button><br/><br/><br/>
-              <button class="btn btn-primary" onclick="location.href = './CapitalGainsDetails.html'">Back</button><br/><br/><br/>
+                <button class="btn btn-primary col-md-2" onclick="location.href = './index.html'">HomePage</button><br/><br/><br/>
             </div>
     
-    <form action="TotalTaxPay.html">
-        <div class="float-md-start div1" >
-            <h3>Details of Eligible Tax Deduction</h3> 
+    <form action="TotalTaxPay.html"  >
+        <div class="float-md-start div1 col-10" >        
+              
+              <div class="d-flex p-2">
+                <a href="CapitalGainsDetails.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                  </svg></a>&nbsp;<h5>Details of Eligible Tax deductions</h5> 
+              </div>
+        
             <br/>       
             <div class="details">
                 <input type="text"style="width: 350px;" class="epf" id="epf" placeholder="Section 80C deductions excluding EPF" />

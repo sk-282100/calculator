@@ -11,15 +11,24 @@
             }
   </script>
     <body>    
-      <div style="border: 2px solid rgb(51, 163, 238); height: 700px; width: 600px; margin: auto;" >
+      <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 700px;" >
         <div class="row">              
           <div class="float-md-start div1">
               <button class="btn btn-primary" onclick="location.href = './index.html'">Home</button><br/><br/><br/>
-              <button class="btn btn-primary" onclick="location.href = './TaxDeductionDetails.html'">Back</button><br/><br/><br/><br/>
-          </div>  
+               </div>  
       <form>  
         <div class="float-md-start div1" >
-          <h3>Total Tax Payable</h3> <br><br><br>
+          <div id="main_content">
+
+          <div class="d-flex p-2">
+            <a href="TaxDeductionDetails.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+              </svg></a>&nbsp;<h5>Total Tax Payable</h5> 
+          </div>
+          
+          <!-- <h3>Total Tax Payable</h3>  -->
+          
+          <br><br><br>
             <br>
               <table>
                 <tr>
