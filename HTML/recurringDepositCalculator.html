@@ -6,68 +6,78 @@
     <link rel="stylesheet" href="../CSS/recurringDepositCalculator.css">
     <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
     <script src="../JS/recurringDepositCalculator.js"></script>
+    
+ </script>
 </head>
 
-<body>
-    <div class="col-md-7">
 
-        <button onclick="location.href = './index.html'">Homepage</button>
-        <br />
+            <body >
+                <div class="mt-3 calculator">
+                    <h4 class="mb-2">Recuring Deposit Calculator</h4></div>
+            <form class="container col-8 div" id="form">
+                <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage  </button >
+          
+                <div class="container">
+                    <label>Monthly Investment*</label>
+                    <br />
+                    <input type="text" class="float-end inputText" id="rangePrimary" required />
+        
+                    <input id="slider" class="slider" type="range" name="range" step="1" min="1" max="100000" value=""
+                        onchange="rangePrimary.value=value" required>
+                        <datalist id="slider">
+                            <option value="1" label="1"></option>
 
-        <div class="container">
+                            <option value="50" label="50000"></option>
+                           
+                            <option value="100" label="100000"></option>
+                          </datalist>
+                    <br />
+                    <label>Rate of Interest*</label>
+                    <br />
+                    <input type="text" class="float-end inputText" id="rangePrimary1" required />
+        
+                    <input id="slider1" class="slider" type="range" name="range" step="1" min="1" max="20" value=""
+                        onchange="rangePrimary1.value=value" required />
+                        <datalist id="slider1">
+                            <option value="1" label="1"></option>
+                            
+                            <option value="10" label="10"></option>
+                         
+                            <option value="20" label="20"></option>
+                          </datalist>
+                    <br />
+                    <label>Time Period(months)</label>
+                    <br />
+                    <input type="text" class="float-end inputText" id="rangePrimary2" required />
+        
+                    <input id="slider2" class="slider" type="range" name="range" step="1" min="1" max="100" value=""
+                        onchange="rangePrimary2.value=value" required />
+                        <datalist id="slider2">
+                            <option value="1" label="1"></option>
+                            <option value="50" label="50"></option>
+            
+                            <option value="100" label="100"></option>
+                          </datalist>
+                    <br />
+                    <label for="int">Interest Compounding:</label>
+                    <select name="interest" id="int" required>
+                        <option  class="dropdown-item" value="4">Quarterly</option>
+                        <option  class="dropdown-item" value="6">Half-Yearly</option>
+                        <option  class="dropdown-item" value="1">Yearly</option>
+                        <option  class="dropdown-item" value="12">Monthly</option>
+                    </select><br/>
+                    <button type="button" class="btn btn-primary m-5" id="show-maturity-value" onclick="showDetails()">Show
+                        Maturity Value</button>
+                    <br />
+                    <br />
+                    <div class="d-flex flex-row div2">
+                       
+                        <span class="border border-primary bg-primary rounded-2 flex-sm-fill" style="color: white; height: auto;">Total Investment:<p id="tinv"></p></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="border border-primary bg-primary rounded-2 flex-sm-fill" style="color: white; height: auto;">Total Interest:<p id="tint"></p></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="border border-primary bg-primary rounded-2 flex-sm-fill" style="color: white; height: auto;">Maturity Value:<p id="matval"></p></span>
 
-            <label>Monthly Investment*</label>
-            <br />
-            <input type="text" class="float-end inputText" id="rangePrimary" required />
-
-            <input id="slider" class="slider" type="range" name="range" step="1" min="1" max="100000" value=""
-                onchange="rangePrimary.value=value" required>
-            <br />
-            <label>Rate of Interest*</label>
-            <br />
-            <input type="text" class="float-end inputText" id="rangePrimary1" required />
-
-            <input id="slider1" class="slider" type="range" name="range" step="1" min="1" max="20" value=""
-                onchange="rangePrimary1.value=value" required />
-
-            <br />
-            <label>Time Period*</label>
-            <br />
-            <input type="text" class="float-end inputText" id="rangePrimary2" required />
-
-            <input id="slider2" class="slider" type="range" name="range" step="1" min="1" max="100" value=""
-                onchange="rangePrimary2.value=value" required />
-            <br />
-            <label for="int">Interest Compounding:</label>
-            <select name="interest" id="int" style="height: 30px;">
-                <option value="4">Quarterly</option>
-                <option value="6">Half-Yearly</option>
-                <option value="1">Yearly</option>
-                <option value="12">Monthly</option>
-            </select>
-            <br />
-            <br />
-
-            <button type="submit" id="show-maturity-value" onclick="showDetails()" class="btn btn-info btn1">Show
-                Maturity Value</button>
-            <div>
-                <table>
-                    <tr>
-                        <td>
-                            <section> Total Investment:<br /><span id="tinv"></span></section>
-                        </td>
-                        <td>
-                            <section> Total Interest:<br /><span id="tint"></span></section>
-                        </td>
-                        <td>
-                            <section> Maturity Value:<br /> <span id="matval"></span></section>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
         </div>
-    </div>
-</body>
+    </form>
+      </body>
 
 </html>
