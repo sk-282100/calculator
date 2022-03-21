@@ -2,6 +2,9 @@ input{
     height: 20px;
     width: 100px;
     text-align: center;
+    border: 1.5px solid #d1d1d1;
+    color: #212529;
+    background-color: #e9ecef;
 }
 table {
     width:900px;
@@ -15,9 +18,16 @@ h4{
     margin: 0 auto;
     width:fit-content;
 }
-
+datalist {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(160, 160, 160);
+    width: 50%;
+  }
+  
+ 
 .inputText{
-    border: 1.5px solid #81CBF6;
+    /* border: 1.5px solid #81CBF6; */
 }
 #slider,#slider1,#slider2{
     width: 100%;
