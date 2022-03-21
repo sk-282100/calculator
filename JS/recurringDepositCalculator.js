@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     $("#show-maturity-value").on('click', function () {
         $("#rangePrimary").change(function () {
             var x = $("#rangePrimary").val()
@@ -16,6 +17,7 @@ $(document).ready(function () {
     });
 
 });
+
 function showDetails() {
 
     var monthlyInvestment = $("#rangePrimary").val()
@@ -28,29 +30,27 @@ function showDetails() {
     console.log(compoundIntrest);
 
    var totalInvestment = monthlyInvestment; 
+  
     if (compoundIntrest == 4) {
         var maturityAmout = monthlyInvestment * [(1 + (intrestRate / 100) / 4) ** (4 * timePeriod)];
-        
+        maturityAmout=maturityAmout.toFixed(2);
     }
     else if (compoundIntrest == 6) {
        var maturityAmout = monthlyInvestment * [(1 + (intrestRate / 100) / 6) ** (6 * timePeriod)];
-        
+       maturityAmout=maturityAmout.toFixed(2);
     }
     else if (compoundIntrest == 1) {
        var maturityAmout = monthlyInvestment * [(1 + (intrestRate / 100) / 1) ** (1 * timePeriod)];
-       
+       maturityAmout=maturityAmout.toFixed(2);
     }
     else {
         var maturityAmout = monthlyInvestment * [(1 + (intrestRate / 100) / 12) ** (12 * timePeriod)];
+        maturityAmout=maturityAmout.toFixed(2);
     }
 
-    // Maturity amount = Deposite amount *[(1 + interestrate/ interest frequency) ^ (interest frequency  tenure)]
-    //     = 100000[(1+(6/100)/4)^(6*4)]
-    // 	= 142950.281193
-
-
+ 
     var totalIntrest = (maturityAmout - monthlyInvestment);
-
+totalIntrest = totalIntrest.toFixed(2);
     $("#tinv").html(totalInvestment);
     $("#tint").html(totalIntrest);
     $("#matval").html(maturityAmout);
