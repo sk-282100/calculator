@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> <head>
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../CSS/incometax.css">
+    <link rel="stylesheet" href="../CSS/IncometaxCalculator.css">
   </head>
   <script>
     function myFunction() {
@@ -28,54 +28,50 @@
      
     }
     </script>
-    <body style="align-items: center;">     
-      <div style="border: 2px solid rgb(51, 163, 238); height: 650px; width: 600px; margin: auto;" >
-        <div class="row">
-          <div class="col d-flex justify-content-center">          
-           
-            <div>
-              <button class="btn1"><a href="#" onclick="location.href = './index.html'">Home</a></button><br/><br/>
-              <br/>
-              <button class="btn1"><a href="#" onclick="location.href = './index.html'">Back</a></button><br/><br/>
-            </div>          
-            
-        </div>  <br/><br/>
+    <body>     
+      <div  style="border: 2px solid rgb(51, 163, 238); height: 650px; width: 600px; margin: auto;" >
+        <div class="row">              
+            <div class="float-md-start div1">
+              <button class="btn btn-primary" onclick="location.href = './index.html'">Home</button><br/><br/><br/><br/>
+            </div>                     
+        </div>
               
-        
-        <div class="container">
-            <h5>Enter Basic Details</h5>
-            <br/>
-            <label for="age" class="label1">Age:</label><br/>
-            <select name="age" id="age" style="height: 30px;">
-              <option value="18 to 59">18 to 59</option>
-              <option value="59 or above">59 or above</option>
-            </select>      
-            <br/> <br/> 
-            <label for="city" class="label1">Resident city type:</label>
-            <br/>
-            <select name="city" id="city" style="height: 30px;">
-              <option value="Metro">Metro</option>
-              <option value="Urban">Urban</option>
-              <option value="Rural">Rural</option>
-            </select>
-            <br/><br/>
-            <label for="Recidence" class="label1">Resident Type:</label><br/>       
-            
-            <input type="radio" name="RecidenceS" value="Self owned" checked="checked">Self owned</input>
-            <input type="radio" name="RecidenceS" value="Rented">Rented</input><br/><br/>
+      <form action="SalaryDetails.html">
+        <div >     
+            <div class="float-md-start div1" >
+              <h5>Enter Basic Details</h5>
+              <br/>
+              <label for="age" class="label1">Age:</label><br/>
+                <select name="age" id="age" style="height: 30px;"required>
+                <option value="18 to 59">18 to 59</option>
+                <option value="59 or above">59 or above</option>
+                </select><br/><br/> 
+
+              <label for="city" class="label1">Resident city type:</label>
+                <br/>
+                <select name="city" id="city" style="height: 30px;"required>
+                <option value="Metro">Metro</option>
+                <option value="Urban">Urban</option>
+                <option value="Rural">Rural</option>
+                </select><br/><br/>
+
+              <label for="Recidence" class="label1">Resident Type:</label><br/>          
+              <input type="radio" name="RecidenceS" value="Self owned" checked="checked" required >Self owned</input>
+              <input type="radio" name="RecidenceS" value="Rented"required>Rented</input><br/><br/>
 
 
-            <label for="occupation" class="label1">Occupation:</label><br/>
-            <select name="occupation" id="occupation" style="height: 30px;">
-              <option value="Self Employed">Self Employed</option>
-              <option value="Government">Government</option>
-              <option value="Private ">Private</option>
-            </select>
+              <label for="occupation" class="label1">Occupation:</label><br/>
+                <select name="occupation" id="occupation" style="height: 30px;"required>
+                <option value="Self Employed">Self Employed</option>
+                <option value="Government">Government</option>
+                <option value="Private ">Private</option>
+                </select>
 
-            <br/><br/><br/>
-             <button class="btn1"><a  onclick="myFunction()">Continue</a></button><br/><br/>
+              <br/><br/><br/>
+              <button class="btn btn-primary" onclick="myFunction()">Continue</button><br/><br/>
                
         </div>
+      </form>
     </div>
     </div>
 </body>

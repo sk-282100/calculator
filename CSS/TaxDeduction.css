@@ -5,26 +5,8 @@ body
  padding:0px;
  font-family:helvetica;
  height:2000px;
- text-align: center;
- align-items: center;
- justify-content: center;
 }
-h1
-{
- text-align:center;
- font-size:35px;
- margin-top:60px;
- color:white;
-}
-button{
-    width: 150px;    
+.div1{
+    padding-left: 20px;
 }
 
-.btn1{
-    border: 2px solid rgb(51, 163, 238);
-    border-radius: 10px;
-    margin-left: 10px;
-    background-color: rgb(51, 163, 238);
-    color: white;
-    margin-bottom: 20px;
-}

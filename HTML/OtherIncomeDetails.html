@@ -24,14 +24,15 @@
     <body>
         
       <div style="border: 2px solid rgb(51, 163, 238); height: 650px; width: 600px; margin: auto;" >
-            <div>
-              <button class="btn1"><a href="#" onclick="location.href = './index.html'">Home</a></button><br/><br/>
-              <br/>
-              <button class="btn1"><a href="#" onclick="location.href = './SalaryDetails.html'">Back</a></button><br/><br/>
-            </div>  
-        <br/>
+        <div class="row">  
+          <div class="float-md-start div1">
+              <button class="btn btn-primary" onclick="location.href = './index.html'">Home</button><br/><br/><br/>
+              <button class="btn btn-primary" onclick="location.href = './SalaryDetails.html'">Back</button><br/><br/><br/><br/>
+          </div>  
         
-        <div class="container">
+        
+      <form action="CapitalGainsDetails.html">
+        <div class="float-md-start div1" >
             <h3>Details of Other Income</h3> 
             <br/>       
             <div class="details">
@@ -47,12 +48,13 @@
                 <input type="text"style="width: 350px;" class="source" id="source" placeholder="Annual Income from other source" />
                 <br/><br/><br/> 
                 
-                <button class="btn1"><a href="#" onclick="myFunction()">Continue</a></button><br/><br/>         
+                <button class="btn btn-primary" onclick="myFunction()">Continue</button><br/><br/>     
                 
             </div>
             <br/>  
    
         </div>
+      </form>
     </div>
 </body>
 </html>

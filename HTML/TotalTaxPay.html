@@ -12,14 +12,13 @@
   </script>
     <body>    
       <div style="border: 2px solid rgb(51, 163, 238); height: 700px; width: 600px; margin: auto;" >
-            <div>
-              <button class="btn1"><a href="#" onclick="location.href = './index.html'">Home</a></button><br/><br/>
-              <br/>
-              <button class="btn1"><a href="#" onclick="location.href = './TaxDeductionDetails.html'">Back</a></button><br/><br/>
-            </div>  
-        <br/>
-        
-        <div class="container">
+        <div class="row">              
+          <div class="float-md-start div1">
+              <button class="btn btn-primary" onclick="location.href = './index.html'">Home</button><br/><br/><br/>
+              <button class="btn btn-primary" onclick="location.href = './TaxDeductionDetails.html'">Back</button><br/><br/><br/><br/>
+          </div>  
+      <form>  
+        <div class="float-md-start div1" >
           <h3>Total Tax Payable</h3> <br><br><br>
             <br>
               <table>
@@ -42,9 +41,10 @@
                 </tr>
               </table><br/><br/>  
 
-              <button class="btn1"><a href="#" onclick="myFunction()">Recalculate</a></button><br/><br/>
+              <button class="btn btn-primary" onclick="myFunction()">Recalculate</button><br/><br/>
             
         </div>
+      </form> 
     </div>
 </body>
 </html>

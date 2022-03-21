@@ -22,15 +22,15 @@
     </script>
     <body>
         
-    <div style="border: 2px solid rgb(51, 163, 238); height: 720px; width: 500px;margin: auto;" >
-        <div>
-            <button class="btn1"><a href="#" onclick="location.href = './index.html'">Home</a></button><br/><br/>
-            <br/>
-            <button class="btn1"><a href="#" onclick="location.href = './OtherIncomeDetails.html'">Back</a></button><br/><br/>
+    <div style="border: 2px solid rgb(51, 163, 238); height: 750px; width: 500px;margin: auto;" >
+        <div class="float-md-start div1">
+            <button class="btn btn-primary" onclick="location.href = './index.html'">Home</button><br/><br/><br/>
+            <button class="btn btn-primary" onclick="location.href = './OtherIncomeDetails.html'">Back</button><br/><br/><br/><br/>
           </div>     
-            <br/>
         
-        <div class="container">
+        <form action="TaxDeductionDetails.html">   
+            <div class="float-md-start div1" > 
+        <!-- <div class="container"> -->
         <h3>Details of Capital gains</h3> 
             <br/>       
             <div class="details">
@@ -54,10 +54,11 @@
                     <input type="text" placeholder="Long term(>= 2 year)" />
                 <label><br/><br/>
 
-                    <button class="btn1"><a href="#" onclick="myFunction()">Continue</a></button><br/><br/>
-
+               <button class="btn btn-primary" onclick="myFunction()">Continue</button><br/><br/>     
+                
             </div>          
         </div>
+        </form>
     </div>
 </body>
 </html>

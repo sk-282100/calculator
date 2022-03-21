@@ -40,14 +40,14 @@
   </script>
     <body>
         <div style="border: 2px solid rgb(51, 163, 238); height: 800px; width: 600px; margin: auto;" >
-            <div>
-                <button class="btn1"><a href="#" onclick="location.href = './index.html'">Home</a></button><br/><br/>
-                <br/>
-                <button class="btn1"><a href="#" onclick="location.href = './CapitalGainsDetails.html'">Back</a></button><br/><br/>
-              </div>  
-        <br/>
-        
-        <div class="container">
+            <div class="row">              
+                <div class="float-md-start div1">
+                <button class="btn btn-primary" onclick="location.href = './index.html'">Home</button><br/><br/><br/>
+              <button class="btn btn-primary" onclick="location.href = './CapitalGainsDetails.html'">Back</button><br/><br/><br/>
+            </div>
+    
+    <form action="TotalTaxPay.html">
+        <div class="float-md-start div1" >
             <h3>Details of Eligible Tax Deduction</h3> 
             <br/>       
             <div class="details">
@@ -78,13 +78,14 @@
                 <input type="text"style="width: 350px;" class="rent" id="rent" placeholder="Home loan interest for rented property" />
                 <br/><br/>
 
-                <button class="btn1"><a href="#" onclick="myFunction()">Calculate Now</a></button><br/><br/>
+                <button class="btn btn-primary" onclick="myFunction()">Calculate Now</button><br/><br/>
                 
             </div>
             <br/>  
 
             
         </div>
+    </form>
     </div>
 </body>
 </html>
