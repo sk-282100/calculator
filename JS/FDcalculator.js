@@ -1,11 +1,28 @@
 $(function(){
-      
+  
+  $("#rangePrimary,#rangePrimary1,#rangePrimary2").blur(function(){
+		console.log(" hs");
+		if($("#rangePrimary").val()=="" && $("#rangePrimary1").val()=="" && $("#rangePrimary2").val()==""){
+			$("#calculate-button").prop("disabled",true);
+		}
+		else{
+			$("#calculate-button").prop("disabled",false);
+		}
+	})
+
+    
     var fdr;
     var toYears;
 
+    
+    $("#rangePrimary").val($("#slider").val())
+    $("#rangePrimary1").val($("#slider1").val())
+    $("#rangePrimary2").val($("#slider2").val())
+   
     $("#rangePrimary").change(function(){
      var x= $("#rangePrimary").val()
       $("#slider").val(x)
+
     })
 
 
@@ -37,7 +54,9 @@ $(function(){
      
     
       var maturityAmout=depositAmount*Math.pow(1+((intrestRate/100)/fixedDeposit),fixedDeposit*(tenure/toYears))
+      maturityAmout = maturityAmout.toFixed(2);
       var totalIntrest=maturityAmout-depositAmount
+      totalIntrest=totalIntrest.toFixed(2);
 
       console.log(maturityAmout);
       $("#maturity").html(maturityAmout)

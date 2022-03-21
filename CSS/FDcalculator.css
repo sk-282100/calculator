@@ -37,7 +37,6 @@ datalist {
     display: block;
     margin-left: auto;
     margin-right: auto; 
-    background-color: rgb(17, 171, 223) ;
     color: white;
  
     }  
@@ -46,7 +45,7 @@ p{
   margin-bottom: 0;
  }
 .total {
-    background-color: rgb(17, 171, 223) ;
+    background-color: #0d6efd ;
     color: white;
     margin-left: auto;
     margin-right: auto; 
