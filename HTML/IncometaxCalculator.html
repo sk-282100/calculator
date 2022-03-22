@@ -7,6 +7,10 @@
     function myFunction() {
       var age = document.getElementById("age").value
       sessionStorage.setItem("age",age);
+
+      // sessionStorage.setItem("age", "age");
+      // let age = sessionStorage.getItem("age");
+      // document.getElementById("age").innerHTML = age;
       
       var city = document.getElementById("city").value
       sessionStorage.setItem("city",city);
@@ -41,15 +45,16 @@
             <div class="float-md-start div1" >
               <h5>Enter Basic Details</h5>
               <br/>
+
               <label for="age" class="label1">Age:</label><br/>
-                <select name="age" id="age" style="height: 30px;"required>
+                <select name="age" id="age" style="height: 30px;" required>
                 <option value="18 to 59">18 to 59</option>
                 <option value="59 or above">59 or above</option>
                 </select><br/><br/> 
 
               <label for="city" class="label1">Resident city type:</label>
                 <br/>
-                <select name="city" id="city" style="height: 30px;"required>
+                <select name="city" id="city" style="height: 30px;" required>
                 <option value="Metro">Metro</option>
                 <option value="Urban">Urban</option>
                 <option value="Rural">Rural</option>
@@ -61,7 +66,7 @@
 
 
               <label for="occupation" class="label1">Occupation:</label><br/>
-                <select name="occupation" id="occupation" style="height: 30px;"required>
+                <select name="occupation" id="occupation" style="height: 30px;" required>
                 <option value="Self Employed">Self Employed</option>
                 <option value="Government">Government</option>
                 <option value="Private ">Private</option>

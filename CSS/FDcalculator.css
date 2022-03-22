@@ -3,7 +3,7 @@
     margin-left: 20px;
     margin: 0 auto;
 }
-input{
+input[type=text]{
     height: 20px;
     width: 100px;
     text-align: center;
@@ -11,6 +11,7 @@ input{
     color: #212529;
     background-color: #e9ecef;
 }
+
 
 .deposit-result{
     width: 30px;

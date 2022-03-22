@@ -69,20 +69,20 @@
 
         <label>Type of fixed deposit</label>
         <div >
-          <label class="radio-inline">
-            <input class="fix-deposit-radio deposit-result" type="radio" value=12 name="optradio">
+          <label class="radio-inline" style="margin-right: 10px;">
+            <input class="fix-deposit-radio " type="radio" style="margin-right: 5px; " value=12 name="optradio">
             Monthly Payout
           </label>
-          <label class="radio-inline">
-            <input class="fix-deposit-radio" type="radio" value=4
+          <label class="radio-inline" style="margin-right: 10px;">
+            <input class="fix-deposit-radio" type="radio" value=4 style="margin-right: 5px; "
               name="optradio">Quarterly Payout
           </label>
-          <label class="radio-inline">
-            <input class="fix-deposit-radio"  type="radio" value=6
+          <label class="radio-inline" style="margin-right: 10px;">
+            <input class="fix-deposit-radio"  type="radio" value=6 style="margin-right: 5px; "
               name="optradio">Half Yearly Payout
           </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">Reinvestment/Cumulative
+          <label class="radio-inline" style="margin-right: 10px;">
+            <input type="radio" name="optradio" style="margin-right: 5px;">Reinvestment/Cumulative
           </label>
         </div>
         
@@ -101,5 +101,130 @@
 
 </body>
 
+<<<<<<< HEAD
 
   
+=======
+  <!-- <head>
+    <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/FDcalculator.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../JS/FDcalculator.js"></script>
+  </head>
+
+
+  <body>
+    
+    <div class="mt-3 calculator">
+      <h4 class="mb-2">Fixed Deposit Calculator</h4>
+      <table>
+        <tr>
+          <td>
+            <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage  </button >
+          </td>
+        </tr>
+        <tr>
+          <td >
+            <div class="container">
+            
+  
+              <br />
+              <label> Deposit Amount </label>
+              <br />
+              <input  type="text" class="float-end inputText" id="rangePrimary"  />
+             
+
+             
+              <input  id="slider" type="range" name="range" step="500" min="1000" max="100000" value="" onchange="rangePrimary.value=value">
+              <datalist id="slider">
+                <option value="1000" label="1000"></option>
+                <option value="10"></option>
+                <option value="20"></option>
+                <option value="30"></option>
+                <option value="40"></option>
+                <option value="50" label="50000"></option>
+                <option value="60"></option>
+                <option value="70"></option>
+                <option value="80"></option>
+                <option value="90"></option>
+                <option value="100" label="100000"></option>
+              </datalist>
+
+              <label>Interest rate in %</label>
+              <input type="text" class="float-end inputText"  id="rangePrimary1"  />
+  
+              <input id="slider1" type="range" name="range" step="1.00" min="1.00" max="20.00" value="" onchange="rangePrimary1.value=value">
+              <datalist id="slider1">
+                <option value="1" label="1"></option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5" label="10"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8"></option>
+                <option value="9"></option>
+                <option value="10" label="20"></option>
+              </datalist>
+  
+              <label for="int">Tenure</label>
+              <select name="interest" id="int" style="height: 30px;">
+                <option value=365 class="dropdown-item">Days</option>
+                <option value=12 class="dropdown-item">Monthly</option>
+                <option value=1 class="dropdown-item">Yearly</option>
+              
+              </select>
+              <input type="text" class="float-end inputText" id="rangePrimary2"  />
+  
+              <input id="slider2" type="range" name="range" step="1" min="1" max="100" value="" onchange="rangePrimary2.value=value">
+              <datalist id="slider2">
+                <option value="1" label="1"></option>
+                <option value="10"></option>
+                <option value="20"></option>
+                <option value="30"></option>
+                <option value="40"></option>
+                <option value="50" label="50"></option>
+                <option value="60"></option>
+                <option value="70"></option>
+                <option value="80"></option>
+                <option value="90"></option>
+                <option value="100" label="100"></option>
+              </datalist>
+              <label>Type of fixed deposit</label>
+              <div>
+                  <label  class="radio-inline">
+                      <input class="fix-deposit-radio" style="width: 30px; height: 15px;"  type="radio" value=12 name="optradio"> Monthly Payout
+                    </label>
+                    <label  class="radio-inline">
+                      <input class="fix-deposit-radio" style="width: 30px;  height: 15px;"  type="radio" value=4 name="optradio" >Quarterly Payout
+                    </label>
+                    <label  class="radio-inline">
+                      <input  class="fix-deposit-radio" style="width: 30px;  height: 15px;"  type="radio" value=6 name="optradio">Half Yearly Payout
+                    </label> 
+                    <label  class="radio-inline">
+                      <input   style="width: 30px;  height: 15px;" type="radio"  name="optradio" >Reinvestment/Cumulative
+                    </label> 
+                </div>
+                <br/>
+                <div class="calculate">  
+                  <button id="calculate-button" class="btn btn-primary"> Calculate </button>  
+               </div>
+            <br/>
+            <div class="total">
+              <p>Maturity Amount: <span id="maturity"></span></p>
+              <p>Total Intrest Earned: <span id="totIntrest"></span></p>
+            </div>
+  
+          
+           
+          </td>
+      
+        </tr>
+      </table>
+    </div>
+  
+  </body> -->
+
+</html>
+>>>>>>> 45875e5871bc2735d05448dfe196e201ed7ab246

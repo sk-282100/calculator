@@ -6,72 +6,84 @@
     <link rel="stylesheet" href="../CSS/recurringDepositCalculator.css">
     <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
     <script src="../JS/recurringDepositCalculator.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
 </head>
-<body>
+
+<body class="container">
     <div class="mt-3 calculator">
         <h4 class="mb-2">Recuring Deposit Calculator</h4>
     </div>
-    <div class="container col-8  div">
-        <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
-        <form class="" id="form" action="">
+    <div class="rows">
+        <div class="container col-lg-11 float-lg-start div">
+            <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
+            <form class="" id="form" action="">
 
-            <div class="container">
-                <label>Monthly Investment*</label>
-                <input type="text" class="float-end inputText" id="rangePrimary" readonly value="1000"/>
+                <div class="container col-6 float-lg-start">
+                    <label>Monthly Investment*</label>
+                    <input type="text" class="float-end inputText" id="rangePrimary" readonly value="1000" />
 
-                <input id="slider" class="slider" type="range" name="range" step="500" min="1000" max="100000" value="1000"
-                    onchange="rangePrimary.value=value" required />
-                <br />
-                <datalist id="slider">
-                    <option value="1" label="1"></option>
-                    <option value="50" label="50000"></option>
-                    <option value="100" label="100000"></option>
-                </datalist>
-                <label>Rate of Interest*</label>
-                <input type="text" class="float-end inputText" id="rangePrimary1" readonly value="1" />
-
-                <input id="slider1" class="slider" type="range" name="range" step="1" min="1" max="20" value="1"
-                    onchange="rangePrimary1.value=value" required />
-                <datalist id="slider1">
-                    <option value="1" label="1"></option>
-                    <option value="10" label="10"></option>
-                    <option value="20" label="20"></option>
-                </datalist>
-                <label>Time Period(months)</label>
-                <input type="text" class="float-end inputText" id="rangePrimary2" readonly value="1" />
-
-                <input id="slider2" class="slider" type="range" name="range" step="1" min="1" max="100" value="1"
-                    onchange="rangePrimary2.value=value" required />
-                <datalist id="slider2">
-                    <option value="1" label="1"></option>
-                    <option value="50" label="50"></option>
-                    <option value="100" label="100"></option>
-                </datalist>
-                <label for="int">Interest Compounding:</label>
-                <select name="interest" id="int" required>
-                    <option class="dropdown-item" value="4">Quarterly</option>
-                    <option class="dropdown-item" value="6">Half-Yearly</option>
-                    <option class="dropdown-item" value="1">Yearly</option>
-                    <option class="dropdown-item" value="12">Monthly</option>
-                </select>
-                <div class="py-3">
-                    <button type="button" class="btn btn-primary" id="show-maturity-value" onclick="showDetails()">Show
-                        Maturity Value</button>
+                    <input id="slider" class="slider" type="range" name="range" step="500" min="1000" max="100000"
+                        value="1000" onchange="rangePrimary.value=value" required />
                     <br />
-                    <div class="d-flex flex-row div2 mt-3">
+                    <datalist id="slider">
+                        <option value="1" label="1"></option>
+                        <option value="50" label="50000"></option>
+                        <option value="100" label="100000"></option>
+                    </datalist>
+                    <label>Rate of Interest*</label>
+                    <input type="text" class="float-end inputText" id="rangePrimary1" readonly value="1" />
 
-                        <span class="border border-primary bg-primary rounded-2 flex-sm-fill rd-result-text"
-                            >Total Investment:<p id="tinv"></p>
-                            </span>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="border border-primary bg-primary rounded-2 flex-sm-fill rd-result-text"
-                            >Total Interest:<p id="tint"></p>
-                            </span>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="border border-primary bg-primary rounded-2 flex-sm-fill rd-result-text"
-                            >Maturity Value:<p id="matval"></p></span>
+                    <input id="slider1" class="slider" type="range" name="range" step="1" min="1" max="20" value="1"
+                        onchange="rangePrimary1.value=value" required />
+                    <datalist id="slider1">
+                        <option value="1" label="1"></option>
+                        <option value="10" label="10"></option>
+                        <option value="20" label="20"></option>
+                    </datalist>
+                    <label>Time Period(months)</label>
+                    <input type="text" class="float-end inputText" id="rangePrimary2" readonly value="1" />
 
+                    <input id="slider2" class="slider" type="range" name="range" step="1" min="1" max="100" value="1"
+                        onchange="rangePrimary2.value=value" required />
+                    <datalist id="slider2">
+                        <option value="1" label="1"></option>
+                        <option value="50" label="50"></option>
+                        <option value="100" label="100"></option>
+                    </datalist>
+                    <label for="int">Interest Compounding:</label>
+                    <select name="interest" id="int" required>
+                        <option class="dropdown-item" value="4">Quarterly</option>
+                        <option class="dropdown-item" value="6">Half-Yearly</option>
+                        <option class="dropdown-item" value="1">Yearly</option>
+                        <option class="dropdown-item" value="12">Monthly</option>
+                    </select>
+                    <div class="py-3">
+                        <button type="button" class="btn btn-primary" id="show-maturity-value"
+                            onclick="showDetails()">Show
+                            Maturity Value</button>
+                        <br />
+                        <div class="d-flex flex-row div2 mt-3">
+
+                            <span class="border border-primary bg-primary rounded-2 flex-sm-fill rd-result-text">Total
+                                Investment:<p id="tinv"></p>
+                            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span class="border border-primary bg-primary rounded-2 flex-sm-fill rd-result-text">Total
+                                Interest:<p id="tint"></p>
+                            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span
+                                class="border border-primary bg-primary rounded-2 flex-sm-fill rd-result-text">Maturity
+                                Value:<p id="matval"></p></span>
+
+                        </div>
                     </div>
-                </div>
-        </form>
+            </form>
+        </div>
+        <div class="col-5 float-md-end container">
+
+            <div id="chartContainer" style="height: 350px; width: 250px;"></div>
+
+        </div>
     </div>
 </body>
 
