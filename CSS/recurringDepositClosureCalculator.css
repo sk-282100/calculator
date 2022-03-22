@@ -1,31 +1,15 @@
-.input{
-    float: right;
-    height: 23px;
-    width: 200px;
-    border: 1.5px solid black;
-    
+
+.div{
+    height: 100%;
+    border: 2px solid rgb(17, 171, 223);
+    margin-left: 20px;
+    margin: 0 auto;
 }
-table{
-   background-color: #ccffff; 
+h4{
+    margin-left: 20px;
+    margin: 0 auto;
+    width:fit-content;
 }
-select{
-    float: right;
-    width: 200px;
-    height: 40px;
-    border: 1.5px solid black;
-}
-td{
-    padding-right: 20px;
-  
-}
-.label{
-    padding-left: 15px;
-}
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-   
-  }
-.t1{
-    text-align: center;
-}
+
+
+
