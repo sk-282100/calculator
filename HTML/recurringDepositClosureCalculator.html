@@ -14,54 +14,55 @@
 <body>
     <div class="mt-3 calculator">
         <h4 class="mb-2 rows">Recuring Deposit Closure Calculator</h4>
-<form class="container col-lg-11 div " style="background-color: aqua;" >
-    <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage  </button >
-        <div class="col-md-6 float-lg-none">
+        <div class="container col-lg-11 div " style="background-color: aqua;">
+            <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
+            <form>
+                <div class="col-md-6 float-lg-none">
 
-            <label class="col-md-9">Types of Customer</label>
-            <input class="flex-column" type="radio" id="normal" name="rd">
-            <label for="normal">Normal</label><br>
-            <label class="col-md-9"></label>
-            <input class="flex-column" type="radio" id="seniorCitizen" name="rd">
+                    <label class="col-md-9">Types of Customer</label>
+                    <input class="flex-column" type="radio" id="normal" name="rd">
+                    <label for="normal">Normal</label><br>
+                    <label class="col-md-9"></label>
+                    <input class="flex-column" type="radio" id="seniorCitizen" name="rd">
 
-            <label for="seniorCitizen">Senior Citizen</label>
-            <br />
-            <label class="label" for="Rdcreation">RD Creation Date</label>
-            <input class="col-3 float-sm-end border-1"  type="date" id="Rdcration"><br /><br />
-            <label class="label" for="amountOfDeposite">Amount Of Deposite</label>
-            <input class="col-3 float-sm-end border-1" type="text" id="amountOfDeposite" /> <br />
-            <br />
-            <label class="label" for="int">Penalty Rate(Rate Below Notes)</label>
-            <select name="interest" id="int"  class="col-3 float-sm-end border-1">
-                <option class="dropdown-item" value="0">0</option>
-                <option class="dropdown-item" value="0.5">0.5</option>
-                <option class="dropdown-item" value="1">1</option>
-                
-            </select>
-            <br /><br />
-            <label class="label" for="matDate">Maturity Date</label>
-            <input class="col-3 float-sm-end border-1" type="text" id="matDate" placeholder="dd/mm/yyyy" /> <br />
-            <br />
-            <h6 class="label" style="text-decoration: underline;">Maturity Details</h6>
+                    <label for="seniorCitizen">Senior Citizen</label>
+                    <br />
+                    <label class="label" for="Rdcreation">RD Creation Date</label>
+                    <input class="col-3 float-sm-end border-1" type="date" id="Rdcration"><br /><br />
+                    <label class="label" for="amountOfDeposite">Amount Of Deposite</label>
+                    <input class="col-3 float-sm-end border-1" type="text" id="amountOfDeposite" /> <br />
+                    <br />
+                    <label class="label" for="int">Penalty Rate(Rate Below Notes)</label>
+                    <select name="interest" id="int" class="col-3 float-sm-end border-1">
+                        <option class="dropdown-item" value="0">0</option>
+                        <option class="dropdown-item" value="0.5">0.5</option>
+                        <option class="dropdown-item" value="1">1</option>
 
-            <label class="label" for="rateOfIntrest">Rate Of Interest(%)</label>
-            <input class="col-3  float-sm-end border-1" type="text" id="rateOfIntrest" /> <br /><br />
-            <label class="label" for="matAmount">Maturity Amount</label>
-            <input class="col-3 float-sm-end border-1" type="text" id="matAmount" /> <br /><br />
-            <label class="label" for="intAmount">Interest Amount</label>
-            <input class="col-3 float-sm-end border-1" type="text" id="intAmount" /> <br /><br />
-            <h6 class="label">Tenure</h6>
+                    </select>
+                    <br /><br />
+                    <label class="label" for="matDate">Maturity Date</label>
+                    <input class="col-3 float-sm-end border-1" type="text" id="matDate" placeholder="dd/mm/yyyy" />
+                    <br />
+                    <br />
+                    <h6 class="label" style="text-decoration: underline;">Maturity Details</h6>
 
-            <label class="label" for="year">Years</label>
-            <input class="col-3 float-sm-end border-1" type="text" id="year" /> <br />
-            <br />
-            <label class="label" for="month">Month</label>
-            <input class="col-3 float-sm-end border-1" type="text" id="month" /> <br />
-       </div>
+                    <label class="label" for="rateOfIntrest">Rate Of Interest(%)</label>
+                    <input class="col-3  float-sm-end border-1" type="text" id="rateOfIntrest" /> <br /><br />
+                    <label class="label" for="matAmount">Maturity Amount</label>
+                    <input class="col-3 float-sm-end border-1" type="text" id="matAmount" /> <br /><br />
+                    <label class="label" for="intAmount">Interest Amount</label>
+                    <input class="col-3 float-sm-end border-1" type="text" id="intAmount" /> <br /><br />
+                    <h6 class="label">Tenure</h6>
+
+                    <label class="label" for="year">Years</label>
+                    <input class="col-3 float-sm-end border-1" type="text" id="year" /> <br />
+                    <br />
+                    <label class="label" for="month">Month</label>
+                    <input class="col-3 float-sm-end border-1" type="text" id="month" /> <br />
+                </div>
+        </div>
+
+        </form>
     </div>
-
-    </form>
-   
 </body>
-
 </html>
