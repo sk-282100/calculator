@@ -10,6 +10,8 @@ h4{
     margin: 0 auto;
     width:fit-content;
 }
-
+table,td,tr{
+    text-align: center;
+}
 
 

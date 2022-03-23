@@ -1,42 +1,42 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="../CSS/SalaryDetails.css">
-<link rel="stylesheet" type="text/css" href="../Plugin/bootstrap/css/bootstrap.min.css">
-
-
-<script>
- function change_tab(id)
- {
-   document.getElementById("page_content").innerHTML=document.getElementById(id+"_desc").innerHTML;
-   document.getElementById("page1").className="notselected";
-   document.getElementById("page2").className="notselected";
-   document.getElementById(id).className="selected";
- }
- function myFunction() {
-  var basic = document.getElementById("basic").value
-      sessionStorage.setItem("basic",basic);
-
-      var hra = document.getElementById("hra").value
-      sessionStorage.setItem("hra",hra);
-
-      var da = document.getElementById("da").value
-      sessionStorage.setItem("da",da);
-
-      var sa = document.getElementById("sa").value
-      sessionStorage.setItem("sa",sa);
-
-      var epf = document.getElementById("epf").value
-      sessionStorage.setItem("epf",epf);
-
-      var Gross = document.getElementById("Gross").value
-      sessionStorage.setItem("Gross",Gross);
-
-      location.replace("OtherIncomeDetails.html")
-     
- }
-</script>
+    <link rel="stylesheet" type="text/css" href="../CSS/SalaryDetails.css">
+    <link rel="stylesheet" type="text/css" href="../Plugin/bootstrap/css/bootstrap.min.css">
 
 </head>
+<script>
+    function pageRedirect1() {
+        window.location.replace("1MonthlySalaryDetails.html");
+    }  
+    function pageRedirect2() {
+        window.location.replace("2AnnuallySalaryDetails.html");
+    }    
+
+     function myFunction() {
+   
+        // for monthly
+      var basic1 = document.getElementById("basic1").value
+      sessionStorage.setItem("basic1",basic1);
+
+      var hra1 = document.getElementById("hra1").value
+      sessionStorage.setItem("hra1",hra1);
+
+      var da1 = document.getElementById("da1").value
+      sessionStorage.setItem("da1",da1);
+
+      var sa1 = document.getElementById("sa1").value
+      sessionStorage.setItem("sa1",sa1);
+
+      var epf1 = document.getElementById("epf1").value
+      sessionStorage.setItem("epf1",epf1);
+
+      var Gross1 = document.getElementById("Gross1").value
+      sessionStorage.setItem("Gross1",Gross1);
+
+
+   location.replace("OtherIncomeDetails.html")
+ }
+</script>
 <body>
   <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 700px;" >              
       <div class="float-md-start div1">
@@ -50,96 +50,49 @@
           
           <div class="float-md-start div1">
 
-            <li style="font-size: large;"><a href="IncometaxCalculator.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-            </svg></li></a>
-            
-            <li style="font-size: large;">Salary Details:</li>
+            <div class="container">
+                <ul class="nav nav-tabs">
+                    <li style="font-size: large;"><a href="IncometaxCalculator.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                      </svg></li>
+                      <li style="font-size: large;" class="active"><a data-toggle="tab"><h5>Salary Details:</h5></a></li>
 
-            <!-- <li style="font-size: large;">Salary Details:</li> -->
-            <li class="selected" id="page1" onclick="change_tab(this.id);">Monthly</li>
-            <li class="notselected" id="page2" onclick="change_tab(this.id);">Anually</li>
-    
+                      <li><a data-toggle="tab" onclick="pageRedirect1()">Monthly</a></li>
+                  <li><a data-toggle="tab" onclick="pageRedirect2()">Annually</a></li>
+                </ul>
+        <br/>
+
+        <div>
+          <h5>Monthly</h5>
+          <div class="details">    
+            <input type="text"style="width: 350px;" class="basic1" id="basic1" placeholder="Monthly Basic Salary" />
             <br/><br/>
-          <div class='hidden_desc' id="page1_desc">
-            <h5>Monthly</h5>
-          <div class="details"> 
-
-            <input type="text"style="width: 350px;" class="basic" id="basic" placeholder="Monthly Basic Salary" />
+  
+            <input type="text"style="width: 350px;" class="hra1" id="hra1" placeholder="Monthly HRA Received" />
             <br/><br/>
-
-            <input type="text"style="width: 350px;" class="hra" id="hra" placeholder="Monthly HRA Received" />
+  
+            <input type="text"style="width: 350px;" class="da1" id="da1" placeholder="Monthly Dearness allowance" />
             <br/><br/>
-
-            <input type="text"style="width: 350px;" class="da" id="da" placeholder="Monthly Dearness allowance" />
+  
+            <input type="text"style="width: 350px;" class="sa1" id="sa1" placeholder="Monthly special allowance" />
             <br/><br/>
-
-            <input type="text"style="width: 350px;" class="sa" id="sa" placeholder="Monthly special allowance" />
+  
+            <input type="text"style="width: 350px;" class="epf1" id="epf1" placeholder="Monthly Employee EPF contribution by self" />
             <br/><br/>
-
-            <input type="text"style="width: 350px;" class="epf" id="epf" placeholder="Monthly Employee EPF contribution by self" />
-            <br/><br/>
-
-            <input type="text"style="width: 350px;" class="Gross" id="Gross" placeholder="Monthly Gross Salary" />
+  
+            <input type="text"style="width: 350px;" class="Gross1" id="Gross1" placeholder="Monthly Gross Salary" />
             <br/><br/>   
+            
             <button class="btn btn-primary" onclick="myFunction()">Continue</button><br/><br/>
-      
+  
           </div>
         </div>
+    </div>
 
-      <div class='hidden_desc' id="page2_desc">
-        <h5>Annually</h5>
-        <div class="details">    
-          <input type="text"style="width: 350px;" class="basic" id="basic" placeholder="Annual Basic Salary" />
-          <br/><br/>
 
-          <input type="text"style="width: 350px;" class="hra" id="hra" placeholder="Annual HRA Received" />
-          <br/><br/>
+     </div>
 
-          <input type="text"style="width: 350px;" class="da" id="da" placeholder="Annual Dearness allowance" />
-          <br/><br/>
-
-          <input type="text"style="width: 350px;" class="sa" id="sa" placeholder="Annual special allowance" />
-          <br/><br/>
-
-          <input type="text"style="width: 350px;" class="epf" id="epf" placeholder="Annual Employee EPF contribution by self" />
-          <br/><br/>
-
-          <input type="text"style="width: 350px;" class="Gross" id="Gross" placeholder="Annual Gross Salary" />
-          <br/><br/>   
-          
-          <button class="btn btn-primary" onclick="myFunction()">Continue</button><br/><br/>
-
-        </div>
-      </div>
-    
-      <div id="page_content">
-        <h5>Monthly</h5>
-        <div class="details">    
-          <input type="text"style="width: 350px;" class="basic" id="basic" placeholder="Monthly Basic Salary" />
-          <br/><br/>
-      
-          <input type="text"style="width: 350px;" class="hra" id="hra" placeholder="Monthly HRA Received" />
-          <br/><br/>
-      
-          <input type="text"style="width: 350px;" class="da" id="da" placeholder="Monthly Dearness allowance" />
-          <br/><br/>
-      
-          <input type="text"style="width: 350px;" class="sa" id="sa" placeholder="Monthly special allowance" />
-          <br/><br/>
-      
-          <input type="text"style="width: 350px;" class="epf" id="epf" placeholder="Monthly Employee EPF contribution by self" />
-          <br/><br/>
-      
-          <input type="text"style="width: 350px;" class="Gross" id="Gross" placeholder="Monthly Gross Salary" />
-          <br/><br/>   
-          
-          <button class="btn btn-primary" onclick="myFunction()">Continue</button><br/><br/>
-        </div>
-      </div>
-    
-
-</form>
+    </form>
 
 </div>
 
