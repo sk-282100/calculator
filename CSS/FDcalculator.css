@@ -34,7 +34,7 @@ datalist {
 .inputText{
     /* border: 1.5px solid #81CBF6; */
 }
-#slider,#slider1,#slider2{
+#depositeAmountSlider,#roiSlider,#tenureSlider{
     width: 100%;
 }
 

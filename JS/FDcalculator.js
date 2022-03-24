@@ -1,58 +1,41 @@
 $(function(){
-  
-  $("#rangePrimary,#rangePrimary1,#rangePrimary2").blur(function(){
-		console.log(" hs");
-		if($("#rangePrimary").val()=="" && $("#rangePrimary1").val()=="" && $("#rangePrimary2").val()==""){
-			$("#calculate-button").prop("disabled",true);
-		}
-		else{
-			$("#calculate-button").prop("disabled",false);
-		}
-	})
+  var fdr=1;
+  var toYears=365;
 
-    
-    var fdr;
-    var toYears;
-
-    
-    $("#rangePrimary").val($("#slider").val())
-    $("#rangePrimary1").val($("#slider1").val())
-    $("#rangePrimary2").val($("#slider2").val())
-   
-    $("#rangePrimary").change(function(){
-     var x= $("#rangePrimary").val()
-      $("#slider").val(x)
-
-    })
-
-
-    $("#rangePrimary1").change(function(){
-     var x= $("#rangePrimary1").val()
-      $("#slider1").val(x)
-    })
-
-    $("#rangePrimary2").change(function(){
-     var x= $("#rangePrimary2").val()
-      $("#slider2").val(x)
-    })
-
-
-    $(".fix-deposit-radio").click(function(){
+  //To get type of fixed deposite 
+  $(".fix-deposit-radio").click(function(){
       fdr=$(this).val()
     })
 
-    $("#int").change(function(){
+  //To get Tensure type value from dropdown  
+    $("#tenure").change(function(){
       toYears=$(this).val()
     })
+ 
+  //To get deposite amount and display in proper format 
+    $("#depositeAmountSlider").change(function(){
+      $("#depositeAmount").val(Number($("#depositeAmountSlider").val()).toLocaleString('en-IN'));
+      $("#hddepositeAmount").val(Number($("#depositeAmountSlider").val()));
+    });
 
+    //To get Rate Of Interest value and display in proper format
+    $("#roiSlider").change(function(){
+      $("#roi").val($("#roiSlider").val()+'%');
+      $("#hdroi").val($("#roiSlider").val());
+    });
+  
+    //To get Tenure value
+    $("#tenureSlider").change(function(){
+      $("#tenureValue").val($("#tenureSlider").val());
+    });
+
+    //calculating Maturity Amount
     $("#calculate-button").click(function(){
-      var depositAmount=$("#rangePrimary").val()
-      var intrestRate= $("#rangePrimary1").val()
-      var tenure= $("#rangePrimary2").val()
+      var depositAmount=$("#hddepositeAmount").val()
+      var intrestRate= $("#hdroi").val()
+      var tenure= $("#tenureValue").val()
       var fixedDeposit=fdr;
   
-     
-    
       var maturityAmout=depositAmount*Math.pow(1+((intrestRate/100)/fixedDeposit),fixedDeposit*(tenure/toYears))
       maturityAmout = maturityAmout.toFixed(2);
       var totalIntrest=maturityAmout-depositAmount
