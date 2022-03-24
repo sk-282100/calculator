@@ -35,9 +35,9 @@
 <h6 for="city" class="label1">Resident city type:</label>   
 <div class="">           
 <select name="city" id="city" class="form-select w-auto"  required>
-<option value="Metro">Metro</option>
-<option value="Urban">Urban</option>
-<option value="Rural">Rural</option>
+<option value="1">Metro</option>
+<option value="2">Urban</option>
+<option value="3">Rural</option>
 </select>
 </div>
 </div>
@@ -46,14 +46,14 @@
 <h6 for="Recidence" class="label1">Resident Type:</label>    
 <div class=" d-flex">
 <div class="form-check">
-<input class="form-check-input" type="radio" name="RecidenceS" id="selfOwned" checked="checked">
+<input class="form-check-input" type="radio" name="RecidenceS" id="selfOwned" value="1" checked="checked">
 <label class="form-check-label" for="selfOwned">
 Self owned
 </label>
 </div>
 
 <div class="form-check mx-3">
-<input class="form-check-input" type="radio" name="RecidenceS" id="rented" >
+<input class="form-check-input" type="radio" name="RecidenceS" value="2" id="rented" >
 <label class="form-check-label" for="rented">
 Rented
 </label>
@@ -65,9 +65,9 @@ Rented
 <h6 for="occupation" class="label1">Occupation:</label>
 <div class="">
 <select name="occupation" id="occupation"  class="form-select w-auto"  required>
-<option value="Self Employed">Self Employed</option>
-<option value="Government">Government</option>
-<option value="Private ">Private</option>
+<option value="1">Self Employed</option>
+<option value="2">Government</option>
+<option value="3 ">Private</option>
 </select>
 </div>
 </div>
@@ -96,46 +96,46 @@ Rented
 <div class="tab-content" id="myTabContent">
 <!-- Start: Month Salary Details -->
 <div class="tab-pane fade show active mt-3" id="monthlySalary" role="tabpanel" aria-labelledby="home-tab">
-<div class="row mb-3" >
-<h6 for="age" class="label1">Monthly Basic Salary:</label>
-<div>
-<input type="text" id="basic1" class="form-control w-50"/>
-</div>
-</div>
-
-<div class="row mb-3" >
-<h6 for="age" class="label1">Monthly HRA Received:</label>
-<div>
-<input type="text" id="hra1" class="form-control w-50"/>
-</div>
+  <div class="row mb-3" >
+    <h6 for="age" class="label1">Monthly Basic Salary:</label>
+    <div>
+    <input type="text" id="basic1" class="form-control w-50"/>
+  </div>
 </div>
 
 <div class="row mb-3" >
-<h6 for="age" class="label1">Monthly Dearness allowance:</label>
-<div>
-<input type="text" id="da1" class="form-control w-50"/>
-</div>
-</div>
-
-<div class="row mb-3" >
-<h6 for="age" class="label1">Monthly special allowance:</label>
-<div>
-<input type="text" id="sa1" class="form-control w-50"/>
-</div>
+  <h6 for="age" class="label1">Monthly HRA Received:</label>
+    <div>
+    <input type="text" id="hra1" class="form-control w-50"/>
+    </div>
 </div>
 
 <div class="row mb-3" >
-<h6 for="age" class="label1">Monthly Employee EPF contribution by self:</label>
-<div>
-<input type="text" id="epf1" class="form-control w-50"/>
-</div>
+  <h6 for="age" class="label1">Monthly Dearness allowance:</label>
+    <div>
+    <input type="text" id="da1" class="form-control w-50"/>
+    </div>
 </div>
 
 <div class="row mb-3" >
-<h6 for="age" class="label1">Monthly Gross Salary:</label>
-<div>
-<input type="text" id="Gross1" class="form-control w-50"/>
+  <h6 for="age" class="label1">Monthly special allowance:</label>
+    <div>
+    <input type="text" id="sa1" class="form-control w-50"/>
+    </div>
 </div>
+
+<div class="row mb-3" >
+  <h6 for="age" class="label1">Monthly Employee EPF contribution by self:</label>
+    <div>
+    <input type="text" id="epf1" class="form-control w-50"/>
+    </div>
+</div>
+
+<div class="row mb-3" >
+  <h6 for="age" class="label1">Monthly Gross Salary:</label>
+    <div>
+    <input type="text" id="Gross1" class="form-control w-50"/>
+    </div>
 </div>
 </div>
 <!-- End: Month Salary Details -->
@@ -189,12 +189,194 @@ Rented
 <!-- End: Annual Salary Details -->
 </div>
 <!-- End: Salary Details -->
+<!-- Details of Other Income -->
+<div class="row mb-3" >
+  <h6 for="saving" class="saving">Annual Income from Interest or saving:</label>
+  <div>
+  <input type="text" id="saving" class="form-control w-50"/>
 </div>
-<div class="row mb-3">
-<div class="">
-<button class="btn btn-primary" onclick="myFunction()">Continue</button>
 </div>
+
+<div class="row mb-3" >
+<h6 for="deposit" class="deposit">Annual Income from Deposits:</label>
+  <div>
+  <input type="text" id="deposit" class="form-control w-50"/>
+  </div>
 </div>
+
+<div class="row mb-3" >
+<h6 for="rent" class="rent">Annual Income from Rentals:</label>
+  <div>
+  <input type="text" id="rent" class="form-control w-50"/>
+  </div>
+</div>
+
+<div class="row mb-3" >
+<h6 for="source" class="source">Annual Income from other source:</label>
+  <div>
+  <input type="text" id="source" class="form-control w-50"/>
+  </div>
+</div>
+<!-- End: Other income Details -->
+
+<!-- Start:  Capital gains Details -->
+
+<h6 for="Equity" class="Equity" id="equity">Equity Instruments:</h6>
+      <div class="row ">
+        <div class="col-lg-6 container">
+            <p for="equity1">Short term(< 1 year)</label>
+                <input type="text" id="equity1" class="form-control w-120">
+        </div>
+        <div class="col-lg-6 container" >
+            <p for="equity2">Long term(>= 1 year)</label>
+                <input type="text" id="equity2" class="form-control w-120">
+        </div>
+      </div>
+
+      <h6 for="Debit" class="debit" id="debit">Debit Investments:</h6>
+      <div class="row ">
+        <div class="col-lg-6 container">
+            <p for="debit1">Short term(< 3 year)</label>
+                <input type="text" id="debit1" class="form-control w-120">
+        </div>
+        <div class="col-lg-6 container" >
+            <p for="debit2">Long term(>= 2 year)</label>
+                <input type="text" id="debit2" class="form-control w-120">
+        </div>
+      </div>
+
+
+      <h6 for="Shares" class="shares" id="shares">Unlisted Shares:</h6>
+      <div class="row ">
+        <div class="col-lg-6 container">
+            <p for="shares1">Short term (< 2 year)</label>
+                <input type="text" id="shares1" class="form-control w-120">
+        </div>
+        <div class="col-lg-6 container" >
+            <p for="shares2">Long term(>= 2 year)</label>
+                <input type="text" id="shares2" class="form-control w-120">
+        </div>
+      </div>
+
+      <h6 for="Estate" class="estate" id="estate">Real estate or lands:</h6>
+      <div class="row ">
+        <div class="col-lg-6 container">
+            <p for="estate1">Short term (< 2 year)</label>
+                <input type="text" id="estate1" class="form-control w-120">
+        </div>
+        <div class="col-lg-6 container" >
+            <p for="estate2">Long term (>= 2 year)</label>
+                <input type="text" id="estate2" class="form-control w-120">
+        </div>
+      </div>
+<!-- End:  Capital gains Details -->
+
+
+<!-- Start:  Tax Deductions -->
+<div class="row mb-3" >
+  <h6 for="epf" class="epf">Section 80C deductions excluding EPF:</label>
+    <div>
+    <input type="text" id="epf" class="form-control w-50"/>
+    </div>
+</div>
+
+<div class="row mb-3" >
+  <h6 for="selfInsurance" class="selfInsurance">Health insurance premium for self/family:</label>
+    <div>
+    <input type="text" id="selfInsurance" class="form-control w-50"/> 
+    </div>
+</div>
+
+<div class="row mb-3" >
+  <h6 for="nps" class="nps">NPS investment under section 80CCD(1B):</label>               
+    <div>
+    <input type="text" id="nps" class="form-control w-50"/>
+    </div>
+</div>
+
+<div class="row mb-3" >
+  <h6 for="senior" class="senior">Is any of the parent a senior citizen?</label>
+
+             <input type="radio" name="senior" value="yes" checked="checked">yes</input>
+              <input type="radio" name="senior" value="no">no</input>
+</div>
+
+<div class="row mb-3" >
+  <h6 for="parentInsurance" class="parentInsurance">Health Insurance premium for parents:</label>
+      <div>
+    <input type="text" id="parentInsurance" class="form-control w-50"/>
+    </div>
+</div>
+
+<div class="row mb-3" >
+  <h6 for="educationLoanInterest" class="educationLoanInterest">Interest on education loan:</label>              
+    <div>
+    <input type="text" id="educationLoanInterest" class="form-control w-50"/>
+    </div>
+</div>
+
+<div class="row mb-3" >
+  <h6 for="homeLoanInterest" class="homeLoanInterest">Home loan interest for self occupied property:</label>              
+    <div>
+    <input type="text" id="homeLoanInterest" class="form-control w-50"/>
+    </div>
+</div>
+
+<div class="row mb-3" >             
+  <h6 for="rent" class="rent">Home loan interest for rented property:</label>
+    <div>
+    <input type="text" id="rent" class="form-control w-50"/>
+    </div>
+</div>
+<!-- End: Tax Deductions -->
+
+</div>
+    <div class="row mb-3">
+    <div class="">
+    <button class="btn btn-primary" onclick="myFunction()">Continue</button>
+    </div>
+    </div>
+
+
+    <!-- Start: Tax Pay -->
+
+    <div class="row mb-3" >
+      <div>
+        <div class="fa fa-inr">Total Tax: &#8377;</div><br><br>
+                            
+                  <table>
+    
+                    <tr>
+                      <td>Gross Income</td>
+                      <td id="gross-income"></td>
+                    </tr>
+                    <tr>
+                      <td>Capital Gain</td>
+                      <td id="capital-gain"></td>
+                    <tr>
+                      <td>Tax Deduction</td>
+                      <td id="tax-deduction"></td>
+                    </tr>
+                    <tr>
+                      <td>Tax Excemptions</td>
+                      <td id="tax-excemption"></td>
+                    </tr>
+                    <tr>
+                      <td>Total Income</td>
+                      <td id="total-income"></td>
+                    </tr>
+                  </table><br/><br/>  
+    
+                  <div class="row mb-3">
+                    <div class="">
+                    <button class="btn btn-primary" onclick="recalculate()">Recalculate</button>
+                    </div>
+                  </div>
+                
+            </div>
+      </div>
+    </div>
+    <!-- End: Tax Pay -->
 
 </div>
 </div>

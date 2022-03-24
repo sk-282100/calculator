@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html> <head>
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/SalaryDetails.css">
@@ -47,11 +47,74 @@
       </form>
     </div>
 </body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html> <head>
+  <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/SalaryDetails.css">
+    <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../JS/OtherIncomeDetails.js"></script>
+</head>
+
+<body>     
+<div class="col-md-5 container " style="border: 3px solid #0099CC; " >
+  <div class="row mb-3 mt-2">          
+    <div>    
+        <button class="btn btn-primary " onclick="location.href = './index.html'"> Homepage </button>
+    </div>
+  </div>
+  <!-- Start: Basic Details -->
+  <div class="row" >
+    <div class="">
+      <div class="d-flex p-2">
+        <a href="SalaryDetails.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+          </svg></a>&nbsp;<h5>Details of Other Income</h5> 
+      </div>
+    </div>
+    
+<!-- Details of Other Income -->
+    <div class="row mb-3" >
+      <h6 for="saving" class="saving">Annual Income from Interest or saving:</label>
+      <div>
+      <input type="text" id="saving" class="form-control w-50"/>
+    </div>
+  </div>
+  
+  <div class="row mb-3" >
+    <h6 for="deposit" class="deposit">Annual Income from Deposits:</label>
+      <div>
+      <input type="text" id="deposit" class="form-control w-50"/>
+      </div>
+  </div>
+  
+  <div class="row mb-3" >
+    <h6 for="rent" class="rent">Annual Income from Rentals:</label>
+      <div>
+      <input type="text" id="rent" class="form-control w-50"/>
+      </div>
+  </div>
+
+  <div class="row mb-3" >
+    <h6 for="source" class="source">Annual Income from other source:</label>
+      <div>
+      <input type="text" id="source" class="form-control w-50"/>
+      </div>
+  </div>
+  
+  <div class="row mb-3">
+    <div class="">
+    <button class="btn btn-primary" onclick="myFunction()">Continue</button>
+    </div>
+  </div>
+
+  </div>
+</body>
 </html>
-
-
-
-
-
 
 
