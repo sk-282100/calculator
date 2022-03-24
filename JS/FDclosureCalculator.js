@@ -1,5 +1,8 @@
+ 
+
 
 $(document).ready(function () {
+  $("#matDate").html(new Date().toLocaleDateString());
     var typeOfCustomer = $(".radioBtn").val();
     var rdCreation = $("#Rdcration").val();
     var amountOfDeposite = $("#amountOfDeposite").val();
@@ -47,6 +50,46 @@ $(document).ready(function () {
       $("#showtable").toggle(300);
       $("#chartContainer").hide(300);
     });
+    $('#penaltyRate').change(function(){
+      var x= $('#penaltyRate :selected').val();
+       
+      
+      var depositeamount=$("#amountOfDeposite").val()
+      var rateintrest= $("#rateOfIntrest1").val()
+      var Fdcreation= new Date ($("#fdCreation").val())
+      var matDate= new Date($("#matDate").html())
+      var intrestfreq=matDate-Fdcreation
+
+      var intrestfreq1=Math.floor((intrestfreq) / 31536000000)
+      var year=$("#year").html(intrestfreq1)
+      
+      var intrestfreq2=Math.floor(((intrestfreq)%31536000000)/2628000000)
+      var month=$("#month").html(intrestfreq2)
+      
+      var intrestfreq3=Math.floor((((intrestfreq)% 31536000000)%2628000000)/86400000+2)
+      var days=$("#day").html(intrestfreq3)
+
+      console.log(intrestfreq);
+      console.log(Fdcreation);
+      console.log(matDate);
+      // var tenure= $("#rangePrimary2").val()
+
+       if (x == 0) {
+        $("#rateOfIntrest1").html(4.9);
+        // document.getElementById("matAmount1").value=depositeamount*Math.pow(1+((rateintrest/100)/(Fdcreation-matDate),(Fdcreation-matDate)*(tenure/toYears)));
+       }
+       
+        else if (x==0.5) {
+          $("#rateOfIntrest1").html(4.4);
+        }
+       else if (x==1)
+       {
+        $("#rateOfIntrest1").html(3.9);
+       }
+      })
+     
   });
   
   
+
+ 

@@ -24,52 +24,54 @@
 
 <div class="container">
     <label class="col-md-9">Types of Customer</label>
-    <input class="flex-column" type="radio" id="normal" name="rd">
-    <label for="normal">Normal</label><br>
-    <label class="col-md-9"></label>
-    <input class="flex-column" type="radio" id="seniorCitizen" name="rd">
+                    <input class="flex-column" type="radio" value="4" id="normal" name="fd" checked="checked">
+                    <label for="normal">Normal</label>
+                    <label class="col-md-9"></label>
+                    <input class="flex-column" type="radio" value="5" id="seniorCitizen" name="fd"> 
 
-    <label for="seniorCitizen">Senior Citizen</label>
+                    <label for="seniorCitizen">Senior Citizen</label>
+
+                    <label class="label " for="fdCreation">FD Creation Date</label>
+                    <input class="col-3 float-sm-end border-1" type="date" id="fdCreation" value="2021-01-01"><br /><br />
+                    <label class="label" for="amountOfDeposite">Amount Of Deposite</label>
+                    <input class="col-3 float-sm-end border-1" type="text" id="amountOfDeposite" /> <br />
     <br />
-    <label class="label" for="Rdcreation">FD Creation Date</label>
-    <input class="col-3 float-sm-end border-1" type="date" id="Rdcration"><br /><br />
-    <label class="label" for="amountOfDeposite">Amount Of Deposite</label>
-    <input class="col-3 float-sm-end border-1" type="text" id="amountOfDeposite" /> <br />
-    <br />
-    <label class="label" for="int">Penalty Rate(Rate Below Notes)</label>
-    <select name="interest" id="int" class="col-3 float-sm-end border-1">
-        <option class="dropdown-item" value="0">0</option>
+    <label class="label" for="penaltyRate">Penalty Rate(Rate Below Notes)</label>
+    <select name="interest" id="penaltyRate" class="col-3 float-sm-end border-1">
+        <option class="dropdown-item"  value="">select penalty</option>
+        <option class="dropdown-item"  value="0">0</option>
         <option class="dropdown-item" value="0.5">0.5</option>
         <option class="dropdown-item" value="1">1</option>
 
     </select>
     <br /><br />
     <label class="label" for="matDate">Maturity Date</label>
-    <input class="col-3 float-sm-end border-1" type="text" id="matDate" placeholder="dd/mm/yyyy" />
+    <span  class="col-3 float-sm-end border-1" id="matDate"></span>
     <br />
     <br />
     <h6 class="label" style="text-decoration: underline;">Maturity Details</h6>
 
     <label class="label" for="rateOfIntrest">Rate Of Interest(%)</label>
-    <input class="col-3  float-sm-end border-1" type="text" id="rateOfIntrest" /> <br /><br />
+    <span class="col-3  float-sm-end border-1" id="rateOfIntrest1"></span> <br /><br />
     <label class="label" for="matAmount">Maturity Amount</label>
-    <input class="col-3 float-sm-end border-1" type="text" id="matAmount" /> <br /><br />
+    <input class="col-3 float-sm-end border-1" type="text" id="matAmount1" /> <br /><br />
     <label class="label" for="intAmount">Interest Amount</label>
     <input class="col-3 float-sm-end border-1" type="text" id="intAmount" /> <br /><br />
     <h6 class="label">Tenure</h6>
 
     <label class="label" for="year">Years</label>
-    <input class="col-3 float-sm-end border-1" type="text" id="year" /> <br />
+    <span class="col-3 float-sm-end border-1"  id="year"></span> <br />
     <br />
     <label class="label" for="month">Month</label>
-    <input class="col-3 float-sm-end border-1" type="text" id="month" /> <br />
+    <span class="col-3 float-sm-end border-1" id="month"></span> <br />
     <br/>
     <label class="label" for="day">Day</label>
-    <input class="col-3 float-sm-end border-1" type="text" id="day" /> <br />
+    <span class="col-3 float-sm-end border-1" id="day"></span> <br />
 </div>
 </div>
 
         <div class="col-5 float-lg-end">
+            <div class="vr"></div>
             <div class="flex-column container" style="margin-top: 50px;">
                 <button class="btn btn-info" id="btn1">
                    Graph
