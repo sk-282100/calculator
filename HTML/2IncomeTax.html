@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/2IncomeTax.css">
+    <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../JS/IncomeTaxCalculator.js"></script>
+</head>
+
+<body class="container">
+    
+    <div class="rows">
+        <div class="mt-2 calculator">
+            <h4 class="mb-2">Enter Basic Details</h4>
+        </div>
+        <div class="container col-lg-6 float-lg-start div">
+            
+            <form action="SalaryDetails.html" class="mt-3">
+                <div class="container col-6 float-lg-start">
+                    <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
+                    <br/>
+                   
+                <label for="age" class="label1">Age:</label>
+                <select name="age" id="age" style="height: 30px;" required>
+                <option value="18 to 59">18 to 59</option>
+                <option value="59 or above">59 or above</option>
+                </select><br/><br/>
+
+               <label for="city" class="label1">Resident city type:</label>
+                <select name="city" id="city" style="height: 30px;" required>
+                <option value="Metro">Metro</option>
+                <option value="Urban">Urban</option>
+                <option value="Rural">Rural</option>
+                </select><br/><br/>
+
+                <label for="Recidence" class="label1">Resident Type:</label>         
+                <input type="radio" name="RecidenceS" value="Self owned" checked="checked" required >Self owned</input>
+                <input type="radio" name="RecidenceS" value="Rented"required>Rented</input><br/><br/>
+
+
+                <label for="occupation" class="label1">Occupation:</label>
+                <select name="occupation" id="occupation" style="height: 30px;" required>
+                <option value="Self Employed">Self Employed</option>
+                <option value="Government">Government</option>
+                <option value="Private ">Private</option>
+                </select><br/><br/>
+
+              <div class="py-3">
+                <button class="btn btn-primary" onclick="myFunction()">Continue</button>
+              </div>
+               
+            </form>
+        </div>
+        
+    </div>
+</body>
+
+</html>

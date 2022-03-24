@@ -1,83 +1,202 @@
 <!DOCTYPE html>
 <html> <head>
-    <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../CSS/IncometaxCalculator.css">
-  </head>
-  <script>
-    function myFunction() {
-      var age = document.getElementById("age").value
-      sessionStorage.setItem("age",age);
+<link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
 
-      // sessionStorage.setItem("age", "age");
-      // let age = sessionStorage.getItem("age");
-      // document.getElementById("age").innerHTML = age;
-      
-      var city = document.getElementById("city").value
-      sessionStorage.setItem("city",city);
-      
-      var radios = document.getElementsByName('RecidenceS');
-      for (var i = 0, length = radios.length; i < length; i++) {
-        if (radios[i].checked) {
-   
-                var radio_value =radios[i].value;
-                       }
-                    }
-      sessionStorage.setItem("Resident Type",radio_value);
-      
-      
-      var occupation = document.getElementById("occupation").value
-      sessionStorage.setItem("occupation",occupation);
+<script src="../Plugin/library/jquery-3.6.0.min.js"></script>
+<script src="../Plugin/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="../JS/IncomeTaxCalculator.js"></script>
+</head>
 
-      location.replace("SalaryDetails.html")
-     
-    }
-    </script>
-    <body>     
-      <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 700px;" >
-        <div class="row">              
-            <div class="float-md-start div1">
-              <button class="btn btn-primary" onclick="location.href = './index.html'">Home</button><br/><br/><br/><br/>
-            </div>                     
-        </div>
-              
-      <form action="SalaryDetails.html">
-        <div >     
-            <div class="float-md-start div1" >
-              <h5>Enter Basic Details</h5>
-              <br/>
+<body>     
+<div class="col-md-5 container " style="border: 3px solid #0099CC; " >
+<div class="row mb-3 mt-2">          
+<div>    
+<button class="btn btn-primary " onclick="location.href = './index.html'"> Homepage </button>
+</div>
+</div>
+<!-- Start: Basic Details -->
+<div class="row" >
+<div class="">
+<h5 class="font-weight-bold">Enter Basic Details</h5>
+</div>
+</div>
 
-              <label for="age" class="label1">Age:</label><br/>
-                <select name="age" id="age" style="height: 30px;" required>
-                <option value="18 to 59">18 to 59</option>
-                <option value="59 or above">59 or above</option>
-                </select><br/><br/> 
+<div class="row mb-3" >
+<h6 for="age" class="label1">Age:</label>
+<div>
+<select name="age" id="age" class="form-select w-auto"  required>
+<option value="1">18 to 59</option>
+<option value="2">59 or above</option>
+</select>
+</div>
+</div>
 
-              <label for="city" class="label1">Resident city type:</label>
-                <br/>
-                <select name="city" id="city" style="height: 30px;" required>
-                <option value="Metro">Metro</option>
-                <option value="Urban">Urban</option>
-                <option value="Rural">Rural</option>
-                </select><br/><br/>
+<div class="row mb-3">
+<h6 for="city" class="label1">Resident city type:</label>   
+<div class="">           
+<select name="city" id="city" class="form-select w-auto"  required>
+<option value="Metro">Metro</option>
+<option value="Urban">Urban</option>
+<option value="Rural">Rural</option>
+</select>
+</div>
+</div>
 
-              <label for="Recidence" class="label1">Resident Type:</label><br/>          
-              <input type="radio" name="RecidenceS" value="Self owned" checked="checked" required >Self owned</input>
-              <input type="radio" name="RecidenceS" value="Rented"required>Rented</input><br/><br/>
+<div class="row mb-3">
+<h6 for="Recidence" class="label1">Resident Type:</label>    
+<div class=" d-flex">
+<div class="form-check">
+<input class="form-check-input" type="radio" name="RecidenceS" id="selfOwned" checked="checked">
+<label class="form-check-label" for="selfOwned">
+Self owned
+</label>
+</div>
 
+<div class="form-check mx-3">
+<input class="form-check-input" type="radio" name="RecidenceS" id="rented" >
+<label class="form-check-label" for="rented">
+Rented
+</label>
+</div>
 
-              <label for="occupation" class="label1">Occupation:</label><br/>
-                <select name="occupation" id="occupation" style="height: 30px;" required>
-                <option value="Self Employed">Self Employed</option>
-                <option value="Government">Government</option>
-                <option value="Private ">Private</option>
-                </select>
+</div>
+</div>
+<div class="row mb-3">
+<h6 for="occupation" class="label1">Occupation:</label>
+<div class="">
+<select name="occupation" id="occupation"  class="form-select w-auto"  required>
+<option value="Self Employed">Self Employed</option>
+<option value="Government">Government</option>
+<option value="Private ">Private</option>
+</select>
+</div>
+</div>
 
-              <br/><br/><br/>
-              <button class="btn btn-primary" onclick="myFunction()">Continue</button><br/><br/>
-               
-        </div>
-      </form>
-    </div>
-    </div>
+<!-- End: Basic Details -->
+
+<!-- Start: Salary Details -->
+<div class="d-none" id="dvsalaryDetail" >
+<div class="row" >
+<div class="">
+<h5 class="font-weight-bold"> Basic Salary Details</h5>
+</div>
+</div>
+
+<div class="row" >
+<nav>
+<ul class="nav nav-tabs" id="salaryDetailTab" role="tablist">
+<li class="nav-item" role="presentation">
+<button class="nav-link active" id="monthlyTab" data-bs-toggle="tab" data-bs-target="#monthlySalary" type="button" role="tab" aria-controls="monthlySalary" aria-selected="true">Month</button>
+</li>
+<li class="nav-item" role="presentation">
+<button class="nav-link" id="AnnualTab" data-bs-toggle="tab" data-bs-target="#AnnualSalary" type="button" role="tab" aria-controls="AnnualSalary" aria-selected="false">Annual</button>
+</li>
+</ul>
+</nav>
+<div class="tab-content" id="myTabContent">
+<!-- Start: Month Salary Details -->
+<div class="tab-pane fade show active mt-3" id="monthlySalary" role="tabpanel" aria-labelledby="home-tab">
+<div class="row mb-3" >
+<h6 for="age" class="label1">Monthly Basic Salary:</label>
+<div>
+<input type="text" id="basic1" class="form-control w-50"/>
+</div>
+</div>
+
+<div class="row mb-3" >
+<h6 for="age" class="label1">Monthly HRA Received:</label>
+<div>
+<input type="text" id="hra1" class="form-control w-50"/>
+</div>
+</div>
+
+<div class="row mb-3" >
+<h6 for="age" class="label1">Monthly Dearness allowance:</label>
+<div>
+<input type="text" id="da1" class="form-control w-50"/>
+</div>
+</div>
+
+<div class="row mb-3" >
+<h6 for="age" class="label1">Monthly special allowance:</label>
+<div>
+<input type="text" id="sa1" class="form-control w-50"/>
+</div>
+</div>
+
+<div class="row mb-3" >
+<h6 for="age" class="label1">Monthly Employee EPF contribution by self:</label>
+<div>
+<input type="text" id="epf1" class="form-control w-50"/>
+</div>
+</div>
+
+<div class="row mb-3" >
+<h6 for="age" class="label1">Monthly Gross Salary:</label>
+<div>
+<input type="text" id="Gross1" class="form-control w-50"/>
+</div>
+</div>
+</div>
+<!-- End: Month Salary Details -->
+
+<!-- Start: Annual Salary Details -->
+<div class="tab-pane fade mt-3" id="AnnualSalary" role="tabpanel" aria-labelledby="profile-tab">
+<div class="row mb-3" >
+<h6 for="age" class="label1">Annual Basic Salary:</label>
+<div>
+<input type="text" id="basic2" class="form-control w-50"/>
+</div>
+</div>  
+
+<div class="row mb-3" >
+<h6 for="age" class="label1">Annual HRA Received:</label>
+<div>
+<input type="text" id="hra2" class="form-control w-50"/>
+</div>
+</div> 
+
+<div class="row mb-3" >
+<h6 for="age" class="label1">Annual Dearness allowance:</label>
+<div>
+<input type="text" id="da2" class="form-control w-50"/>
+</div>
+</div>  
+
+<div class="row mb-3" >
+<h6 for="age" class="label1">Annual special allowance:</label>
+<div>
+<input type="text" id="sa2" class="form-control w-50"/>
+</div>
+</div> 
+
+<div class="row mb-3" >
+<h6 for="age" class="label1">Annual Employee EPF contribution by self:</label>
+<div>
+<input type="text" id="epf2" class="form-control w-50"/>
+</div>
+</div>  
+
+<div class="row mb-3" >
+<h6 for="age" class="label1">Annual Gross Salary:</label>
+<div>
+<input type="text" id="Gross2" class="form-control w-50"/>
+</div>
+</div> 
+
+</div>
+</div>
+<!-- End: Annual Salary Details -->
+</div>
+<!-- End: Salary Details -->
+</div>
+<div class="row mb-3">
+<div class="">
+<button class="btn btn-primary" onclick="myFunction()">Continue</button>
+</div>
+</div>
+
+</div>
+</div>
 </body>
 </html>

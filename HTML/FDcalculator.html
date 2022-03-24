@@ -23,54 +23,57 @@
     <form class="" id="form" action="">
 
       <div class="container">
+        <div class="my-2">
         <label> Deposit Amount </label>
-        <input type="text" class="float-end inputText" id="rangePrimary" readonly value="1000" />
+        <input type="text" class="float-end inputText" id="depositeAmount" readonly  value="1,000" />
+<input type="hidden" id="hddepositeAmount" value="1000">
+        <input id="depositeAmountSlider" class="slider" type="range" name="range" step="500" min="1000" max="100000" value="1000"
+          >
+        <datalist id="depositeAmountSlider">
+          <option value="1,000" label="1,000"></option>
 
-        <input id="slider" class="slider" type="range" name="range" step="500" min="1000" max="100000" value="1000"
-          onchange="rangePrimary.value=value">
-        <datalist id="slider">
-          <option value="1000" label="1000"></option>
+          <option value="50" label="50,000"></option>
 
-          <option value="50" label="50000"></option>
-
-          <option value="100" label="100000"></option>
+          <option value="100" label="1,00,000"></option>
         </datalist>
-
+      </div>
+      <div class="my-2">
         <label>Interest rate in %</label>
-        <input type="text" class="float-end inputText" id="rangePrimary1" readonly value="1" />
+        <input type="text" class="float-end inputText" id="roi" readonly value="1%" />
+        <input type="hidden" id="hdroi" value="1">
+        <input id="roiSlider" class="slider" type="range" name="range" step="1" min="1" max="20" value="1"
+         >
+        <datalist id="roiSlider">
+          <option value="1" label="1%"></option>
 
-        <input id="slider1" class="slider" type="range" name="range" step="1.00" min="1.00" max="20.00" value="1"
-          onchange="rangePrimary1.value=value">
-        <datalist id="slider1">
-          <option value="1" label="1"></option>
+          <option value="5" label="10%"></option>
 
-          <option value="5" label="10"></option>
-
-          <option value="10" label="20"></option>
+          <option value="10" label="20%"></option>
         </datalist>
-
-        <label for="int">Tenure</label>
-        <select name="interest" id="int" style="height: 30px;">
+      </div>
+      <div class="my-2">
+        <label for="tenure">Tenure</label>
+        <select name="tenure" id="tenure" >
           <option value=365 class="dropdown-item">Days</option>
           <option value=12 class="dropdown-item">Monthly</option>
           <option value=1 class="dropdown-item">Yearly</option>
         </select>
 
-        <input type="text" class="float-end inputText" id="rangePrimary2" readonly value="1" />
+        <input type="text" class="float-end inputText" id="tenureValue" readonly value="1" />
 
-        <input id="slider2" type="range" name="range" step="1" min="1" max="100" value="1"
+        <input id="tenureSlider" type="range" name="range" step="1" min="1" max="100" value="1"
           onchange="rangePrimary2.value=value">
-        <datalist id="slider2">
+        <datalist id="tenureSlider">
           <option value="1" label="1"></option>
           <option value="50" label="50"></option>
           <option value="100" label="100"></option>
         </datalist>
-
-
+      </div>
+<div class="my-2">
         <label>Type of fixed deposit</label>
         <div >
           <label class="radio-inline" style="margin-right: 10px;">
-            <input class="fix-deposit-radio " type="radio" style="margin-right: 5px; " value=12 name="optradio">
+            <input class="fix-deposit-radio " type="radio" style="margin-right: 5px; " value=12 name="optradio" checked>
             Monthly Payout
           </label>
           <label class="radio-inline" style="margin-right: 10px;">
@@ -85,7 +88,7 @@
             <input type="radio" name="optradio" style="margin-right: 5px;">Reinvestment/Cumulative
           </label>
         </div>
-        
+      </div>   
         <br />
         <div class="calculate">
           <button type="button" id="calculate-button" class="btn btn-primary"> Calculate </button>
@@ -101,5 +104,10 @@
 
 </body>
 
+<<<<<<< HEAD
 
   
+=======
+</html>
+
+>>>>>>> 77952f3505ef96b16b5b3472f09ba0f0dcb69961

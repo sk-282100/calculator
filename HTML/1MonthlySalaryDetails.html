@@ -2,39 +2,15 @@
 <html> <head>
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/SalaryDetails.css">
+    <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../JS/1MonthlySalaryDetails.js"></script>
   </head>
-  <script>
-    function myFunction() {
-   
-        // for monthly
-      var basic1 = document.getElementById("basic1").value
-      sessionStorage.setItem("basic1",basic1);
-
-      var hra1 = document.getElementById("hra1").value
-      sessionStorage.setItem("hra1",hra1);
-
-      var da1 = document.getElementById("da1").value
-      sessionStorage.setItem("da1",da1);
-
-      var sa1 = document.getElementById("sa1").value
-      sessionStorage.setItem("sa1",sa1);
-
-      var epf1 = document.getElementById("epf1").value
-      sessionStorage.setItem("epf1",epf1);
-
-      var Gross1 = document.getElementById("Gross1").value
-      sessionStorage.setItem("Gross1",Gross1);
-
-
-   location.replace("OtherIncomeDetails.html")
- }
-</script>
-
+  
     <body>
-        <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 700px;" >
+        <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 550px;" >
             <div class="row">              
                 <div class="float-md-start div1">
-                <button class="btn btn-primary col-md-2" onclick="location.href = './index.html'">HomePage</button><br/><br/><br/>
+                  <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
             </div>
     
     <form action="OtherIncomeDetails.html"  >
@@ -45,11 +21,11 @@
                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                   </svg></a>&nbsp;<h5>Salary Details</h5> 
               </div>
-        
-            <br/>       
-            <div>
+              
+            <div class="mb-3">
                 <h5>Monthly</h5>
-                <div class="details">    
+                <div class="details">  
+                    
                   <input type="text"style="width: 350px;" class="basic1" id="basic1" placeholder="Monthly Basic Salary" />
                   <br/><br/>
         

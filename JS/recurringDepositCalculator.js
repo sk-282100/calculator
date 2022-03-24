@@ -17,42 +17,28 @@ $(document).ready(function () {
 });
 
 function showDetails() {
-  var monthlyInvestment = $("#rangePrimary").val();
-  var intrestRate = $("#rangePrimary1").val();
-  var timePeriod = $("#rangePrimary2").val();
-  var compoundIntrest = $("#int").val();
-  console.log(monthlyInvestment);
-  console.log(intrestRate);
-  console.log(timePeriod);
-  console.log(compoundIntrest);
 
-  var totalInvestment = monthlyInvestment;
-
-  if (compoundIntrest == 4) {
-    // var maturityAmout=monthlyInvestment*Math.pow(1+((intrestRate/100)/monthlyInvestment),monthlyInvestment*(timePeriod/4))
-    var maturityAmout =
-      monthlyInvestment * [(1 + intrestRate / 100 / 4) ** (4 * timePeriod)];
-    // var maturityAmout=monthlyInvestment*[(1+(intrestRate/400))*(timePeriod/4)-1]/1-(1-intrestRate/400)*(-1/3);
-    maturityAmout = maturityAmout.toFixed(2);
+  var p = $("#rangePrimary").val(),
+    i = $("#rangePrimary1").val(),
+    n = $("#rangePrimary2").val(),
+    compoundIntrest = $("#int").val();
+  if (compoundIntrest == 3) {
+    (e = Math.pow(1 + i / 400, n / 3)), (d = Math.pow(1 + i / 400, -1 / 3));
+    console.log("4");
   } else if (compoundIntrest == 6) {
-    var maturityAmout =
-      monthlyInvestment * [(1 + intrestRate / 100 / 6) ** (6 * timePeriod)];
-    maturityAmout = maturityAmout.toFixed(2);
-  } else if (compoundIntrest == 1) {
-    var maturityAmout =
-      monthlyInvestment * [(1 + intrestRate / 100 / 1) ** (1 * timePeriod)];
-    maturityAmout = maturityAmout.toFixed(2);
+    (e = Math.pow(1 + i / 200, n / 6)), (d = Math.pow(1 + i / 200, -1 / 6));
+    console.log("6");
+  } else if (compoundIntrest == 12) {
+    (e = Math.pow(1 + i / 100, n / 12)), (d = Math.pow(1 + i / 100, -1 / 12));
+    console.log("1");
   } else {
-    var maturityAmout =
-      monthlyInvestment * [(1 + intrestRate / 100 / 12) ** (12 * timePeriod)];
-    maturityAmout = maturityAmout.toFixed(2);
+    (e = Math.pow(1 + i / 1200, n / 1)), (d = Math.pow(1 + i / 1200, -1 / 1));
+    console.log("12");
   }
-
-  var totalIntrest = maturityAmout - monthlyInvestment;
-  totalIntrest = totalIntrest.toFixed(2);
-  $("#tinv").html(totalInvestment);
-  $("#tint").html(totalIntrest);
-  $("#matval").html(maturityAmout);
+  m = (p * (e - 1)) / (1 - d);
+  $("#matval").text("Rs." + m.toFixed(0));
+  $("#tinv").text("Rs." + p * n);
+  $("#tint").text("Rs." + (m - p * n).toFixed(0));
 
   var chart = new CanvasJS.Chart("chartContainer", {
     animationEnabled: true,
@@ -62,14 +48,15 @@ function showDetails() {
         showInLegend: true,
         type: "pie",
         startAngle: 240,
-       // yValueFormatString: "##0.00\"%\"",
+        // yValueFormatString: "##0.00\"%\"",
         indexLabel: "{label} {y}",
         dataPoints: [
-          { y: totalInvestment, label: "Total Investment",name: "Total Investment" },
-          { y: totalIntrest, label:"Total Intrest", name: "Total Intrest" },
+          { y: p * n, label: "Total Investment", name: "Total Investment" },
+          { y: m - p * n, label: "Total Intrest", name: "Total Intrest" },
         ],
       },
     ],
   });
   chart.render();
 }
+function rd() {}

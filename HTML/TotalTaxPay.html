@@ -2,19 +2,16 @@
 <html> <head>
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/TotalTaxPayable.css">
+    <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../JS/TotalTaxPay.js"></script>
+    
   </head>
-  <script>
-        function myFunction() {
-                let Totaltax = sessionStorage.getItem("Totaltax");
 
-                // location.replace(" ")
-            }
-  </script>
     <body>    
-      <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 700px;" >
+      <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 550px;" >
         <div class="row">              
           <div class="float-md-start div1">
-              <button class="btn btn-primary" onclick="location.href = './index.html'">Home</button><br/><br/><br/>
+            <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
                </div>  
       <form>  
         <div class="float-md-start div1" >
@@ -23,34 +20,35 @@
           <div class="d-flex p-2">
             <a href="TaxDeductionDetails.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-              </svg></a>&nbsp;<h5>Total Tax Payable</h5> 
+              </svg></a>&nbsp;<h5>Total Tax Payable</h5> <br/><br/> 
           </div>
-          
-          <!-- <h3>Total Tax Payable</h3>  -->
-          
-          <br><br><br>
-            <br>
+
+          <div class="fa fa-inr">Total Tax: &#8377;</div><br><br>
+                        
               <table>
+
                 <tr>
                   <td>Gross Income</td>
-                  <td></td>
+                  <td id="gross-income"></td>
                 </tr>
                 <tr>
                   <td>Capital Gain</td>
-                  <td></td>
-
+                  <td id="capital-gain"></td>
                 <tr>
                   <td>Tax Deduction</td>
-                  <td></td>
-
+                  <td id="tax-deduction"></td>
                 </tr>
                 <tr>
                   <td>Tax Excemptions</td>
-                  <td></td>
+                  <td id="tax-excemption"></td>
+                </tr>
+                <tr>
+                  <td>Total Income</td>
+                  <td id="total-income"></td>
                 </tr>
               </table><br/><br/>  
 
-              <button class="btn btn-primary" onclick="myFunction()">Recalculate</button><br/><br/>
+              <button class="btn btn-primary" onclick="recalculate()">Recalculate</button><br/><br/>
             
         </div>
       </form> 

@@ -53,14 +53,14 @@
                     </datalist>
                     <label for="int">Interest Compounding:</label>
                     <select name="interest" id="int" required>
-                        <option class="dropdown-item" value="4">Quarterly</option>
+                        <option class="dropdown-item" value="3">Quarterly</option>
                         <option class="dropdown-item" value="6">Half-Yearly</option>
-                        <option class="dropdown-item" value="1">Yearly</option>
-                        <option class="dropdown-item" value="12">Monthly</option>
+                        <option class="dropdown-item" value="12">Yearly</option>
+                        <option class="dropdown-item" value="1">Monthly</option>
                     </select>
                     <div class="py-3">
                         <button type="button" class="btn btn-primary" id="show-maturity-value"
-                            onclick="showDetails()">Show
+                            onclick="rd()">Show
                             Maturity Value</button>
                         <br />
                         <div class="d-flex flex-row div2 mt-3">
@@ -85,6 +85,7 @@
 
         </div>
     </div>
+
 </body>
 
 </html>
