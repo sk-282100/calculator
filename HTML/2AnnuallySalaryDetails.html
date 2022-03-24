@@ -2,39 +2,15 @@
 <html> <head>
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/SalaryDetails.css">
+    <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../JS/2AnnuallySalaryDetails.js"></script>
   </head>
-  <script>
-    function myFunction() {
-   
-        // for annually
-      var basic2 = document.getElementById("basic2").value
-      sessionStorage.setItem("basic2",basic2);
-
-      var hra2 = document.getElementById("hra2").value
-      sessionStorage.setItem("hra2",hra2);
-
-      var da2 = document.getElementById("da2").value
-      sessionStorage.setItem("da2",da2);
-
-      var sa2 = document.getElementById("sa2").value
-      sessionStorage.setItem("sa2",sa2);
-
-      var epf2 = document.getElementById("epf2").value
-      sessionStorage.setItem("epf2",epf2);
-
-      var Gross2 = document.getElementById("Gross2").value
-      sessionStorage.setItem("Gross2",Gross2);
-
-
-   location.replace("OtherIncomeDetails.html")
- }
-</script>
 
     <body>
-        <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 700px;" >
+        <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 550px;" >
             <div class="row">              
                 <div class="float-md-start div1">
-                <button class="btn btn-primary col-md-2" onclick="location.href = './index.html'">HomePage</button><br/><br/><br/>
+                  <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
             </div>
     
     <form action="OtherIncomeDetails.html"  >

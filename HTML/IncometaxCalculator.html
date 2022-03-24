@@ -2,78 +2,62 @@
 <html> <head>
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/IncometaxCalculator.css">
+    <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../JS/IncomeTaxCalculator.js"></script>
   </head>
-  <script>
-    function myFunction() {
-      var age = document.getElementById("age").value
-      sessionStorage.setItem("age",age);
-
-      // sessionStorage.setItem("age", "age");
-      // let age = sessionStorage.getItem("age");
-      // document.getElementById("age").innerHTML = age;
-      
-      var city = document.getElementById("city").value
-      sessionStorage.setItem("city",city);
-      
-      var radios = document.getElementsByName('RecidenceS');
-      for (var i = 0, length = radios.length; i < length; i++) {
-        if (radios[i].checked) {
-   
-                var radio_value =radios[i].value;
-                       }
-                    }
-      sessionStorage.setItem("Resident Type",radio_value);
-      
-      
-      var occupation = document.getElementById("occupation").value
-      sessionStorage.setItem("occupation",occupation);
-
-      location.replace("SalaryDetails.html")
-     
-    }
-    </script>
+  
     <body>     
-      <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 700px;" >
+      <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 400px;" >
         <div class="row">              
             <div class="float-md-start div1">
-              <button class="btn btn-primary" onclick="location.href = './index.html'">Home</button><br/><br/><br/><br/>
-            </div>                     
+              <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
+                </div>                     
         </div>
               
-      <form action="SalaryDetails.html">
-        <div >     
+      <form action="SalaryDetails.html" class="mt-3">
+            
             <div class="float-md-start div1" >
-              <h5>Enter Basic Details</h5>
-              <br/>
+              <div class="mb-3">
+                <h5 class="font-weight-bold">Enter Basic Details</h5>
+              </div>
+            
+              <div class="mb-3">
+                <label for="age" class="label1">Age:</label>
+                <div class="mb-3">
+                  <select name="age" id="age" style="height: 30px;" required>
+                    <option value="18 to 59">18 to 59</option>
+                    <option value="59 or above">59 or above</option>
+                    </select>
+                </div> 
+              </div>
 
-              <label for="age" class="label1">Age:</label><br/>
-                <select name="age" id="age" style="height: 30px;" required>
-                <option value="18 to 59">18 to 59</option>
-                <option value="59 or above">59 or above</option>
-                </select><br/><br/> 
+              <div class="mb-3">
+                <label for="city" class="label1">Resident city type:</label>              
+                  <select name="city" id="city" style="height: 30px;" required>
+                  <option value="Metro">Metro</option>
+                  <option value="Urban">Urban</option>
+                  <option value="Rural">Rural</option>
+                  </select>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="Recidence" class="label1">Resident Type:</label>          
+                  <input type="radio" name="RecidenceS" value="Self owned" checked="checked" required >Self owned</input>
+                  <input type="radio" name="RecidenceS" value="Rented"required>Rented</input>
+                </div>
 
-              <label for="city" class="label1">Resident city type:</label>
-                <br/>
-                <select name="city" id="city" style="height: 30px;" required>
-                <option value="Metro">Metro</option>
-                <option value="Urban">Urban</option>
-                <option value="Rural">Rural</option>
-                </select><br/><br/>
-
-              <label for="Recidence" class="label1">Resident Type:</label><br/>          
-              <input type="radio" name="RecidenceS" value="Self owned" checked="checked" required >Self owned</input>
-              <input type="radio" name="RecidenceS" value="Rented"required>Rented</input><br/><br/>
-
-
-              <label for="occupation" class="label1">Occupation:</label><br/>
-                <select name="occupation" id="occupation" style="height: 30px;" required>
-                <option value="Self Employed">Self Employed</option>
-                <option value="Government">Government</option>
-                <option value="Private ">Private</option>
-                </select>
-
-              <br/><br/><br/>
-              <button class="btn btn-primary" onclick="myFunction()">Continue</button><br/><br/>
+                <div class="mb-3">
+                  <label for="occupation" class="label1">Occupation:</label>
+                  <select name="occupation" id="occupation" style="height: 30px;" required>
+                  <option value="Self Employed">Self Employed</option>
+                  <option value="Government">Government</option>
+                  <option value="Private ">Private</option>
+                  </select>
+                </div>
+ 
+              <div class="mb-3">
+                <button class="btn btn-primary" onclick="myFunction()">Continue</button>
+              </div>
                
         </div>
       </form>

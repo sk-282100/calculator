@@ -2,88 +2,15 @@
 <html> <head>
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/TaxDeduction.css">
+    <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../JS/TaxDeductionDetails.js"></script>
   </head>
-  <script>
-            function myFunction() {
-                var epf = document.getElementById("epf").value
-                sessionStorage.setItem("epf",epf);
 
-                var insurance = document.getElementById("insurance").value
-                sessionStorage.setItem("insurance",insurance);
-
-                var nps = document.getElementById("nps").value
-                sessionStorage.setItem("nps",nps);
-
-                var radios = document.getElementsByName('parent');
-                for (var i = 0, length = radios.length; i < length; i++) {
-                    if (radios[i].checked) {
-            
-                            var radio_value =radios[i].value;
-                                }
-                                }
-                sessionStorage.setItem("parent",radio_value);
-
-                var health = document.getElementById("health").value
-                sessionStorage.setItem("health",health);
-
-                var education = document.getElementById("education").value
-                sessionStorage.setItem("education",education);
-
-                var loan = document.getElementById("loan").value
-                sessionStorage.setItem("loan",loan);
-
-                var rent = document.getElementById("rent").value
-                sessionStorage.setItem("rent",estate);
-
-
-
-                var $ = function (id) 
-                    {
-                        return document.getElementById(id);
-                    }
-                    var calculate_tax = function() 
-                    {
-                        var total;
-                        var income = parseFloat( $("income").value);
-                        $("tax").value =  calcTaxes(income);
-                        console.log(tax);
-                        function calcTaxes(amount)
-                        {
-                            var cal= 0;
-                            if(amount < 2.500000)
-                            {
-                            tax = 0;
-                            }
-                            else if( amount >= 2.500000 && amount <= 500000)
-                            {
-                            tax = 0.5; 
-                            }
-                            else if (amount >=4.800000 && amount <=9.8500000)
-                            {
-                            tax = 0.20;
-                            }
-
-                            else{
-                            tax = amount * .10;
-                                }
-                            tax += amount * .153;
-
-                            return tax;   
-                        }
-                    }
-                    window.onload = function () {
-                        $("cal").onclick = calculate_tax;
-                    }
-
-
-                location.replace("TotalTaxPay.html")
-            }
-  </script>
     <body>
-        <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 700px;" >
+        <div class="col-md-5 container " style="border: 3px solid #0099CC; height: 600px;" >
             <div class="row">              
                 <div class="float-md-start div1">
-                <button class="btn btn-primary col-md-2" onclick="location.href = './index.html'">HomePage</button><br/><br/><br/>
+                    <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
             </div>
     
     <form action="TotalTaxPay.html"  >
@@ -97,28 +24,30 @@
         
             <br/>       
             <div class="details">
-                <input type="text"style="width: 350px;" class="epf" id="epf" placeholder="Section 80C deductions excluding EPF" />
-                <br/><br/>
+                <div class="mb-3">
+                    <input type="text"style="width: 350px;" class="epf" id="epf" placeholder="Section 80C deductions excluding EPF" />
+                </div>
+              
 
-                <input type="text"style="width: 350px;" class="insurance" id="insurance" placeholder="Health insurance premium for self/family" />
+                <input type="text"style="width: 350px;" class="selfInsurance" id="selfInsurance" placeholder="Health insurance premium for self/family" />
                 <br/><br/>
 
                 <input type="text"style="width: 350px;" class="nps" id="nps" placeholder="NPS investment under section 80CCD(1B)" />
                 <br/><br/>
 
-                <label for="parent" class="parent">Is any of the parent a senior citizen?</label><br/>       
+                <label for="senior" class="senior">Is any of the parent a senior citizen?</label>       
             
-                <input type="radio" name="parent" value="Self owned" checked="checked">yes</input>
-                <input type="radio" name="parent" value="Rented">no</input><br/><br/>
+                <input type="radio" name="senior" value="yes" checked="checked">yes</input>
+                <input type="radio" name="senior" value="no">no</input><br/><br/>
 
 
-                <input type="text"style="width: 350px;" class="health" id="health" placeholder="Health Insurance premium for parents" />
+                <input type="text"style="width: 350px;" class="parentInsurance" id="parentInsurance" placeholder="Health Insurance premium for parents" />
                 <br/><br/>
 
-                <input type="text"style="width: 350px;" class="education" id="education" placeholder="Interest on education loan " />
+                <input type="text"style="width: 350px;" class="educationLoanInterest" id="educationLoanInterest" placeholder="Interest on education loan " />
                 <br/><br/>
 
-                <input type="text"style="width: 350px;" class="loan" id="loan" placeholder="Home loan interest for self occupied property" />
+                <input type="text"style="width: 350px;" class="homeLoanInterest" id="homeLoanInterest" placeholder="Home loan interest for self occupied property" />
                 <br/><br/>
 
                 <input type="text"style="width: 350px;" class="rent" id="rent" placeholder="Home loan interest for rented property" />
