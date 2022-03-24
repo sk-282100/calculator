@@ -1,67 +1,39 @@
-
-.div{
-    border: 2px solid rgb(17, 171, 223);
-    margin-left: 20px;
-    margin: 0 auto;
-   
-    
+.div {
+  border: 2px solid rgb(17, 171, 223);
+  margin-left: 20px;
+  margin: 0 auto;
 }
-input{
-    height: 20px;
-    width: 100px;
-    text-align: center;
-    border: 1.5px solid #d1d1d1;
-    color: #212529;
-    background-color: #e9ecef;
+input[type="text"] {
+  height: 20px;
+  width: 100px;
+  text-align: center;
+  border: 1.5px solid #d1d1d1;
+  color: #212529;
+  background-color: #e9ecef;
 }
 
-h4{
-    margin-left: 20px;
-    margin: 0 auto;
-    width:fit-content;
+h4 {
+  margin-left: 20px;
+  margin: 0 auto;
+  width: fit-content;
 }
 datalist {
-    display: flex;
-    justify-content: space-between;
-    color: rgb(160, 160, 160);
-    width: 50%;
-  }
-  
- 
-.inputText{
-    /* border: 1.5px solid #81CBF6; */
-}
-#slider,#slider1,#slider2{
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(160, 160, 160);
+  width: 50%;
 }
 
-.calculate button {  
-    display: block;
-    margin-left: auto;
-    margin-right: auto; 
-    background-color: rgb(17, 171, 223) ;
-    color: white;
- 
-    }  
-
-p{
-  margin-bottom: 0;
- }
- .div2{
-     height: 60px;
-     text-align: center;
- }
-.total {
-    background-color: rgb(17, 171, 223) ;
-    color: white;
-    margin-left: auto;
-    margin-right: auto; 
-    width: fit-content;
-    padding: 5px 100px;
-    margin-bottom: 20px;
+#monthlyAmountSlider,
+#rateOfInterestSlider,
+#timePeriodSlider {
+  width: 100%;
 }
 
-.rd-result-text{
-    color: white;
+.div2 {
+  height: 60px;
+  text-align: center;
 }
-
+.rd-result-text {
+  color: white;
+}

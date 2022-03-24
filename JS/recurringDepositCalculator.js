@@ -1,62 +1,69 @@
-$(document).ready(function () {
-  $("#show-maturity-value").on("click", function () {
-    $("#rangePrimary").change(function () {
-      var x = $("#rangePrimary").val();
-      $("#slider").val(x);
-    });
-    $("#rangePrimary1").change(function () {
-      var y = $("#rangePrimary1").val();
-      $("#slider1").val(y);
-    });
-    $("#rangePrimary2").change(function () {
-      var z = $("#rangePrimary2").val();
-      $("#slider2").val(z);
-    });
-    showDetails();
+$(function () {
+  //To get monthly amount and display in proper format 
+  $("#monthlyAmountSlider").change(function () {
+    $("#monthlyInvestment").val(Number($("#monthlyAmountSlider").val()).toLocaleString('en-IN'));
+    $("#hdMonthlyAmount").val(Number($("#monthlyAmountSlider").val()));
   });
-});
 
-function showDetails() {
-
-  var p = $("#rangePrimary").val(),
-    i = $("#rangePrimary1").val(),
-    n = $("#rangePrimary2").val(),
-    compoundIntrest = $("#int").val();
-  if (compoundIntrest == 3) {
-    (e = Math.pow(1 + i / 400, n / 3)), (d = Math.pow(1 + i / 400, -1 / 3));
-    console.log("4");
-  } else if (compoundIntrest == 6) {
-    (e = Math.pow(1 + i / 200, n / 6)), (d = Math.pow(1 + i / 200, -1 / 6));
-    console.log("6");
-  } else if (compoundIntrest == 12) {
-    (e = Math.pow(1 + i / 100, n / 12)), (d = Math.pow(1 + i / 100, -1 / 12));
-    console.log("1");
-  } else {
-    (e = Math.pow(1 + i / 1200, n / 1)), (d = Math.pow(1 + i / 1200, -1 / 1));
-    console.log("12");
-  }
-  m = (p * (e - 1)) / (1 - d);
-  $("#matval").text("Rs." + m.toFixed(0));
-  $("#tinv").text("Rs." + p * n);
-  $("#tint").text("Rs." + (m - p * n).toFixed(0));
-
-  var chart = new CanvasJS.Chart("chartContainer", {
-    animationEnabled: true,
-
-    data: [
-      {
-        showInLegend: true,
-        type: "pie",
-        startAngle: 240,
-        // yValueFormatString: "##0.00\"%\"",
-        indexLabel: "{label} {y}",
-        dataPoints: [
-          { y: p * n, label: "Total Investment", name: "Total Investment" },
-          { y: m - p * n, label: "Total Intrest", name: "Total Intrest" },
-        ],
-      },
-    ],
+  //To get Rate Of Interest value and display in proper format
+  $("#rateOfInterestSlider").change(function () {
+    $("#rateOfInterest").val($("#rateOfInterestSlider").val() + '%');
+    $("#hdRateOfIntrest").val($("#rateOfInterestSlider").val());
   });
-  chart.render();
-}
-function rd() {}
+
+  //To get Time Period value
+  $("#timePeriodSlider").change(function () {
+    $("#timePeriod").val($("#timePeriodSlider").val());
+  });
+
+  //calculating Maturity Amount
+  $("#show-maturity-value").click(function () {
+    var monthlyInvestment = $("#hdMonthlyAmount").val();//p
+    var rateOfInterest = $("#hdRateOfIntrest").val();//i
+    var timePeriod = $("#timePeriod").val();//n
+    var compoundIntrest = $("#interestCompounding").val();
+    if (compoundIntrest == 3) {
+      (e = Math.pow(1 + rateOfInterest / 400, timePeriod / compoundIntrest)), (d = Math.pow(1 + rateOfInterest / 400, -1 / compoundIntrest));
+      console.log("4");
+    } else if (compoundIntrest == 6) {
+      (e = Math.pow(1 + rateOfInterest / 200, timePeriod / compoundIntrest)), (d = Math.pow(1 + rateOfInterest / 200, -1 / compoundIntrest));
+      console.log("6");
+    } else if (compoundIntrest == 12) {
+      (e = Math.pow(1 + rateOfInterest / 100, timePeriod / compoundIntrest)), (d = Math.pow(1 + rateOfInterest / 100, -1 / compoundIntrest));
+      console.log("1");
+    } else {
+      (e = Math.pow(1 + rateOfInterest / 1200, timePeriod / compoundIntrest)), (d = Math.pow(1 + rateOfInterest / 1200, -1 / compoundIntrest));
+      console.log("12");
+    }
+
+    var maturityAmout = (monthlyInvestment * (e - 1)) / (1 - d);
+
+    $("#mValue").text("Rs." + maturityAmout.toFixed(0));
+    $("#tInvestment").text("Rs." + monthlyInvestment * timePeriod);
+    $("#tIntrest").text("Rs." + (maturityAmout - monthlyInvestment * timePeriod).toFixed(0));
+          
+    // pie chart
+    var chart = new CanvasJS.Chart("chartContainer", {
+      animationEnabled: true,
+
+      data: [
+        {
+          showInLegend: true,
+          type: "pie",
+
+          startAngle: 240,
+          // yValueFormatString: "##0.00\"%\"",
+          indexLabel: "{label} {y}",
+          dataPoints: [
+            { y: monthlyInvestment * timePeriod, label: "Total Investment", label: "Total Investment" },
+            { y: maturityAmout - monthlyInvestment * timePeriod, label: "Total Intrest", label: "Total Intrest" },
+          ],
+        },
+      ],
+    });
+    chart.render();
+  })
+})
+
+
+
