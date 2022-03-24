@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../CSS/recurringDepositClosureCalculator.css">
     <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
     <script src="../JS/recurringDepositClosureCalculator.js"></script>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
 
 </head>
 
@@ -16,26 +16,28 @@
     </div>
 
     <div class="row">
-        <div class="container col-sm-10 div bg-info">
+        <div class="container col-lg-10 div bg-info">
             <div class="col-lg-6 float-lg-start">
                 <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
 
-                <div class="container">
+                <div class="container mt-3">
                     <label class="col-md-9">Types of Customer</label>
-                    <input class="flex-column" type="radio" id="normal" name="rd">
-                    <label for="normal">Normal</label><br>
+                    <input class="flex-column" type="radio" value="4" id="normal" name="rd" checked="checked">
+                    <label for="normal">Normal</label>
                     <label class="col-md-9"></label>
-                    <input class="flex-column" type="radio" id="seniorCitizen" name="rd">
+                    <input class="flex-column" type="radio" value="5" id="seniorCitizen" name="rd">
 
                     <label for="seniorCitizen">Senior Citizen</label>
-                    <br />
-                    <label class="label" for="Rdcreation">RD Creation Date</label>
-                    <input class="col-3 float-sm-end border-1" type="date" id="Rdcration"><br /><br />
+
+                    <label class="label " for="Rdcreation">RD Creation Date</label>
+                    <input class="col-4 float-sm-end border-1 calculate" type="date" id="Rdcration"
+                        value="2020-05-23"><br /><br />
                     <label class="label" for="amountOfDeposite">Amount Of Deposite</label>
-                    <input class="col-3 float-sm-end border-1" type="text" id="amountOfDeposite" /> <br />
+                    <input class="col-4 float-sm-end border-1 calculate" type="text" id="amountOfDeposite"
+                        value="10000" /> <br />
                     <br />
-                    <label class="label" for="int">Penalty Rate(Rate Below Notes)</label>
-                    <select name="interest" id="int" class="col-3 float-sm-end border-1">
+                    <label class="label" for="penaltyRate">Penalty Rate(Rate Below Notes)</label>
+                    <select name="interest" id="penaltyRate" class="col-4 float-sm-end border-1 calculate">
                         <option class="dropdown-item" value="0">0</option>
                         <option class="dropdown-item" value="0.5">0.5</option>
                         <option class="dropdown-item" value="1">1</option>
@@ -43,29 +45,58 @@
                     </select>
                     <br /><br />
                     <label class="label" for="matDate">Maturity Date</label>
-                    <input class="col-3 float-sm-end border-1" type="text" id="matDate" placeholder="dd/mm/yyyy" />
+                    <!-- <input class="col-4 float-sm-end border-1" type="text" id="matDate" placeholder="dd/mm/yyyy" /> -->
+                    <p id="date" class="col-4 float-sm-end"></p>
+                    <script>
+                        n = new Date();
+                        y = n.getFullYear();
+                        m = n.getMonth() + 1;
+                        d = n.getDate();
+                        document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+
+
+                    </script>
                     <br />
                     <br />
                     <h6 class="label" style="text-decoration: underline;">Maturity Details</h6>
 
-                    <label class="label" for="rateOfIntrest">Rate Of Interest(%)</label>
-                    <input class="col-3  float-sm-end border-1" type="text" id="rateOfIntrest" /> <br /><br />
-                    <label class="label" for="matAmount">Maturity Amount</label>
-                    <input class="col-3 float-sm-end border-1" type="text" id="matAmount" /> <br /><br />
-                    <label class="label" for="intAmount">Interest Amount</label>
-                    <input class="col-3 float-sm-end border-1" type="text" id="intAmount" /> <br /><br />
-                    <h6 class="label">Tenure</h6>
 
-                    <label class="label" for="year">Years</label>
-                    <input class="col-3 float-sm-end border-1" type="text" id="year" /> <br />
+
+                    <!-- <input type="text" class="col-4  float-sm-end " name="rateOfIntrest" id="rateOfIntrest" value="4.9"
+                        readonly> -->
+                    <p id="rateOfIntrest" class="col-4 float-sm-end">4.9%</p>
+                    <label class="label" for="rateOfIntrest">Rate Of Interest(%)</label></br>
+
+
+
+                    <!-- <input class="col-4  float-sm-end border-1" type="text" id="rateOfIntrest" /> <br /><br /> -->
+                    <!-- <br><input class="col-4 float-sm-end border-1" type="text" id="matAmount" /> -->
+                    </br>
+                    <p id="matAmount" class="col-4 float-sm-end"></p>
+                    <label class="label" for="matAmount">Maturity Amount</label></br>
+
+                    <!-- </br> <input class="col-4 float-sm-end border-1" type="text" id="intAmount" />
+                     -->
+                    </br>
+                    <p id="intrestAmount" class="col-4 float-sm-end"></p>
+                    <label class="label" for="intrestAmount">Interest Amount</label></br>
                     <br />
+                    <h6 class="label">Tenure</h6>
+                    <!-- <input class="col-4 float-sm-end border-1" type="text" id="year" /> -->
+                    </br>
+                    <p id="year" class="col-4 float-sm-end">yr</p>
+                    <label class="label" for="year">Years</label></br>
+                    <br />
+                    <!-- <input class="col-4 float-sm-end border-1" type="text" id="month" /> -->
+                    </br>
+                    <p id="month" class="col-4 float-sm-end">month</p>
                     <label class="label" for="month">Month</label>
-                    <input class="col-3 float-sm-end border-1" type="text" id="month" /> <br />
+                    <br />
                 </div>
             </div>
 
             <div class="col-5 float-lg-end">
-                <div class="flex-column container" style="margin-top: 50px;">
+                <!-- <div class="flex-column container" style="margin-top: 50px;">
                     <button class="btn btn-info" id="btn1">
                         Graph
                     </button>&nbsp;&nbsp;
@@ -98,10 +129,45 @@
                     </tr>
                     </tbody>
                 </table>
+            </div> -->
             </div>
         </div>
-    </div>
+        <script>
+            rd();
+            $(".calculate").on('keyup', function () {
+                rd();
+            });
+            function rd() {
 
+
+
+                var rdCreation = $("#Rdcration").val(),//p
+                    amountOfDeposite = $("#amountOfDeposite").val(),//i
+                    penaltyRate = $("#penaltyRate").val(),//n
+
+
+
+
+
+                    e = Math.pow((1 + amountOfDeposite / 1200), penaltyRate / 1),
+                    d = Math.pow((1 + amountOfDeposite / 1200), (-1 / 1));
+                    
+
+                var past_date = new Date(rdCreation);
+                var current_date = new Date();
+
+                var difference = (current_date.getFullYear() * 12 + current_date.getMonth()) - (past_date.getFullYear() * 12 + past_date.getMonth());
+                console.log(difference);
+               var m = (difference * (e - 1)) / (1 - d);
+                $("#matAmount").text(m.toFixed(2));
+               // $(".n").text("Instalment amount = " + rdCreation*penaltyRate);
+                $("#intrestAmount").text((m - difference * penaltyRate).toFixed(2));
+
+
+                
+            }
+
+        </script>
 </body>
 
 </html>

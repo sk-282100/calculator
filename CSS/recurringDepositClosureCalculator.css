@@ -13,5 +13,7 @@ h4{
 table,td,tr{
     text-align: center;
 }
-
-
+.radiobtn {
+    float: left;
+    margin-left: 2px;
+}
