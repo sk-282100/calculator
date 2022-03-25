@@ -1,173 +1,184 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/recurringDepositClosureCalculator.css">
     <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
     <script src="../JS/recurringDepositClosureCalculator.js"></script>
-    <!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 </head>
 
-<body>
+<body class="container">
     <div class="mt-3 calculator">
-        <h4 class="mb-2 rows">Recuring Deposit Closure Calculator</h4>
+        <center>
+            <h4 class="mb-2">Recuring Deposit Closure Calculator</h4>
+        </center>
     </div>
-
-    <div class="row">
-        <div class="container col-lg-10 div bg-info">
-            <div class="col-lg-6 float-lg-start">
+    <div class="row" style="border: 3px solid #0099CC; ">
+        <div class="col-8 mb-3 mt-2">
+            <div>
                 <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-flex justify-content-start">
 
-                <div class="container mt-3">
-                    <label class="col-md-9">Types of Customer</label>
-                    <input class="flex-column" type="radio" value="4" id="normal" name="rd" checked="checked">
-                    <label for="normal">Normal</label>
-                    <label class="col-md-9"></label>
-                    <input class="flex-column" type="radio" value="5" id="seniorCitizen" name="rd">
+                <div class="col-lg-6">
+                    <div class="mb-2">
+                        <label class="col-md-8">Types of Customer</label>
+                        <input class="flex-column form-check-input" type="radio" value="4" id="normal" name="rd"
+                            checked="checked">
+                        <label class="form-check-label" for="normal">Normal</label>
 
-                    <label for="seniorCitizen">Senior Citizen</label>
+                        <label class="col-md-8"></label>
+                        <input class="flex-column form-check-input" type="radio" value="5" id="seniorCitizen" name="rd">
+                        <label class=" form-check-label" for="seniorCitizen">Senior Citizen</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"> <label class="mb-3 " for="rdCrationDate">RD Creation Date</label></div>
+                        <div class="col-8"> <input class="float-sm-end form-control-sm " type="date"
+                                style="width: 180px;" id="rdCrationDate" value="2020-03-25"></div>
 
-                    <label class="label " for="Rdcreation">RD Creation Date</label>
-                    <input class="col-4 float-sm-end border-1 calculate" type="date" id="Rdcration"
-                        value="2020-05-23"><br /><br />
-                    <label class="label" for="amountOfDeposite">Amount Of Deposite</label>
-                    <input class="col-4 float-sm-end border-1 calculate" type="text" id="amountOfDeposite"
-                        value="10000" /> <br />
-                    <br />
-                    <label class="label" for="penaltyRate">Penalty Rate(Rate Below Notes)</label>
-                    <select name="interest" id="penaltyRate" class="col-4 float-sm-end border-1 calculate">
-                        <option class="dropdown-item" value="0">0</option>
-                        <option class="dropdown-item" value="0.5">0.5</option>
-                        <option class="dropdown-item" value="1">1</option>
+                    </div>
 
-                    </select>
-                    <br /><br />
-                    <label class="label" for="matDate">Maturity Date</label>
-                    <!-- <input class="col-4 float-sm-end border-1" type="text" id="matDate" placeholder="dd/mm/yyyy" /> -->
-                    <p id="date" class="col-4 float-sm-end"></p>
-                    <script>
-                        n = new Date();
-                        y = n.getFullYear();
-                        m = n.getMonth() + 1;
-                        d = n.getDate();
-                        document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="mb-3" for="amountOfDeposite">Amount Of Deposite</label>
+                        </div>
+                        <div class="col-8">
+                            <input class=" float-sm-end form-control-sm" style="width: 180px;" type="text"
+                                id="amountOfDeposite" value="1000" />
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="penaltyRate">Penalty Rate(Rate Below Notes)</label>
+                        </div>
+                        <div class="col-8">
+                            <select name="interest" id="penaltyRate" class="form-select-sm float-md-end"
+                                style="width: 180px;">
+                                <option class="dropdown-item" value="0">0</option>
+                                <option class="dropdown-item" value="0.5">0.5</option>
+                                <option class="dropdown-item" value="1">1</option>
 
-                    </script>
-                    <br />
-                    <br />
-                    <h6 class="label" style="text-decoration: underline;">Maturity Details</h6>
+                            </select>
+                        </div>
 
+                    </div>
 
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="mb-3" for="matDate">Maturity Date</label>
+                        </div>
+                        <div class="col-8">
+                            <p id="date" class="float-sm-end"></p>
+                            <script>
+                                n = new Date();
+                                y = n.getFullYear();
+                                m = n.getMonth() + 1;
+                                d = n.getDate();
+                                document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+                            </script>
+                        </div>
+                    </div>
+                    <div>
+                        <h6>Maturity Details</h6>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="mb-3" for="rateOfIntrest">Rate Of Interest(%)</label>
+                        </div>
+                        <div class="col-8">
+                            <p id="rateOfIntrest" class="float-sm-end">4.9%</p>
+                        </div>
+                    </div>
 
-                    <!-- <input type="text" class="col-4  float-sm-end " name="rateOfIntrest" id="rateOfIntrest" value="4.9"
-                        readonly> -->
-                    <p id="rateOfIntrest" class="col-4 float-sm-end">4.9%</p>
-                    <label class="label" for="rateOfIntrest">Rate Of Interest(%)</label></br>
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="mb-3" for="matAmount">Maturity Amount</label>
+                        </div>
+                        <div class="col-8">
+                            <p id="matAmount" class="float-sm-end"></p>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="mb-3" for="intrestAmount">Interest Amount</label>
+                        </div>
+                        <div class="col-8">
+                            <p id="intrestAmount" class="float-sm-end"></p>
+                        </div>
+                    </div>
 
+                    <div>
+                        <h6>Tenure</h6>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="mb-3" for="year">Years</label>
+                        </div>
+                        <div class="col-8">
+                            <p id="year" class="float-sm-end "></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="mb-3" for="month">Month</label>
+                        </div>
+                        <div class="col-8">
+                            <p id="month" class="float-sm-end"></p>
+                        </div>
+                    </div>
 
-                    <!-- <input class="col-4  float-sm-end border-1" type="text" id="rateOfIntrest" /> <br /><br /> -->
-                    <!-- <br><input class="col-4 float-sm-end border-1" type="text" id="matAmount" /> -->
-                    </br>
-                    <p id="matAmount" class="col-4 float-sm-end"></p>
-                    <label class="label" for="matAmount">Maturity Amount</label></br>
+                </div>
+                <!-- table -->
 
-                    <!-- </br> <input class="col-4 float-sm-end border-1" type="text" id="intAmount" />
-                     -->
-                    </br>
-                    <p id="intrestAmount" class="col-4 float-sm-end"></p>
-                    <label class="label" for="intrestAmount">Interest Amount</label></br>
-                    <br />
-                    <h6 class="label">Tenure</h6>
-                    <!-- <input class="col-4 float-sm-end border-1" type="text" id="year" /> -->
-                    </br>
-                    <p id="year" class="col-4 float-sm-end">yr</p>
-                    <label class="label" for="year">Years</label></br>
-                    <br />
-                    <!-- <input class="col-4 float-sm-end border-1" type="text" id="month" /> -->
-                    </br>
-                    <p id="month" class="col-4 float-sm-end">month</p>
-                    <label class="label" for="month">Month</label>
-                    <br />
+                <div class="col-8 float-sm-end m-lg-5 ">
+                    <div class=" d-flex">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="graph"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1"> Graph</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="table"
+                                value="option2" checked>
+                            <label class="form-check-label" for="inlineRadio2">Table</label>
+                        </div>
+                    </div>
+
+                    <div class="row p-4">
+                        <table id="showTable" class="table table-bordered border-primary w-auto mx-5 ">
+                            <tr>
+                                <td colspan="2">Financial Year Wise Interest Amount</td>
+                            </tr>
+                            <tr>
+                                <td class="w-auto col-1">Financial Year</td>
+                                <td class="col-1">Interest</td>
+                            </tr>
+                            <tr>
+                                <td class="col-1">
+                                    <span id="finacialYear"> </span>
+                                </td>
+                                <td class="col-1"><span id="intrest"> </span></td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <div class="col-8">
+                        <div id="chartContainer"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-5 float-lg-end">
-                <!-- <div class="flex-column container" style="margin-top: 50px;">
-                    <button class="btn btn-info" id="btn1">
-                        Graph
-                    </button>&nbsp;&nbsp;
-                    <button class="btn btn-info" id="btn2">
-                        Table
-                    </button>
-                </div><br /><br />
-                <div id="chartContainer" style="height: 300px; width: 100%;"></div><br />
-                <table class="container bg-white" id="showtable">
-                    <tr>
-                        <th colspan="2">
-                            Financial year Wise interest Amount
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Financial year
-                        </td>
-                        <td>
-                            interest
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            200
-                        </td>
-                        <td>
-                            400
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div> -->
-            </div>
         </div>
-        <script>
-            rd();
-            $(".calculate").on('keyup', function () {
-                rd();
-            });
-            function rd() {
 
+    </div>
 
-
-                var rdCreation = $("#Rdcration").val(),//p
-                    amountOfDeposite = $("#amountOfDeposite").val(),//i
-                    penaltyRate = $("#penaltyRate").val(),//n
-
-
-
-
-
-                    e = Math.pow((1 + amountOfDeposite / 1200), penaltyRate / 1),
-                    d = Math.pow((1 + amountOfDeposite / 1200), (-1 / 1));
-                    
-
-                var past_date = new Date(rdCreation);
-                var current_date = new Date();
-
-                var difference = (current_date.getFullYear() * 12 + current_date.getMonth()) - (past_date.getFullYear() * 12 + past_date.getMonth());
-                console.log(difference);
-               var m = (difference * (e - 1)) / (1 - d);
-                $("#matAmount").text(m.toFixed(2));
-               // $(".n").text("Instalment amount = " + rdCreation*penaltyRate);
-                $("#intrestAmount").text((m - difference * penaltyRate).toFixed(2));
-
-
-                
-            }
-
-        </script>
 </body>
 
 </html>
