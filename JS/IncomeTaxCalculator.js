@@ -47,9 +47,19 @@
       $('#dvOtherIncome').removeClass('d-none');
     })
     
+    $('#btnBackSalaryDetail').click(function(){
+      $('#dvSalaryDetail').addClass('d-none');
+      $('#dvBasicDetail').removeClass('d-none');
+    })
+
     $('#btnOtherIncome').click(function(){
       $('#dvOtherIncome').addClass('d-none');
       $('#dvCapitalGains').removeClass('d-none');
+    })
+
+    $('#btnBackOtherIncome').click(function(){
+      $('#dvOtherIncome').addClass('d-none');
+      $('#dvSalaryDetail').removeClass('d-none');
     })
 
     $('#btnCapitalGains').click(function(){
@@ -57,8 +67,18 @@
       $('#dvTaxDeductions').removeClass('d-none');
     })
 
+    $('#btnBackCapitalGains').click(function(){
+      $('#dvCapitalGains').addClass('d-none');
+      $('#dvOtherIncome').removeClass('d-none');
+    })
+
     $('#btnTaxDeductions').click(function(){
       $('#dvTaxDeductions').addClass('d-none');
       $('#dvResult').removeClass('d-none');
+    })
+
+    $('#btnBackTaxDeductions').click(function(){
+      $('#dvTaxDeductions').addClass('d-none');
+      $('#dvCapitalGains').removeClass('d-none');
     })
   });
