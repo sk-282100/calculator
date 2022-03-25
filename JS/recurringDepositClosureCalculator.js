@@ -1,11 +1,11 @@
 $(function showGraphTable() {
   $("#graph").click(function () {
-    $("#chartContainer").toggle(300);
-    $("#showTable").hide(300);
+    $("#dvChartResult").toggle(300);
+    $("#dvTableResult").hide(300);
   });
   $("#table").click(function () {
-    $("#showTable").toggle(300);
-    $("#chartContainer").hide(300);
+    $("#dvTableResult").toggle(300);
+    $("#dvChartResult").hide(300);
   });
 });
 
@@ -81,4 +81,8 @@ $(function() {
    
     }
   });
+});
+
+$( document ).ready(function() {
+  $("#penaltyRate").trigger( "change" );
 });

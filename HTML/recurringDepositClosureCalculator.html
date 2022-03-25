@@ -18,47 +18,55 @@
     <div class="row" style="border: 3px solid #0099CC; ">
         <div class="col-8 mb-3 mt-2">
             <div>
-                <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
+                <button class="btn btn-primary " onclick="location.href = './index.html'"> Homepage </button>
             </div>
         </div>
         <div class="row">
             <div class="d-flex justify-content-start">
 
                 <div class="col-lg-6">
-                    <div class="mb-2">
-                        <label class="col-md-8">Types of Customer</label>
+
+                    <div class="row mb-2">
+                        <div class="col-md-8">
+                        <label class="">Types of Customer</label>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="">
                         <input class="flex-column form-check-input" type="radio" value="4" id="normal" name="rd"
                             checked="checked">
                         <label class="form-check-label" for="normal">Normal</label>
-
-                        <label class="col-md-8"></label>
+                    </div>
+                        <div class="">
                         <input class="flex-column form-check-input" type="radio" value="5" id="seniorCitizen" name="rd">
                         <label class=" form-check-label" for="seniorCitizen">Senior Citizen</label>
                     </div>
-                    <div class="row">
-                        <div class="col-4"> <label class="mb-3 " for="rdCrationDate">RD Creation Date</label></div>
-                        <div class="col-8"> <input class="float-sm-end form-control-sm " type="date"
-                                style="width: 180px;" id="rdCrationDate" value="2020-03-25"></div>
+                </div>
+                </div>
+              
+                    <div class="row  mb-2">
+                        <div class="col-8"> <label class="mb-3 " for="rdCrationDate">RD Creation Date</label></div>
+                        <div class="col-4"> <input class="form-control" type="date"
+                                 id="rdCrationDate" value="2020-03-25"></div>
 
                     </div>
 
-                    <div class="row">
-                        <div class="col-4">
-                            <label class="mb-3" for="amountOfDeposite">Amount Of Deposite</label>
-                        </div>
+                    <div class="row mb-2">
                         <div class="col-8">
-                            <input class=" float-sm-end form-control-sm" style="width: 180px;" type="text"
+                            <label class="" for="amountOfDeposite">Amount Of Deposite</label>
+                        </div>
+                        <div class="col-4">
+                            <input class="form-control"  type="text"
                                 id="amountOfDeposite" value="1000" />
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-4">
+                    <div class="row mb-2">
+                        <div class="col-8">
                             <label for="penaltyRate">Penalty Rate(Rate Below Notes)</label>
                         </div>
-                        <div class="col-8">
-                            <select name="interest" id="penaltyRate" class="form-select-sm float-md-end"
-                                style="width: 180px;">
+                        <div class="col-4">
+                            <select name="interest" id="penaltyRate" class="form-select"
+                                >
                                 <option class="dropdown-item" value="0">0</option>
                                 <option class="dropdown-item" value="0.5">0.5</option>
                                 <option class="dropdown-item" value="1">1</option>
@@ -68,11 +76,11 @@
 
                     </div>
 
-                    <div class="row">
-                        <div class="col-4">
+                    <div class="row mb-2">
+                        <div class="col-8">
                             <label class="mb-3" for="matDate">Maturity Date</label>
                         </div>
-                        <div class="col-8">
+                        <div class="col-4">
                             <p id="date" class="float-sm-end"></p>
                             <script>
                                 n = new Date();
@@ -83,50 +91,50 @@
                             </script>
                         </div>
                     </div>
-                    <div>
+                    <div class="row mb-2">
                         <h6>Maturity Details</h6>
                     </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <label class="mb-3" for="rateOfIntrest">Rate Of Interest(%)</label>
+                    <div class="row mb-2">
+                        <div class="col-8 ">
+                            <label class="" for="rateOfIntrest">Rate Of Interest(%)</label>
                         </div>
-                        <div class="col-8">
+                        <div class="col-4">
                             <p id="rateOfIntrest" class="float-sm-end">4.9%</p>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-4">
-                            <label class="mb-3" for="matAmount">Maturity Amount</label>
-                        </div>
+                    <div class="row mb-2">
                         <div class="col-8">
+                            <label class="" for="matAmount">Maturity Amount</label>
+                        </div>
+                        <div class="col-4">
                             <p id="matAmount" class="float-sm-end"></p>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-4">
+                    <div class="row mb-2">
+                        <div class="col-8">
                             <label class="mb-3" for="intrestAmount">Interest Amount</label>
                         </div>
-                        <div class="col-8">
+                        <div class="col-4">
                             <p id="intrestAmount" class="float-sm-end"></p>
                         </div>
                     </div>
 
-                    <div>
+                    <div class="row mb-2">
                         <h6>Tenure</h6>
                     </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <label class="mb-3" for="year">Years</label>
-                        </div>
+                    <div class="row mb-2">
                         <div class="col-8">
+                            <label class="" for="year">Years</label>
+                        </div>
+                        <div class="col-4">
                             <p id="year" class="float-sm-end "></p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mb-2">
                         <div class="col-4">
-                            <label class="mb-3" for="month">Month</label>
+                            <label class="" for="month">Month</label>
                         </div>
                         <div class="col-8">
                             <p id="month" class="float-sm-end"></p>
@@ -136,8 +144,8 @@
                 </div>
                 <!-- table -->
 
-                <div class="col-8 float-sm-end m-lg-5 ">
-                    <div class=" d-flex">
+                <div class="col-lg-6 mx-4">
+                    <div class=" ">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="graph"
                                 value="option1">
@@ -149,9 +157,9 @@
                             <label class="form-check-label" for="inlineRadio2">Table</label>
                         </div>
                     </div>
-
-                    <div class="row p-4">
-                        <table id="showTable" class="table table-bordered border-primary w-auto mx-5 ">
+                    <div class=" ">
+                    <div id="dvTableResult" class="w-50">
+                        <table id="showTable" class="table table-bordered border-primary w-auto">
                             <tr>
                                 <td colspan="2">Financial Year Wise Interest Amount</td>
                             </tr>
@@ -169,9 +177,10 @@
 
                     </div>
 
-                    <div class="col-8">
+                    <div id="dvChartResult">
                         <div id="chartContainer"></div>
                     </div>
+                </div>
                 </div>
             </div>
 
