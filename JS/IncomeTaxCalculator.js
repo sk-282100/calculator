@@ -35,3 +35,30 @@
         tabTrigger.show()
       })
     })
+
+    $( document ).ready(function() {
+    $('#btnBasicDetail').click(function(){
+      $('#dvBasicDetail').addClass('d-none');
+      $('#dvSalaryDetail').removeClass('d-none');
+    })
+
+    $('#btnSalaryDetail').click(function(){
+      $('#dvSalaryDetail').addClass('d-none');
+      $('#dvOtherIncome').removeClass('d-none');
+    })
+    
+    $('#btnOtherIncome').click(function(){
+      $('#dvOtherIncome').addClass('d-none');
+      $('#dvCapitalGains').removeClass('d-none');
+    })
+
+    $('#btnCapitalGains').click(function(){
+      $('#dvCapitalGains').addClass('d-none');
+      $('#dvTaxDeductions').removeClass('d-none');
+    })
+
+    $('#btnTaxDeductions').click(function(){
+      $('#dvTaxDeductions').addClass('d-none');
+      $('#dvResult').removeClass('d-none');
+    })
+  });
