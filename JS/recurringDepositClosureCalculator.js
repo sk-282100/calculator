@@ -178,11 +178,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
   ],
 });
 chart.render();
-  // table value
-  $("#finacialYear").text("FY." + rdCreationDate.getFullYear());
-  $("#intrest").text(
-    (m - p*n).toFixed(2)
-  );
+  
 }
 
 function getTodayDate(){

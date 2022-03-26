@@ -1,113 +1,195 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" href="../Plugin/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../CSS/FDclosurecalculator.css">
+
     <script src="../Plugin/library/jquery-3.6.0.min.js"></script>
     <script src="../JS/FDclosureCalculator.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script>
-      
-        </script>
-    
+
 </head>
 
-<body>
-<div class="mt-3 calculator">
-    <h4 class="mb-2 rows">Fixed Deposit Closure Calculator</h4>  </div>
-
-    <div class="row">
-        <div class="container col-sm-10 div bg-info">
-<div class="col-lg-6 float-lg-start">
-    <button class="btn btn-primary m-2" onclick="location.href = './index.html'"> Homepage </button>
-
-<div class="container">
-    <label class="col-md-9">Types of Customer</label>
-                    <input class="flex-column" type="radio" value="4" id="normal" name="fd" checked="checked">
-                    <label for="normal">Normal</label>
-                    <label class="col-md-9"></label>
-                    <input class="flex-column" type="radio" value="5" id="seniorCitizen" name="fd"> 
-
-                    <label for="seniorCitizen">Senior Citizen</label>
-
-                    <label class="label " for="fdCreation">FD Creation Date</label>
-                    <input class="col-3 float-sm-end border-1" type="date" id="fdCreation" value="2021-01-01"><br /><br />
-                    <label class="label" for="amountOfDeposite">Amount Of Deposite</label>
-                    <input class="col-3 float-sm-end border-1" type="text" id="amountOfDeposite" /> <br />
-    <br />
-    <label class="label" for="penaltyRate">Penalty Rate(Rate Below Notes)</label>
-    <select name="interest" id="penaltyRate" class="col-3 float-sm-end border-1">
-        <option class="dropdown-item"  value="">select penalty</option>
-        <option class="dropdown-item"  value="0">0</option>
-        <option class="dropdown-item" value="0.5">0.5</option>
-        <option class="dropdown-item" value="1">1</option>
-
-    </select>
-    <br /><br />
-    <label class="label" for="matDate">Maturity Date</label>
-    <span  class="col-3 float-sm-end border-1" id="matDate"></span>
-    <br />
-    <br />
-    <h6 class="label" style="text-decoration: underline;">Maturity Details</h6>
-
-    <label class="label" for="rateOfIntrest">Rate Of Interest(%)</label>
-    <span class="col-3  float-sm-end border-1" id="rateOfIntrest1"></span> <br /><br />
-    <label class="label" for="matAmount">Maturity Amount</label>
-    <input class="col-3 float-sm-end border-1" type="text" id="matAmount1" /> <br /><br />
-    <label class="label" for="intAmount">Interest Amount</label>
-    <input class="col-3 float-sm-end border-1" type="text" id="intAmount" /> <br /><br />
-    <h6 class="label">Tenure</h6>
-
-    <label class="label" for="year">Years</label>
-    <span class="col-3 float-sm-end border-1"  id="year"></span> <br />
-    <br />
-    <label class="label" for="month">Month</label>
-    <span class="col-3 float-sm-end border-1" id="month"></span> <br />
-    <br/>
-    <label class="label" for="day">Day</label>
-    <span class="col-3 float-sm-end border-1" id="day"></span> <br />
-</div>
-</div>
-
-        <div class="col-5 float-lg-end">
-            <div class="vr"></div>
-            <div class="flex-column container" style="margin-top: 50px;">
-                <button class="btn btn-info" id="btn1">
-                   Graph
-                </button>&nbsp;&nbsp;
-                <button class="btn btn-info" id="btn2">
-                  Table
-                </button>
-            </div><br/><br/>
-            <div id="chartContainer" style="height: 300px; width: 100%;"></div><br/>
-            <table class="container bg-white" id="showtable">
-                <tr >
-                    <th colspan="2">
-                        Financial year Wise interest Amount
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        Financial year
-                    </td>
-                    <td>
-                        interest
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                       400
-                    </td>
-                    <td>
-                     500
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+<body class="container">
+    <div class="mt-3 calculator">
+        <center>
+            <h4 class="mb-2">Fixed Deposit Closure Calculator</h4>
+        </center>
+    </div>
+    <div class="row" style="border: 3px solid #0099CC; ">
+        <div class="col-8 mb-3 mt-2">
+            <div>
+                <button class="btn btn-primary " onclick="location.href = './index.html'"> Homepage </button>
             </div>
+        </div>
+        <div class="row">
+            <div class="d-flex justify-content-start">
+
+                <div class="col-lg-6">
+
+                    <div class="row mb-2">
+                        <div class="col-md-8">
+                        <label class="">Types of Customer</label>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="">
+                        <input class="flex-column form-check-input" type="radio" value="0" id="normal" name="rd"
+                            checked="checked">
+                        <label class="form-check-label" for="normal">Normal</label>
+                    </div>
+                        <div class="">
+                        <input class="flex-column form-check-input" type="radio" value="0.5" id="seniorCitizen" name="rd">
+                        <label class=" form-check-label" for="seniorCitizen">Senior Citizen</label>
+                    </div>
                 </div>
+                </div>
+              
+                    <div class="row  mb-2">
+                        <div class="col-8"> <label class="mb-3 " for="rdCrationDate">FD Creation Date</label></div>
+                        <div class="col-4"> <input class="form-control" type="date"
+                                 id="rdCrationDate" value="2020-03-25"></div>
+
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-8">
+                            <label class="" for="amountOfDeposite">Amount Of Deposite</label>
+                        </div>
+                        <div class="col-4">
+                            <input class="form-control"  type="text"
+                                id="amountOfDeposite" value="1000" />
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-8">
+                            <label for="penaltyRate">Penalty Rate(Rate Below Notes)</label>
+                        </div>
+                        <div class="col-4">
+                            <select name="interest" id="penaltyRate" class="form-select"
+                                >
+                                <option class="dropdown-item" value="0">0</option>
+                                <option class="dropdown-item" value="0.5">0.5</option>
+                                <option class="dropdown-item" value="1">1</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-8">
+                            <label class="mb-3" for="matDate">Maturity Date</label>
+                        </div>
+                        <div class="col-4">
+                            <!-- <p id="date" class="float-sm-end"></p> -->
+                            <input type="text" id="maturitydate" readonly class="form-control disabled">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <h6>Maturity Details</h6>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-8 ">
+                            <label class="" for="rateOfIntrest">Rate Of Interest(%)</label>
+                        </div>
+                        <div class="col-4">
+                            <!-- <p id="rateOfIntrest" class="float-sm-end">4.9%</p> -->
+                            <input type="text" id="rateOfIntrest" readonly class="form-control disabled" value="5.2%">
+                            <input type="hidden" id="hdnrateOfIntrest" value="5.2">
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-8">
+                            <label class="" for="matAmount">Maturity Amount</label>
+                        </div>
+                        <div class="col-4">
+                            <!-- <p id="matAmount" class="float-sm-end"></p> -->
+                            <input type="text" id="maturityAmount" readonly class="form-control disabled">
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-8">
+                            <label class="" >Principle Amount</label>
+                        </div>
+                        <div class="col-4">
+                            <!-- <p id="matAmount" class="float-sm-end"></p> -->
+                            <input type="text" id="principleAmount" readonly class="form-control disabled">
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-8">
+                            <label class="mb-3" for="intrestAmount">Interest Amount</label>
+                        </div>
+                        <div class="col-4">
+                            <!-- <p id="intrestAmount" class="float-sm-end"></p> -->
+                            <input type="text" id="intrestAmount" readonly class="form-control disabled">
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <h6>Tenure</h6>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-8">
+                            <label class="" for="year">Years</label>
+                        </div>
+                        <div class="col-4">
+                            <!-- <p id="year" class="float-sm-end "></p> -->
+                            <input type="text" id="year" readonly class="form-control disabled">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-8">
+                            <label class="" for="month">Month</label>
+                        </div>
+                        <div class="col-4">
+                            <!-- <p id="month" class="float-sm-end"></p> -->
+                            <input type="text" id="month" readonly class="form-control disabled">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- table -->
+
+                <div class="col-lg-6 mx-4">
+                    <div class=" ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="graph"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1"> Graph</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="table"
+                                value="option2" checked>
+                            <label class="form-check-label" for="inlineRadio2">Table</label>
+                        </div>
+                    </div>
+                    <div class=" ">
+                    <div id="dvTableResult" class="d-block w-50">
+                        <table id="showTable" class="table table-bordered border-primary w-auto">
+                            
+                            <tbody id="bodyshowTable">
+
+                            </tbody>
+                           
+                        </table>
+
+                    </div>
+
+                    <div id="dvChartResult" class="d-none">
+                        <div id="chartContainer"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 </body>
+
 </html>
