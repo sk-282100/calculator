@@ -10,7 +10,27 @@
       var epf=0,selfInsurance=0,nps=0,parentInsurance=0,educationLoanInterest=0,homeLoanInterest=0,rent1=0;
       var grossincome=0,capitalgain=0,taxdeduction=0,taxexcemptions=0,totalincome=0;
 
+      (function($) {
+        $.fn.inputFilter = function(inputFilter) {
+          return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+            if (inputFilter(this.value)) {
+              this.oldValue = this.value;
+              this.oldSelectionStart = this.selectionStart;
+              this.oldSelectionEnd = this.selectionEnd;
+            } else if (this.hasOwnProperty("oldValue")) {
+              this.value = this.oldValue;
+              this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+            } else {
+              this.value = "";
+            }
+          });
+        };
+      }(jQuery));
+      
+      $("input[type=text]").inputFilter(function(value) {
+           return /^\d*$/.test(value)  });
 
+      
 
       $('#btnBasicDetail').click(function(){
 
