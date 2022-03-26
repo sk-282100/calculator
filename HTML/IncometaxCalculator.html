@@ -375,7 +375,7 @@ Rented
 <div class="row mb-3">
     <div class="d-flex justify-content-start">
         <button class="btn btn-primary" id="btnBackTaxDeductions" >Back</button>
-    <button class="btn btn-primary mx-3" id="btnTaxDeductions" >Continue Now</button>
+    <button class="btn btn-primary mx-3" id="btnTaxDeductions" onclick="myFunction()">Continue Now</button>
     </div>
     </div>
 </div>
@@ -389,9 +389,10 @@ Rented
 <div class="d-none" id="dvResult" >
 <div class="row mb-3" >
 <div>
-<div class="fa fa-inr">Total Tax: &#8377;</div><br><br>
+            <td><span id="tax-Pay"></span></td>
+            <div class="fa fa-inr">Total Tax: &#8377;</div><br><br>
 
-<table>
+<!-- <table>
 
 <tr>
 <td>Gross Income</td>
@@ -412,7 +413,39 @@ Rented
 <td>Total Income</td>
 <td id="total-income"></td>
 </tr>
-</table><br/><br/>  
+</table><br/><br/>   -->
+
+<div>
+    <table class="table">
+        <tbody>
+          
+          <tr>
+            <th scope="row">Gross Income</th>
+            <td><span id="gross-income"></span></td>
+          </tr>
+    
+          <tr>
+            <th scope="row">Capital Gain</th>
+            <td><span id="capital-gain"></span></td>
+          </tr>
+    
+          <tr>
+            <th scope="row">Tax Deduction</th>
+            <td><span id="tax-deduction"></span></td>
+          </tr>
+    
+          <tr>
+            <th scope="row">Tax Excemptions</th>
+            <td><span id="tax-excemptions"></span></td>
+          </tr>
+    
+          <tr>
+            <th scope="row">Total Income</th>
+            <td><span id="total-income"></span></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
 
 <div class="row mb-3">
 <div class="">
