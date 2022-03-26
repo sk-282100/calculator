@@ -82,7 +82,7 @@ $(function() {
     }
   });
 });
-var arraydataPoints= [];
+
 $( document ).ready(function() {
   //$("#penaltyRate").trigger( "change" );
   calculateFD();
@@ -112,7 +112,7 @@ function calculateFD(){
   var temprdCreationDate= new Date($("#rdCrationDate").val());
   var temp1= new Date($("#rdCrationDate").val());
 var i=(rateofintrest-$('#penaltyRate').val())+parseFloat($('input[name="rd"]:checked').val());
-
+var arraydataPoints= [];
 var p = $("#amountOfDeposite").val(),
     n = MonthDifference(rdCreationDate,current_date),
     y=YearDifference(rdCreationDate,current_date);
@@ -136,9 +136,11 @@ var temprdCreationDate= new Date($("#rdCrationDate").val());
 var yeardiff=YearDifference(new Date($("#rdCrationDate").val()),current_date);
 for(var j=0;j<yeardiff;j++){
   var newdate= new Date(temprdCreationDate.setFullYear(temprdCreationDate.getFullYear()+1));
-    $('#bodyshowTable').append('<tr><td> FY. '+ newdate.getFullYear() +'</td> <td>'+ ((maturity-p)/2).toFixed(2) +'</td> </tr>');
+var yearwiseintrest=parseFloat(((maturity-p)/yeardiff).toFixed(2));
+    $('#bodyshowTable').append('<tr><td> FY. '+ newdate.getFullYear() +'</td> <td>'+ ((maturity-p)/yeardiff).toFixed(2) +'</td> </tr>');
     var datapointobject={
-      y: ((maturity-p)/2).toFixed(2), label: newdate.getFullYear()
+      //y: parseFloat(((maturity-p)/2)).toFixed(2), label: newdate.getFullYear()
+      y: yearwiseintrest, label: newdate.getFullYear()
     }
     arraydataPoints.push(datapointobject);
 
