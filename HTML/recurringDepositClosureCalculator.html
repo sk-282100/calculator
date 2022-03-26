@@ -32,12 +32,12 @@
                     </div>
                     <div class="col-md-4">
                         <div class="">
-                        <input class="flex-column form-check-input" type="radio" value="4" id="normal" name="rd"
+                        <input class="flex-column form-check-input" type="radio" value="0" id="normal" name="rd"
                             checked="checked">
                         <label class="form-check-label" for="normal">Normal</label>
                     </div>
                         <div class="">
-                        <input class="flex-column form-check-input" type="radio" value="5" id="seniorCitizen" name="rd">
+                        <input class="flex-column form-check-input" type="radio" value="0.5" id="seniorCitizen" name="rd">
                         <label class=" form-check-label" for="seniorCitizen">Senior Citizen</label>
                     </div>
                 </div>
@@ -81,14 +81,8 @@
                             <label class="mb-3" for="matDate">Maturity Date</label>
                         </div>
                         <div class="col-4">
-                            <p id="date" class="float-sm-end"></p>
-                            <script>
-                                n = new Date();
-                                y = n.getFullYear();
-                                m = n.getMonth() + 1;
-                                d = n.getDate();
-                                document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
-                            </script>
+                            <!-- <p id="date" class="float-sm-end"></p> -->
+                            <input type="text" id="maturitydate" readonly class="form-control disabled">
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -99,7 +93,9 @@
                             <label class="" for="rateOfIntrest">Rate Of Interest(%)</label>
                         </div>
                         <div class="col-4">
-                            <p id="rateOfIntrest" class="float-sm-end">4.9%</p>
+                            <!-- <p id="rateOfIntrest" class="float-sm-end">4.9%</p> -->
+                            <input type="text" id="rateOfIntrest" readonly class="form-control disabled" value="4.9%">
+                            <input type="hidden" id="hdnrateOfIntrest" value="4.9">
                         </div>
                     </div>
 
@@ -108,7 +104,18 @@
                             <label class="" for="matAmount">Maturity Amount</label>
                         </div>
                         <div class="col-4">
-                            <p id="matAmount" class="float-sm-end"></p>
+                            <!-- <p id="matAmount" class="float-sm-end"></p> -->
+                            <input type="text" id="maturityAmount" readonly class="form-control disabled">
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-8">
+                            <label class="" >Principle Amount</label>
+                        </div>
+                        <div class="col-4">
+                            <!-- <p id="matAmount" class="float-sm-end"></p> -->
+                            <input type="text" id="principleAmount" readonly class="form-control disabled">
                         </div>
                     </div>
 
@@ -117,7 +124,8 @@
                             <label class="mb-3" for="intrestAmount">Interest Amount</label>
                         </div>
                         <div class="col-4">
-                            <p id="intrestAmount" class="float-sm-end"></p>
+                            <!-- <p id="intrestAmount" class="float-sm-end"></p> -->
+                            <input type="text" id="intrestAmount" readonly class="form-control disabled">
                         </div>
                     </div>
 
@@ -129,15 +137,17 @@
                             <label class="" for="year">Years</label>
                         </div>
                         <div class="col-4">
-                            <p id="year" class="float-sm-end "></p>
+                            <!-- <p id="year" class="float-sm-end "></p> -->
+                            <input type="text" id="year" readonly class="form-control disabled">
                         </div>
                     </div>
                     <div class="row mb-2">
-                        <div class="col-4">
+                        <div class="col-8">
                             <label class="" for="month">Month</label>
                         </div>
-                        <div class="col-8">
-                            <p id="month" class="float-sm-end"></p>
+                        <div class="col-4">
+                            <!-- <p id="month" class="float-sm-end"></p> -->
+                            <input type="text" id="month" readonly class="form-control disabled">
                         </div>
                     </div>
 
@@ -158,26 +168,18 @@
                         </div>
                     </div>
                     <div class=" ">
-                    <div id="dvTableResult" class="w-50">
+                    <div id="dvTableResult" class="d-block w-50">
                         <table id="showTable" class="table table-bordered border-primary w-auto">
-                            <tr>
-                                <td colspan="2">Financial Year Wise Interest Amount</td>
-                            </tr>
-                            <tr>
-                                <td class="w-auto col-1">Financial Year</td>
-                                <td class="col-1">Interest</td>
-                            </tr>
-                            <tr>
-                                <td class="col-1">
-                                    <span id="finacialYear"> </span>
-                                </td>
-                                <td class="col-1"><span id="intrest"> </span></td>
-                            </tr>
+                            
+                            <tbody id="bodyshowTable">
+
+                            </tbody>
+                           
                         </table>
 
                     </div>
 
-                    <div id="dvChartResult">
+                    <div id="dvChartResult" class="d-none">
                         <div id="chartContainer"></div>
                     </div>
                 </div>
