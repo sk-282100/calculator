@@ -82,7 +82,7 @@ $(function() {
     }
   });
 });
-var arraydataPoints= [];
+
 $( document ).ready(function() {
   //$("#penaltyRate").trigger( "change" );
   calculateRD();
@@ -106,6 +106,7 @@ function YearDifference(d1, d2) {
 
 function calculateRD(){
   var rateofintrest=4.9;
+  var arraydataPoints= [];
   var rdCreationDate = new Date($("#rdCrationDate").val());
   var current_date = new Date();
   var maturityAmount=0,intrestAmount=0,principleAmount=0;
