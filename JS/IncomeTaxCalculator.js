@@ -1,247 +1,44 @@
 
 
-// function myFunction() {
-
-      // function grossIncome()
-      // {   
-      //    var hra2, da2, sa2, grossIncome;   
-        
-      //     // Calculate Gross Income
-      //     grossIncome = Math.round(hra2 - da2 - sa2);
-      //     console.log(grossIncome);
-      //     return grossIncome;
-      // }
-      // var gross = grossIncome();
-      // $("#gross-income").text(gross);
-      
-           
-      // function capitalGains()
-      // {  
-      //    var equity1, equity2, debit1, debit2, shares1, shares2, estate1, estate2, capitalGains;  
-      
-      //     // Calculate Capital Gains
-      //     capitalGains = Math.round(equity1 + equity2 + debit1 + debit2 + shares1 + shares2 + estate1 + estate2);                                
-      //     console.log(capitalGains);
-      //     return capitalGains;     
-      // }
-      // var capitalGain = capitalGains;
-      // $("#capital-gain").text(capitalGain);
-      
-      
-      // function taxDeductions()
-      // {  
-      //   var epf, selfInsurance, parentInsurance, nps, homeLoanInterest, educationLoanInterest, taxDeductions;  
-          
-      //     // Calculate Capital Gains
-      //     taxDeductions = Math.round(epf, selfInsurance - parentInsurance - nps - homeLoanInterest - educationLoanInterest);
-      //     console.log(taxDeductions);              
-      //     return taxDeductions;   
-      // }
-      // var taxDeduction = taxDeductions;
-      // $("#tax-deduction").text(taxDeduction);
-      
-      // function totalIncome()
-      // {
-      //     var grossIncome, taxDeductions, totalIncome;  
-      
-      //     // Calculate totalIncome
-      //     totalIncome = Math.round(grossIncome-taxDeductions);
-      //     console.log(totalIncome);             
-      //     return totalIncome;  
-      // }
-      // var total = totalIncome;
-      // $("#total-income").text(total);
-      
-
-      // function taxExcemptions()
-      // {
-      //     var taxExcemptions;  
-      
-      //     // Calculate totalIncome
-      //     taxExcemptions = Math.round();
-      //     console.log(taxExcemptions);             
-      //     return taxExcemptions;  
-      // }
-      // var taxExcemption = taxExcemptions;
-      // $("#tax-excemption").text(taxExcemption);
-
-
-      // function recalculate()
-      // {
-      //   var grossIncomeResult = grossIncome();
-      //   document.getElementById("#gross-income").value = grossIncomeResult;     
-      // }
-      // var recal = recalculate;
-
-    function myFunction() {
-
-        function grossIncome() {
-          var hra2 = document.getElementById("hra2").value;
-          var da2 =document.getElementById("da2").value;
-          var sa2 =document.getElementById("sa2").value;
-
-          var grossIncome = Math.round(hra2 - da2 - sa2);
-          
-          if (grossIncome != null) {
-              document.getElementById("gross-income").innerHTML = grossIncome;
-            }
-        }
-
-
-        function capitalGains() {
-          var equity1 = document.getElementById("equity1").value;
-          var equity2 =document.getElementById("equity2").value;
-          var debit1 =document.getElementById("debit1").value;
-          var debit2 = document.getElementById("debit2").value;
-          var shares1 =document.getElementById("shares1").value;
-          var shares2 =document.getElementById("shares2").value;
-          var estate1 = document.getElementById("estate1").value;
-          var estate2 =document.getElementById("estate2").value;
-
-          var capitalGains =  Math.round(equity1 + equity2 + debit1 + debit2 + shares1 + shares2 + estate1 + estate2);                                
-          
-          if (capitalGains != null) {
-              document.getElementById("capital-gain").innerHTML = capitalGains;
-            }
-        }
-
-    
-
-        function taxDeductions() {
-          var epf = document.getElementById("epf").value;
-          var selfInsurance =document.getElementById("selfInsurance").value;
-          var parentInsurance =document.getElementById("parentInsurance").value;
-          var debit2 = document.getElementById("debit2").value;
-          var shares1 =document.getElementById("shares1").value;
-          var shares2 =document.getElementById("shares2").value;
-          var estate1 = document.getElementById("estate1").value;
-          var estate2 =document.getElementById("estate2").value;
-
-          var taxDeductions =  Math.round(epf, selfInsurance - parentInsurance - nps - homeLoanInterest - educationLoanInterest);
-          if (taxDeductions != null) {
-              document.getElementById("tax-deduction").innerHTML = taxDeductions;
-            }
-        }
-
-        function taxExcemptions() {
-          var equity1 = document.getElementById("equity1").value;
-          var equity2 =document.getElementById("equity2").value;
-          var debit1 =document.getElementById("debit1").value;
-          var debit2 = document.getElementById("debit2").value;
-          var shares1 =document.getElementById("shares1").value;
-          var shares2 =document.getElementById("shares2").value;
-          var estate1 = document.getElementById("estate1").value;
-          var estate2 =document.getElementById("estate2").value;
-
-          var taxExcemptions = Math.round();
-          
-          if (taxExcemptions != null) {
-              document.getElementById("tax-excemptions").innerHTML = taxExcemptions;
-            }
-        }
-
-
-        function grossIncome() {
-          var hra2 = document.getElementById("hra2").value;
-          var da2 =document.getElementById("da2").value;
-          var sa2 =document.getElementById("sa2").value;
-
-          var totalIncome = Math.round(grossIncome-taxDeductions);
-          
-          if (totalIncome != null) {
-              document.getElementById("total-income").innerHTML = totalIncome;
-            }
-        }
-
-
-        // function totalIncome()
-      // {
-      //     var grossIncome, taxDeductions, totalIncome;  
-      
-      //     // Calculate totalIncome
-      //     totalIncome = Math.round(grossIncome-taxDeductions);
-      //     console.log(totalIncome);             
-      //     return totalIncome;  
-      // }
-      // var total = totalIncome;
-      // $("#total-income").text(total);
-
-
-    }
-
-
-      $(function(){
-        var fdr=1;
-        var toYears=365;
-      
-        //To get type of fixed deposite 
-        $(".fix-deposit-radio").click(function(){
-            fdr=$(this).val()
-          })
-      
-        //To get Tensure type value from dropdown  
-          $("#tenure").change(function(){
-            toYears=$(this).val()
-          })
-       
-        //To get deposite amount and display in proper format 
-          $("#depositeAmountSlider").change(function(){
-            $("#depositeAmount").val(Number($("#depositeAmountSlider").val()).toLocaleString('en-IN'));
-            $("#hddepositeAmount").val(Number($("#depositeAmountSlider").val()));
-          });
-      
-          //To get Rate Of Interest value and display in proper format
-          $("#roiSlider").change(function(){
-            $("#roi").val($("#roiSlider").val()+'%');
-            $("#hdroi").val($("#roiSlider").val());
-          });
-        
-          //To get Tenure value
-          $("#tenureSlider").change(function(){
-            $("#tenureValue").val($("#tenureSlider").val());
-          });
-      
-          //calculating Maturity Amount
-          $("#calculate-button").click(function(){
-            var depositAmount=$("#hddepositeAmount").val()
-            var intrestRate= $("#hdroi").val()
-            var tenure= $("#tenureValue").val()
-            var fixedDeposit=fdr;
-        
-            var maturityAmout=depositAmount*Math.pow(1+((intrestRate/100)/fixedDeposit),fixedDeposit*(tenure/toYears))
-            maturityAmout = maturityAmout.toFixed(2);
-            var totalIntrest=maturityAmout-depositAmount
-            totalIntrest=totalIntrest.toFixed(2);
-      
-            console.log(maturityAmout);
-            $("#maturity").html(maturityAmout)
-            $("#totIntrest").html(totalIntrest)
-           
-          })
-            
-       })
-
-      
-     
-  // }
-
-    var triggerTabList = [].slice.call(document.querySelectorAll('#salaryDetailTab li'))
-    triggerTabList.forEach(function (triggerEl) {
-      var tabTrigger = new bootstrap.Tab(triggerEl)
-    
-      triggerEl.addEventListener('click', function (event) {
-        event.preventDefault()
-        tabTrigger.show()
-      })
-    })
-
     $( document ).ready(function() {
-    $('#btnBasicDetail').click(function(){
+      var age=0,city=0,RecidenceS=0,occupation=0;
+      var AnnualGross=0,Annualepf=0,Annualsa=0,Annualda=0,Annualhra=0,Annualbasic=0;
+      var MonthGross=0,Monthepf=0,Monthsa=0,Monthda=0,Monthhra=0,Monthbasic=0;
+      var saving=0,source=0,rent=0,deposit=0;
+      var equity1=0,debit1=0,shares1=0,estate1=0;
+      var equity2=0,debit2=0,shares2=0,estate2=0;
+      var epf=0,selfInsurance=0,nps=0,parentInsurance=0,educationLoanInterest=0,homeLoanInterest=0,rent1=0;
+      var grossincome=0,capitalgain=0,taxdeduction=0,taxexcemptions=0,totalincome=0;
+
+
+
+      $('#btnBasicDetail').click(function(){
+
+        age=$('#age').val();
+        city=$('#city').val();
+        RecidenceS=$('input[name="rd"]:checked').val()
+        occupation=$('#occupation').val();
+
       $('#dvBasicDetail').addClass('d-none');
       $('#dvSalaryDetail').removeClass('d-none');
     })
 
     $('#btnSalaryDetail').click(function(){
+
+      Annualbasic=$('#Annualbasic').val();
+      Annualhra=$('#Annualhra').val();
+      Annualda=$('#Annualda').val();
+      Annualsa=$('#Annualsa').val();
+      Annualepf=$('#Annualepf').val();
+      AnnualGross=$('#AnnualGross').val();
+
+      Monthbasic=$('#monthlybasic').val();
+      Monthhra=$('#monthlyhra').val();
+      Monthda=$('#monthlyda').val();
+      Monthsa=$('#monthlysa').val();
+      Monthepf=$('#monthlyepf').val();
+      MonthGross=$('#monthlyGross').val();
+
       $('#dvSalaryDetail').addClass('d-none');
       $('#dvOtherIncome').removeClass('d-none');
     })
@@ -252,6 +49,12 @@
     })
 
     $('#btnOtherIncome').click(function(){
+
+      saving=$('#saving').val();
+      deposit=$('#deposit').val();
+      rent=$('#rent').val();
+      source=$('#source').val();
+
       $('#dvOtherIncome').addClass('d-none');
       $('#dvCapitalGains').removeClass('d-none');
     })
@@ -262,6 +65,17 @@
     })
 
     $('#btnCapitalGains').click(function(){
+
+      equity1=$('#equity1').val();
+      debit1=$('#debit1').val();
+      shares1=$('#shares1').val();
+      estate1=$('#estate1').val();
+
+      equity2=$('#equity2').val();
+      debit2=$('#debit2').val();
+      shares2=$('#shares2').val();
+      estate2=$('#estate2').val();
+
       $('#dvCapitalGains').addClass('d-none');
       $('#dvTaxDeductions').removeClass('d-none');
     })
@@ -272,12 +86,71 @@
     })
 
     $('#btnTaxDeductions').click(function(){
+
+      epf=$('#epf').val();
+      selfInsurance=$('#selfInsurance').val();
+      nps=$('#nps').val();
+      parentInsurance=$('#parentInsurance').val();
+      educationLoanInterest=$('#educationLoanInterest').val();
+      homeLoanInterest=$('#homeLoanInterest').val();
+      rent1=$('#rent').val();
+
       $('#dvTaxDeductions').addClass('d-none');
       $('#dvResult').removeClass('d-none');
+      Calculate();
     })
 
     $('#btnBackTaxDeductions').click(function(){
       $('#dvTaxDeductions').addClass('d-none');
       $('#dvCapitalGains').removeClass('d-none');
     })
+
+    var incometaxobject=[
+      { slab1:0, slab2:250000, rate:0,age:59 },
+      { slab1:250000, slab2:500000, rate:5,age:59 },
+      { slab1:500000, slab2:750000, rate:10,age:59 },
+      { slab1:750000, slab2:1000000, rate:15,age:59 },
+      { slab1:1000000, slab2:1250000, rate:20,age:59 },
+      { slab1:1250000, slab2:1500000, rate:25,age:59 },
+      { slab1:1500000, slab2:15000000, rate:30,age:59 },
+
+    ];
+
+    function Calculate(){
+      if(epf>150000){
+        epf=150000;
+      }
+      if(nps>50000){
+        nps=50000;
+      }
+      if(homeLoanInterest>200000){
+        homeLoanInterest=200000;
+      }
+      if(selfInsurance>20000){
+        selfInsurance=200000;
+      }
+      if(parentInsurance>10000){
+        parentInsurance=10000;
+      }
+      grossincome=parseInt(Annualbasic)+parseInt(saving)+parseInt(source)+parseInt(rent)+parseInt(deposit);
+      capitalgain=parseInt(equity1)+parseInt(equity2)+parseInt(debit1)+parseInt(debit2)+parseInt(shares1)+parseInt(shares2)+parseInt(estate1)+parseInt(estate2);
+      taxdeduction=parseInt(epf)+parseInt(selfInsurance)+parseInt(nps)+parseInt(parentInsurance)+parseInt(educationLoanInterest)+parseInt(homeLoanInterest)+parseInt(rent1);
+      totalincome=parseInt(grossincome)+parseInt(capitalgain);
+       $('#total-income').text(totalincome.toLocaleString('en-IN'));
+       $('#tax-excemptions').text(0.00);
+       $('#tax-deduction').text(taxdeduction.toLocaleString('en-IN'));
+       $('#capital-gain').text(capitalgain.toLocaleString('en-IN'));
+       $('#gross-income').text(grossincome.toLocaleString('en-IN'));
+
+       var incometaxrate=0;
+       for(i=0;i<incometaxobject.length;i++){
+         if(totalincome> incometaxobject[i].slab1 && totalincome< incometaxobject[i].slab2){
+          incometaxrate=incometaxobject[i].rate;
+          break;
+         }
+       }
+      var finalTaxAmount= grossincome*incometaxrate/100;
+      $('#taxamount').text(finalTaxAmount.toLocaleString('en-IN'));
+
+    }
   });
