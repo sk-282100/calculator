@@ -98,7 +98,7 @@
           var estate1 = document.getElementById("estate1").value;
           var estate2 =document.getElementById("estate2").value;
 
-          var capitalGains = Math.round(hra2 - da2 - sa2);
+          var capitalGains =  Math.round(equity1 + equity2 + debit1 + debit2 + shares1 + shares2 + estate1 + estate2);                                
           
           if (capitalGains != null) {
               document.getElementById("capital-gain").innerHTML = capitalGains;
@@ -117,8 +117,7 @@
           var estate1 = document.getElementById("estate1").value;
           var estate2 =document.getElementById("estate2").value;
 
-          var grossIncome = Math.round(hra2 - da2 - sa2);
-          
+          var taxDeductions =  Math.round(epf, selfInsurance - parentInsurance - nps - homeLoanInterest - educationLoanInterest);
           if (taxDeductions != null) {
               document.getElementById("tax-deduction").innerHTML = taxDeductions;
             }
