@@ -30,8 +30,6 @@
       $("input[type=text]").inputFilter(function(value) {
            return /^\d*$/.test(value)  });
 
-      
-
       $('#btnBasicDetail').click(function(){
 
         age=$('#age').val();
